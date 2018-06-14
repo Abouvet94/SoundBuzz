@@ -1,0 +1,57 @@
+{%  extends '::base.html.twig' %}
+{% block title %}{% endblock %}
+{% block stylesheets %}{{ parent() }}
+{# <script src="{{ asset('framework/js/p5/radialsound.js') }}"></script> #}
+{% endblock %}
+{% block body %}
+    <h2>Test playlist</h2>
+
+    <select id="Playlist">
+        {% for playliste in playlist %}
+            <option id="{{ playliste.play_id }}" value="{{ playliste.nom }}">{{ playliste.nom }}</option>
+        {% endfor %}
+    </select>
+
+    <div id="playermusic">
+    </div>
+
+{% endblock %}
+{% block javascripts %}{{ parent() }}
+<script>
+//preload la music choisie
+
+
+$('#Playlist').change(function(){
+    bloq = false;
+    $('#Playlist').each(function(){
+        value = $(this).val();
+        if(value == ""){ bloq = true; }
+    })
+    if(!bloq){
+        //Lancement de la recher Ajax !
+        music = $('#playermusic');
+        
+        var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
+        $.ajax({
+            url: "{{ path('PlaylisteAutomate') }}",
+            type: "POST",
+            dataType: "html",
+            data: {
+                id : id
+            },
+            success: function (data) {
+                var tab = JSON.parse(data)
+                    for(var i=0; i < tab.length; i++ ){ 
+                        music.append('<audio value="'+tab[i].music_id+'">'+tab[i].music_id+'</option>');
+                    }
+            }
+        });
+    }
+});
+
+function preload() {
+    song = document.getElementById("playerid").src;
+    console.log(song);
+}
+</script>
+{% endblock %}

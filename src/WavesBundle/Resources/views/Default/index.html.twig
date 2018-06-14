@@ -1,0 +1,10 @@
+{%  extends '::base.html.twig' %}
+{% block title %}{% endblock %}
+{% block stylesheets %}{{ parent() }}
+    <script src="{{ asset('framework/js/p5/waves.js') }}"></script>
+{% endblock %}
+{% block body %}
+    <h2>Test Son</h2>
+{% endblock %}
+{% block javascripts %}{{ parent() }}
+{% endblock %}

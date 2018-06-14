@@ -1,0 +1,26 @@
+/* 
+Black :
+
+#1a1a1a
+rgb(26, 26, 26)
+hsl(0, 0%, 10%)
+
+OU 
+
+#262626
+rgb(38, 38, 38)
+hsl(0, 0%, 15%)
+
+*/
+
+body {
+    background-color: #1a1a1a;
+}
+
+.playermusic{
+  border: 1 solid white;
+  width: auto;
+  height: auto;
+  margin: 1%;
+  padding: 2%;
+}
