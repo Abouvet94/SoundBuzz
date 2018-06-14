@@ -15,23 +15,18 @@ class WavesController extends Controller {
 
     public function musicAction(){
 
+        $music = $this->getDoctrine()
+        ->getRepository('WavesBundle:Music')
+        ->findAll();
 
-        // // Create an instance of the Sass Compiler class
+        $playlist = $this->getDoctrine()
+        ->getRepository('WavesBundle:Playlist')
+        ->findAll();
 
-        // $music = $this->getDoctrine()
-        // ->getRepository('WavesBundle:Music')
-        // ->findAll();
-
-        // $playlist = $this->getDoctrine()
-        // ->getRepository('WavesBundle:Playlist')
-        // ->findAll();
-
-        //return new Response("Sass File Succesfully compiled");
-        return $this->render('WavesBundle:Default:test.html.twig');
-        // return $this->render('WavesBundle:Default:music.html.twig', array (
-        //     'music' => $music,
-        //     'playlist' => $playlist
-        // ));
+        return $this->render('WavesBundle:Default:music.html.twig', array (
+        'music' => $music,
+        'playlist' => $playlist
+        ));
     }
 
     public function PlaylisteAutomateAction(Request $request){

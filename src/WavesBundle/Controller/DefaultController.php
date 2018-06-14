@@ -20,10 +20,10 @@ class DefaultController extends Controller
         $cssFilesPath = $this->get('kernel')->getRootDir() . '/../web/framework/css/';
         // Ecrit dans les fichier CSS 'all.css'
         file_put_contents(
-            $cssFilesPath. "all.css",
+            $cssFilesPath. "style.css",
             $scss->compile(
                 file_get_contents(
-                    $sassFilesPath. "test.scss"
+                    $sassFilesPath. "style.scss"
                 )
             )
         );
