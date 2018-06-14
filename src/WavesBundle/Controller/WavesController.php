@@ -10,8 +10,6 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 
 //Import Sass
-use Leafo\ScssPhp\Compiler;
-
 
 class WavesController extends Controller {
 
@@ -19,27 +17,6 @@ class WavesController extends Controller {
 
 
         // // Create an instance of the Sass Compiler class
-        $scss = new Compiler();
-
-        $scss->setFormatter(new \Leafo\ScssPhp\Formatter\Expanded());
-
-        //Path SaSS
-        $sassFilesPath = $this->get('kernel')->getRootDir() . '/../web/framework/sass/';
-        //Path Css
-        $cssFilesPath = $this->get('kernel')->getRootDir() . '/../web/framework/css/';
-
-        // Write output css file
-        file_put_contents(
-            $cssFilesPath. "all.css",
-            // Set the content of all.css the output of the
-            // sass compiler from the file all.scss
-            $scss->compile(
-                // Read content of all.scss
-                file_get_contents(
-                    $sassFilesPath. "test.scss"
-                )
-            )
-        );
 
         // $music = $this->getDoctrine()
         // ->getRepository('WavesBundle:Music')
