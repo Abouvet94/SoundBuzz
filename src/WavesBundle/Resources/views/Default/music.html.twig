@@ -12,8 +12,9 @@
         {% endfor %}
     </select>
 
-    <div id="playermusic">
+    <div id="playermusic" style="border:1px solid black; height:20px;">
     </div>
+
 
 {% endblock %}
 {% block javascripts %}{{ parent() }}
@@ -40,18 +41,28 @@ $('#Playlist').change(function(){
                 id : id
             },
             success: function (data) {
-                var tab = JSON.parse(data)
+                var tab = JSON.parse(data);
+                document.getElementById('playermusic').innerHTML = "";
                     for(var i=0; i < tab.length; i++ ){ 
-                        music.append('<audio value="'+tab[i].music_id+'">'+tab[i].music_id+'</option>');
+                        //music.append('<img src="'+tab[i].image+'" height="45" width="45">');
+                        music.append('<audio id="audio" controls="controls"> <source src="'+tab[i].src+'" type="audio/mp3"> </audio> <br>');
                     }
             }
         });
     }
 });
 
+//Test Player 
+
+var player = document.querySelector('#audio');
+
+$('#music').click(function(){
+    console.log('test');
+})
 function preload() {
-    song = document.getElementById("playerid").src;
+    song = document.getElementById("music").src ;
     console.log(song);
+    //song = loadSound(document.getElementById("playerid").src);
 }
 </script>
 {% endblock %}

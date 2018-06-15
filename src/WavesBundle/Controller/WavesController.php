@@ -42,8 +42,13 @@ class WavesController extends Controller {
                 //Récupére Playliste dans un tableau
                 $result = [];
                 $resutl = $this->getDoctrine()->getManager()->getRepository('WavesBundle:Music')->getPlayliste($idplayliste);
+               
+                for ($i=0; $i < sizeof($resutl) ; $i++){
+                    $id = $resutl[$i]['music_id'];
+                    $music[] = $this->getDoctrine()->getManager()->getRepository('WavesBundle:Music')->getMusic($id);
+                }
                 
-                return new JsonResponse($resutl);
+                return new JsonResponse($music);
             }
         }
         return new Response('Error!', 400);

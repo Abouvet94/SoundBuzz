@@ -17,4 +17,12 @@ class MusicRepository extends \Doctrine\ORM\EntityRepository
       $stmt->execute([]);
       return $stmt->fetchAll();
    }
+
+   public function getMusic($id)
+   {
+      $rawSQL = "SELECT * FROM `music` WHERE `music_id` =".$id;
+      $stmt = $this->getEntityManager()->getConnection()->prepare($rawSQL);
+      $stmt->execute([]);
+      return $stmt->fetch();
+   }
 }
