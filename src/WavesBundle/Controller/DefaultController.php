@@ -23,7 +23,7 @@ class DefaultController extends Controller
             $cssFilesPath. "style.css",
             $scss->compile(
                 file_get_contents(
-                    $sassFilesPath. ".scss"
+                    $sassFilesPath. "style.scss"
                 )
             )
         );

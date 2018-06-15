@@ -1,21 +1,4 @@
-@import "variables.scss";
-
-// VARIABLES
-
-$color_fond: #1a1a1a;
-$color_text_primary: #FFFFFF;
-$color_text_secondary: #666666;
-
-$line: #4d4d4d;
-
-$black: #000000;
-$white: #FFFFFF;
-
-$box-pad: 30px;
-
-
-
-
+@import "framework/sass/variables.scss";
 
 
 .icons {
@@ -23,10 +6,6 @@ $box-pad: 30px;
     height: 30px;
     background-color: red;
 }
-
-
-
-
 
 // CLASS GLOBAL
 
