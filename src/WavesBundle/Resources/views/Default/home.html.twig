@@ -18,15 +18,13 @@
             <li><a>Ajouter Musique</a></li>
             <li><a>Découvrir</a></li>
             <li><a>Styles</a></li>
-            <li><a>Ma Musique</a></li>
+            <li><a id="mymusic">Ma Musique</a></li>
             <li>
-                <a>Playlist</a>
+            <a>Playlist</a>
                 <ul>
-                    <li>Playlist</li>
-                    <li>Playlist</li>
-                    <li>Playlist</li>
-                    <li>Playlist</li>
-                    <li>Playlist</li>
+                    {% for playliste in playlist %}
+                        <li>{{ playliste.nom }}</li>
+                    {% endfor %}
                 </ul>
              </li>
         </ul>
@@ -35,6 +33,10 @@
 
     <section>
         <h2>Home sweet Home</h2>
+
+        <div id="musicA" class="pages">
+            <p> TESTTEST </p>
+        </div>
     </section>
 
     <nav class="right_panel">
@@ -80,13 +82,15 @@
         </div>
         <div class="play">
             <div class="icons icon_last"></div>
-            <div class="icons icon_play"></div>
+            <div class=" icon_play">
+                <button id="btn_play"></button>
+            </div>
             <div class="icons icon_next"></div>
         </div>
         <div class="order">
             <div class="icons icon_random"></div>
             <div class="icons icon_loop"></div>
-            <div class="time">0'50/3'30</div>
+            <div class="time"><span id="progressTime">00:00</span></div>
         </div>
     </div>
 
@@ -129,11 +133,13 @@
 
     </div>#}
 
-
-
-
-
-
 {% endblock %}
 {% block javascripts %}{{ parent() }}
+    <script>
+        //Partie Music :
+        // Met en premiére plan la div Music
+        $('#mymusic').click(function(){
+            $('#musicA').show();
+        })
+    </script>
 {% endblock %}
