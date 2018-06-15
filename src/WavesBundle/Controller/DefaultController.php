@@ -27,6 +27,21 @@ class DefaultController extends Controller
                 )
             )
         );
-        return $this->render('WavesBundle:Default:home.html.twig');
+
+
+        //Récupération des Playlist (all)
+        $playlist = $this->getDoctrine()
+        ->getRepository('WavesBundle:Playlist')
+        ->findAll();
+        //Récupération des music (all)
+        $music = $this->getDoctrine()
+        ->getRepository('WavesBundle:Music')
+        ->findAll();
+
+
+        return $this->render('WavesBundle:Default:home.html.twig', array(
+            'playlist' => $playlist,
+            'music' => $music,
+        ));
     }
 }

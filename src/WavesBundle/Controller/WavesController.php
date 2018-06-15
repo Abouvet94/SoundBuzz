@@ -18,7 +18,7 @@ class WavesController extends Controller {
         $music = $this->getDoctrine()
         ->getRepository('WavesBundle:Music')
         ->findAll();
-
+ 
         $playlist = $this->getDoctrine()
         ->getRepository('WavesBundle:Playlist')
         ->findAll();
