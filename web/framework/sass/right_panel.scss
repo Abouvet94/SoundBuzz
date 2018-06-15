@@ -1,0 +1,11 @@
+.right_panel {
+  border-left: 1px solid $line;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  ul {
+	li {
+	  padding: $box-pad/2;
+	}
+  }
+}

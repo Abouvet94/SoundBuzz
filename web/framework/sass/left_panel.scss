@@ -1,0 +1,26 @@
+.left_panel {
+  font-size: 20px;
+  border-right: 1px solid $line;
+  height: 100%;
+  flex-direction: column;
+  justify-content: space-between;
+  ul {
+	height: 100% - 295px;
+	li {
+	  border-bottom: 1px solid $black;
+	  color: $color_text_secondary;
+	  display: block;
+	  padding: $box-pad/2;
+	  &:hover {
+		background-color: rgba($white, 0.1);
+	  }
+	  ul {
+		li {
+		  color: $color_text_primary;
+		  font-size: 15px;
+		  border-bottom: 0;
+		}
+	  }
+	}
+  }
+}
