@@ -1,0 +1,134 @@
+{%  extends '::base.html.twig' %}
+{% block title %}{% endblock %}
+{% block stylesheets %}{{ parent() }}
+    {# <script src="{{ asset('framework/js/p5/waves.js') }}"></script> #}
+{% endblock %}
+{% block body %}
+
+
+
+    <nav class="left_panel">
+        <ul>
+            <li><img src="../../../../../../web/framework/images/logo v2-1.png" alt="Logo SoundBuzz" height="42" width="42"></li>
+            <li><a>Ajouter Musique</a></li>
+            <li><a>Découvrir</a></li>
+            <li><a>Styles</a></li>
+            <li><a>Ma Musique</a></li>
+            <li>
+                <a>Playlist</a>
+                <ul>
+                    <li>Playlist</li>
+                    <li>Playlist</li>
+                    <li>Playlist</li>
+                    <li>Playlist</li>
+                    <li>Playlist</li>
+                </ul>
+             </li>
+        </ul>
+
+    </nav>
+
+    <section>
+        <h2>Home sweet Home</h2>
+    </section>
+
+    <nav class="right_panel">
+        <ul>
+            <li>Utilistaeur</li>
+            <li><button>Premium</button></li>
+            <li>
+                <div>Mozart à aimé :</div>
+                <div>"Ah que je t'aimeuh".</div>
+                <div>Il y a 5 minutes</div>
+            </li>
+            <li>
+                <div>Sonsass à commenté "Despacito" :</div>
+                <div>Pitié arrachez moi les oreilles avec des pinces chauffées à blanc...</div>
+                <div>Il y a 2 heures</div>
+            </li>
+            <li>
+                <div>Frank Mickael a sorti un nouvel album :</div>
+                <div>"Ecouter les femmes".</div>
+                <div>Il y a 3 jours.</div>
+            </li>
+        </ul>
+    </nav>
+
+    <div class="cover_info">
+        <div class="cover">
+            <img src="smiley.gif" alt="Smiley face" height="42" width="42">
+        </div>
+        <div class="info_cover">
+            <div class="title_artist_name">
+                <div>Titre de la Chanson, Titre de la Chanson</div>
+                <div>Artiste</div>
+            </div>
+            <div class="icons icon_comm"></div>
+        </div>
+    </div>
+
+    <div class="player">
+        <div class="followers">
+            <div class="icons icon_like"></div>
+            <div class="icons icon_dislike"></div>
+            <div class="icons icon_add"></div>
+        </div>
+        <div class="play">
+            <div class="icons icon_last"></div>
+            <div class="icons icon_play"></div>
+            <div class="icons icon_next"></div>
+        </div>
+        <div class="order">
+            <div class="icons icon_random"></div>
+            <div class="icons icon_loop"></div>
+            <div class="time">0'50/3'30</div>
+        </div>
+    </div>
+
+    <div class="current_listening">
+        Playlist jouée actuellement
+    </div>
+
+    {#<div class="container_player">
+
+        <div class="cover_info">
+            <div class="cover">
+                <img src="smiley.gif" alt="Smiley face" height="42" width="42">
+            </div>
+            <div class="info_cover">
+                <div class="title_artist_name">
+                    <div>Titre de la Chanson, Titre de la Chanson</div>
+                    <div>Artiste</div>
+                </div>
+                <div class="icons icon_comm"></div>
+            </div>
+        </div>
+
+        <div class="player">
+            <div class="followers">
+                <div class="icons icon_like"></div>
+                <div class="icons icon_dislike"></div>
+                <div class="icons icon_add"></div>
+            </div>
+            <div class="play">
+                <div class="icons icon_last"></div>
+                <div class="icons icon_play"></div>
+                <div class="icons icon_next"></div>
+            </div>
+            <div class="order"></div>
+        </div>
+
+        <div class="current_listening">
+            Playlist jouée actuellement
+        </div>
+
+    </div>#}
+
+
+
+
+
+
+{% endblock %}
+{% block javascripts %}{{ parent() }}
+{% endblock %}

@@ -27,6 +27,6 @@ class DefaultController extends Controller
                 )
             )
         );
-        return $this->render('WavesBundle:Default:index.html.twig');
+        return $this->render('WavesBundle:Default:home.html.twig');
     }
 }
