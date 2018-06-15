@@ -6,18 +6,28 @@
   justify-content: space-between;
 }
 .left_panel ul {
-  height: 96.9270833333%;
+  height: 100%;
 }
-.left_panel ul li {
+.left_panel ul li a {
   border-bottom: 1px solid #000;
   color: #666;
   display: block;
   padding: 15px;
 }
-.left_panel ul li:hover {
+.left_panel ul li a img {
+  width: 100%;
+  height: auto;
+}
+.left_panel ul li a:first-child {
+  padding: 0;
+}
+.left_panel ul li a:first-child:hover {
+  background-color: rgba(255, 255, 255, 0);
+}
+.left_panel ul li a:hover {
   background-color: rgba(255, 255, 255, 0.1);
 }
-.left_panel ul li ul li {
+.left_panel ul li a ul li {
   color: #fff;
   font-size: 15px;
   border-bottom: 0;
