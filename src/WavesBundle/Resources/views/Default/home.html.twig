@@ -5,11 +5,16 @@
 {% endblock %}
 {% block body %}
 
+{# 
+    Pour faire un lien :
+    {{ asset('framework/js/p5/waves.js') }}
+ #}
+
 
 
     <nav class="left_panel">
         <ul>
-            <li><img src="../../../../../../web/framework/images/logo v2-1.png" alt="Logo SoundBuzz" height="42" width="42"></li>
+            <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="42" width="42"></li>
             <li><a>Ajouter Musique</a></li>
             <li><a>Découvrir</a></li>
             <li><a>Styles</a></li>
