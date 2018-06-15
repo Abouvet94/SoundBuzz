@@ -1,10 +1,14 @@
 @import "framework/sass/variables.scss";
+@import "framework/sass/mixins.scss";
 
+@import "framework/sass/left_panel.scss";
+@import "framework/sass/right_panel.scss";
+@import "framework/sass/container_player.scss";
 
 .icons {
     width: 30px;
     height: 30px;
-    background-color: red;
+    background-color: #955ba5;
 }
 
 // CLASS GLOBAL
@@ -35,148 +39,8 @@ nav {
     width: 250px !important;
 }
 
-.left_panel {
-    font-size: 20px;
-    border-right: 1px solid $line;
-    height: 100%;
-    flex-direction: column;
-    justify-content: space-between;
-    ul {
-        height: 100% - 295px;
-        li {
-            border-bottom: 1px solid $black;
-            color: $color_text_secondary;
-            display: block;
-            padding: $box-pad/2;
-            &:hover {
-                background-color: rgba($white, 0.1);
-            }
-            ul {
-                li {
-                    color: $color_text_primary;
-                    font-size: 15px;
-                    border-bottom: 0;
-                }
-            }
-        }
-    }
-}
-
 section {
     width: 73.7%;
-}
-
-.right_panel {
-    border-left: 1px solid $line;
-    height: 100%;
-    position: absolute;
-    right: 0;
-    ul {
-        li {
-            padding: $box-pad/2;
-        }
-    }
-}
-
-.cover_info {
-    position: absolute;
-    bottom: 0;
-    width: 250px;
-    height: $box-pad*2;
-    border-top: 1px solid $line;
-    display: flex;
-    justify-content: space-between;
-    .cover {
-        width: $box-pad*2;
-        height: $box-pad*2;
-        background-color: $white;
-    }
-    .info_cover {
-        font-size: 13px;
-        height: 45px;
-        background-color: $color_fond;
-        flex-direction: row;
-        display: flex;
-        .title_artist_name {
-            width: 125px;
-            height: 40px;
-            margin: 10px;
-            > div {
-                overflow: hidden;
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                &:first-child {
-                    margin-bottom: 5px
-                }
-            }
-        }
-        .icon_comm {
-            margin: 14px 14px 14px 0;
-        }
-    }
-}
-.player {
-    position: absolute;
-    bottom: 0;
-    left: 250px;
-    width: 73.7%;
-    height: $box-pad*2;
-    border-top: 1px solid $line;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    .followers {
-        display: flex;
-        flex-direction: row;
-        .icon_like, .icon_dislike, .icon_add {
-            margin: 14px 0 14px 14px;
-        }
-        .icon_like {
-
-        }
-        .icon_dislike {
-
-        }
-        .icon_add {
-
-        }
-    }
-    .play {
-        display: flex;
-        flex-direction: row;
-        .icon_last, .icon_play, .icon_next {
-            margin: 14px 0 14px 14px;
-        }
-        .icon_last {
-
-        }
-        .icon_play {
-
-        }
-        .icon_next {
-
-        }
-    }
-    .order {
-        display: flex;
-        flex-direction: row;
-        .icon_random, .icon_loop {
-            margin: 14px 0 14px 14px;
-        }
-        .icon_random {
-
-        }
-        .icon_loop {
-
-        }
-        .time {
-            margin: $box-pad/2;
-            line-height: $box-pad;
-        }
-    }
-}
-.current_listening {
-
 }
 
 

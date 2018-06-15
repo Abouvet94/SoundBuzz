@@ -1,26 +1,3 @@
-.icons {
-  width: 30px;
-  height: 30px;
-  background-color: red;
-}
-body {
-  background-color: #1a1a1a;
-  color: #fff;
-  width: 100%;
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: row;
-  font-family: "Myriad Pro Regular", "Trebuchet MS";
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-nav {
-  width: 250px !important;
-}
 .left_panel {
   font-size: 20px;
   border-right: 1px solid #4d4d4d;
@@ -45,9 +22,6 @@ nav {
   font-size: 15px;
   border-bottom: 0;
 }
-section {
-  width: 73.7%;
-}
 .right_panel {
   border-left: 1px solid #4d4d4d;
   height: 100%;
@@ -57,76 +31,109 @@ section {
 .right_panel ul li {
   padding: 15px;
 }
-.cover_info {
-  position: absolute;
-  bottom: 0;
-  width: 250px;
+.container_player {
   height: 60px;
   border-top: 1px solid #4d4d4d;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
 }
-.cover_info .cover {
+.container_player .cover_info {
+  width: 250px;
+  display: flex;
+  justify-content: space-between;
+  border-right: 1px solid #4d4d4d;
+}
+.container_player .cover_info .cover {
   width: 60px;
   height: 60px;
   background-color: #fff;
 }
-.cover_info .info_cover {
+.container_player .cover_info .info_cover {
   font-size: 13px;
   height: 45px;
   background-color: #1a1a1a;
   flex-direction: row;
   display: flex;
 }
-.cover_info .info_cover .title_artist_name {
+.container_player .cover_info .info_cover .title_artist_name {
   width: 125px;
   height: 40px;
   margin: 10px;
 }
-.cover_info .info_cover .title_artist_name > div {
+.container_player .cover_info .info_cover .title_artist_name > div {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.cover_info .info_cover .title_artist_name > div:first-child {
+.container_player .cover_info .info_cover .title_artist_name > div:first-child {
   margin-bottom: 5px;
 }
-.cover_info .info_cover .icon_comm {
+.container_player .cover_info .info_cover .icon_comm {
   margin: 14px 14px 14px 0;
 }
-.player {
-  position: absolute;
-  bottom: 0;
-  left: 250px;
-  width: 73.7%;
-  height: 60px;
-  border-top: 1px solid #4d4d4d;
+.container_player .player {
+  width: 74%;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
-.player .followers {
+.container_player .player .followers {
   display: flex;
   flex-direction: row;
 }
-.player .followers .icon_like, .player .followers .icon_dislike, .player .followers .icon_add {
+.container_player .player .followers .icon_like, .container_player .player .followers .icon_dislike, .container_player .player .followers .icon_add {
   margin: 14px 0 14px 14px;
 }
-.player .play {
+.container_player .player .play {
   display: flex;
   flex-direction: row;
 }
-.player .play .icon_last, .player .play .icon_play, .player .play .icon_next {
+.container_player .player .play .icon_last, .container_player .player .play .icon_play, .container_player .player .play .icon_next {
   margin: 14px 0 14px 14px;
 }
-.player .order {
+.container_player .player .order {
   display: flex;
   flex-direction: row;
 }
-.player .order .icon_random, .player .order .icon_loop {
+.container_player .player .order .icon_random, .container_player .player .order .icon_loop {
   margin: 14px 0 14px 14px;
 }
-.player .order .time {
+.container_player .player .order .time {
   margin: 15px;
   line-height: 30px;
+}
+.container_player .current_listening {
+  width: 220px;
+  margin: 15px;
+  line-height: 30px;
+}
+.icons {
+  width: 30px;
+  height: 30px;
+  background-color: #955ba5;
+}
+body {
+  background-color: #1a1a1a;
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  font-family: "Myriad Pro Regular", "Trebuchet MS";
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+nav {
+  width: 250px !important;
+}
+section {
+  width: 73.7%;
 }
