@@ -132,4 +132,5 @@ section {
 }
 .player .order .time {
   margin: 15px;
+  line-height: 30px;
 }
