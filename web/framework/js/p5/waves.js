@@ -4,9 +4,9 @@ var lastBar = -1;
 var song, analyzer;
 var yoff = 0.0;        // 2nd dimension of perlin noise
 
-function preload() {
-  song = loadSound('framework/js/audio/01.mp3');
-}
+// function preload() {
+//   song = loadSound('framework/js/audio/01.mp3');
+// }
 
 function setup() {
   //Changer la talle de fond
@@ -62,12 +62,12 @@ function draw() {
   endShape(CLOSE);
 }
 
-function mousePressed() {
-  if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-    song.pause(); // .play() will resume from .pause() position
-    background(255,0,0);
-  } else {
-    song.play();
-    background(0,255,0);
-  }
-}
+// function mousePressed() {
+//   if ( song.isPlaying() ) { // .isPlaying() returns a boolean
+//     song.pause(); // .play() will resume from .pause() position
+//     background(255,0,0);
+//   } else {
+//     song.play();
+//     background(0,255,0);
+//   }
+// }

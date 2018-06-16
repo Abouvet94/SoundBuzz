@@ -48245,13 +48245,14 @@ if (typeof IS_MINIFIED !== 'undefined') {
           '[https://github.com/processing/p5.js/wiki/Local-server]'
       );
     } else {
-      console.log(
-        '> p5.js says: ' +
-          message +
-          ' [http://p5js.org/reference/#p5/' +
-          func +
-          ']'
-      );
+        //Surcharge le Browers...
+    //   console.log(
+    //     '> p5.js says: ' +
+    //       message +
+    //       ' [http://p5js.org/reference/#p5/' +
+    //       func +
+    //       ']'
+    //   );
     }
   };
 

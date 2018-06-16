@@ -179,7 +179,7 @@
 
 {% endblock %}
 {% block javascripts %}{{ parent() }}
-
+        <script src="{{ asset('framework/js/function.js') }}"></script>
 <script src="{{ asset('framework/js/ajax.js') }}"></script>
 {# <script src="{{ asset('framework/js/p5/waves.js') }}"></script> #}
 <script>  
@@ -203,7 +203,7 @@
             },
             success: function (data) {
                 var tab = JSON.parse(data);
-                console.log(tab);
+               
                 document.getElementById('playermusic').innerHTML = "";
                     for(var i=0; i < tab.length; i++ ){ 
                         //music.append('<img src="'+tab[i].image+'" height="45" width="45">');
