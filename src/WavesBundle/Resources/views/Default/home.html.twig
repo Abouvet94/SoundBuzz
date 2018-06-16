@@ -32,7 +32,7 @@
     </nav>
 
     <section>
-        <h2>Home sweet Home</h2>
+        <h2>Home  Home</h2>
 
         <div id="musicA" class="pages">
             <p> TESTTEST </p>
@@ -41,25 +41,33 @@
 
     <nav class="right_panel">
         <ul>
-            <li>Utilistaeur</li>
+            <li>
+                {# Petite condition - Si la sexion actuelle comporte un Utilisateur, afficher son Nom. Sinon Afficher Bienvenue #}
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                <p><b>{{ app.user.username }}</b></p>
+                {% else %} <p><b>Bienvenue</b></p>
+                {% endif %}
+            </li>
             <li><button>Premium</button></li>
-            <li>
-                <div>Mozart à aimé :</div>
-                <div>"Ah que je t'aimeuh".</div>
-                <div>Il y a 5 minutes</div>
-            </li>
-            <li>
-                <div>Sonsass à commenté "Despacito" :</div>
-                <div>Pitié arrachez moi les oreilles avec des pinces chauffées à blanc...</div>
-                <div>Il y a 2 heures</div>
-            </li>
-            <li>
-                <div>Frank Mickael a sorti un nouvel album :</div>
-                <div>"Ecouter les femmes".</div>
-                <div>Il y a 3 jours.</div>
-            </li>
+            {# 
+                Premiére Boucle - Récupération des Objets Commentaires.
+                Condition - Si le commentaires date d'aujourd'hui alors l'affichier. Sinon ne rien faire.
+                Html - Remplissage des balises Div par les Variables Twig de l'objet Commentaires.
+             #}
+            {% for Commentaires in commentaire %}
+                {% if Commentaires.date_creation|date('Y-m-d') == "now"|date("Y-m-d") %}
+                    <li>
+                        <div>
+                        {{ Commentaires.user_id.username }} {{ Commentaires.action }} :</br>
+                        {{ Commentaires.titre }} 
+                        </div>
+                        <div>{{ Commentaires.text }}</div>
+                        <div>Aujourd'hui à {{ Commentaires.date_creation|date('H:m:s') }}</div>
+                    </li>
+                {% endif %}
+            {% endfor %}
         </ul>
-    </nav>
+    </nav> 
 
 
     {#<div class="cover_info">

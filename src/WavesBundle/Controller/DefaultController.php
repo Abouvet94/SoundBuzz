@@ -28,7 +28,6 @@ class DefaultController extends Controller
             )
         );
 
-
         //Récupération des Playlist (all)
         $playlist = $this->getDoctrine()
         ->getRepository('WavesBundle:Playlist')
@@ -37,11 +36,15 @@ class DefaultController extends Controller
         $music = $this->getDoctrine()
         ->getRepository('WavesBundle:Music')
         ->findAll();
-
+        //Récupération des Commentaires (all)
+        $commentaire = $this->getDoctrine()
+        ->getRepository('WavesBundle:Commentaire')
+        ->findAll();
 
         return $this->render('WavesBundle:Default:home.html.twig', array(
             'playlist' => $playlist,
             'music' => $music,
+            'commentaire' => $commentaire,
         ));
     }
 }
