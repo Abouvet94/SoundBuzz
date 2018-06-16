@@ -1,7 +1,6 @@
 {%  extends '::base.html.twig' %}
-{% block title %}{% endblock %}
+{% block title %}SoundBuzz{% endblock %}
 {% block stylesheets %}{{ parent() }}
-    {# <script src="{{ asset('framework/js/p5/waves.js') }}"></script> #}
 {% endblock %}
 {% block body %}
 
@@ -10,16 +9,15 @@
     {{ asset('framework/js/p5/waves.js') }}
  #}
 
-
-
+    {# Menu #}
     <nav class="left_panel">
-        <ul>
-            <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="42" width="42"></li>
-            <li><a>Ajouter Musique</a></li>
-            <li><a>Découvrir</a></li>
-            <li><a>Styles</a></li>
-            <li><a id="mymusic">Ma Musique</a></li>
-            <li>
+        <ul id="Menu">
+            <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
+            <li id="addmusic"><a>Ajouter Musique</a></li>
+            <li id="decouvrir"><a>Découvrir</a></li>
+            <li id="styles"><a>Styles</a></li>
+            <li id="mymusic"><a>Ma Musique</a></li>
+            <li id="Playlist_all">
             <a>Playlist</a>
                 <ul>
                 <div id="play_liste_all">
@@ -30,25 +28,45 @@
                 </ul>
              </li>
         </ul>
-
     </nav>
 
-    <section>
-        <h2>Home  Home</h2>
-
-        <div id="musicA" >
-            <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
-                <ul>
-                <h4>Liste Playliste Créé :</h4>
-                    {% for PlayListeUser in PlayListUser %}
-                        <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
-                    {% endfor %}
-                </ul>
-                <div id="playermusic" style="border:1px solid black; height:20px;">
-                </div>
-        </div>
+    {# Corp Dynamique #}
+    <section id="corp_section">
+            {# Page Ajouter Musique #}
+            <div id="addmusic_pages" class="pages">
+                <h2>Page Ajouter Musique</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
+            {# Page Découvrir #}
+            <div id="decouvrir_pages" class="pages">
+                <h2>Page Découvrire</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
+            {# Page Styles #}
+            <div id="styles_pages" class="pages">
+                <h2>Page Styles</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
+            {# Page Ma Mussique #}
+            <div id="mymusic_pages" class="pages">
+                <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
+                    <ul>
+                    <h4>Liste Playliste Créé :</h4>
+                        {% for PlayListeUser in PlayListUser %}
+                            <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div id="playermusic" style="border:1px solid black; height:20px;">
+                    </div>
+            </div>
+            {# Page Playlist #}
+            <div id="Playlist_all_pages" class="pages">
+                <h2>Page Playliste</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
     </section>
 
+    {# Menu de droite (Commentaires / Premium / Ect.. ) #}
     <nav class="right_panel">
         <ul>
             <li>
@@ -79,44 +97,7 @@
         </ul>
     </nav> 
 
-
-    {#<div class="cover_info">
-        <div class="cover">
-            <img src="smiley.gif" alt="Smiley face" height="42" width="42">
-        </div>
-        <div class="info_cover">
-            <div class="title_artist_name">
-                <div>Titre de la Chanson, Titre de la Chanson</div>
-                <div>Artiste</div>
-            </div>
-            <div class="icons icon_comm"></div>
-        </div>
-    </div>
-
-    <div class="player">
-        <div class="followers">
-            <div class="icons icon_like"></div>
-            <div class="icons icon_dislike"></div>
-            <div class="icons icon_add"></div>
-        </div>
-        <div class="play">
-            <div class="icons icon_last"></div>
-            <div class=" icon_play">
-                <button id="btn_play"></button>
-            </div>
-            <div class="icons icon_next"></div>
-        </div>
-        <div class="order">
-            <div class="icons icon_random"></div>
-            <div class="icons icon_loop"></div>
-            <div class="time"><span id="progressTime">00:00</span></div>
-        </div>
-    </div>
-
-    <div class="current_listening">
-        Playlist jouée actuellement
-    </div>#}
-
+    {# La Partie Player #}
     <div class="container_player">
 
         <div class="cover_info">
@@ -156,19 +137,53 @@
 
     </div>
 
+
+    {# Heuu ^^ il faudra m'expliquer cette partie plzzzz :) #}
+
+            {#<div class="cover_info">
+                <div class="cover">
+                    <img src="smiley.gif" alt="Smiley face" height="42" width="42">
+                </div>
+                <div class="info_cover">
+                    <div class="title_artist_name">
+                        <div>Titre de la Chanson, Titre de la Chanson</div>
+                        <div>Artiste</div>
+                    </div>
+                    <div class="icons icon_comm"></div>
+                </div>
+            </div>
+
+            <div class="player">
+                <div class="followers">
+                    <div class="icons icon_like"></div>
+                    <div class="icons icon_dislike"></div>
+                    <div class="icons icon_add"></div>
+                </div>
+                <div class="play">
+                    <div class="icons icon_last"></div>
+                    <div class=" icon_play">
+                        <button id="btn_play"></button>
+                    </div>
+                    <div class="icons icon_next"></div>
+                </div>
+                <div class="order">
+                    <div class="icons icon_random"></div>
+                    <div class="icons icon_loop"></div>
+                    <div class="time"><span id="progressTime">00:00</span></div>
+                </div>
+            </div>
+
+            <div class="current_listening">
+                Playlist jouée actuellement
+            </div>#}
+
 {% endblock %}
 {% block javascripts %}{{ parent() }}
+
 <script src="{{ asset('framework/js/ajax.js') }}"></script>
-    <script>
-    //Partie Music :
-    // Met en premiére plan la div Music
-    $('#mymusic').click(function(){
-        $('#musicA').show();
-
-    })
-
-    //Partie Ajax :
-
+{# <script src="{{ asset('framework/js/p5/waves.js') }}"></script> #}
+<script>  
+    // ## Partie Ajax ##
     /*
         play_liste_all :
             - Récupére l'id du Li Selectionné
@@ -199,6 +214,5 @@
         });
     })
 
-
-    </script>
+</script>
 {% endblock %}
