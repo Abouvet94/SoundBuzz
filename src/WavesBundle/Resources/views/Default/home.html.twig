@@ -22,9 +22,11 @@
             <li>
             <a>Playlist</a>
                 <ul>
+                <div id="play_liste_all">
                     {% for playliste in playlist %}
-                        <li>{{ playliste.nom }}</li>
+                        <li id="{{ playliste.play_id }}">{{ playliste.nom }}</li>
                     {% endfor %}
+                </div>
                 </ul>
              </li>
         </ul>
@@ -34,8 +36,16 @@
     <section>
         <h2>Home  Home</h2>
 
-        <div id="musicA" class="pages">
-            <p> TESTTEST </p>
+        <div id="musicA" >
+            <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
+                <ul>
+                <h4>Liste Playliste Créé :</h4>
+                    {% for PlayListeUser in PlayListUser %}
+                        <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
+                    {% endfor %}
+                </ul>
+                <div id="playermusic" style="border:1px solid black; height:20px;">
+                </div>
         </div>
     </section>
 
@@ -148,11 +158,47 @@
 
 {% endblock %}
 {% block javascripts %}{{ parent() }}
+<script src="{{ asset('framework/js/ajax.js') }}"></script>
     <script>
-        //Partie Music :
-        // Met en premiére plan la div Music
-        $('#mymusic').click(function(){
-            $('#musicA').show();
-        })
+    //Partie Music :
+    // Met en premiére plan la div Music
+    $('#mymusic').click(function(){
+        $('#musicA').show();
+
+    })
+
+    //Partie Ajax :
+
+    /*
+        play_liste_all :
+            - Récupére l'id du Li Selectionné
+            - Envoie en Post l'id dans une function 'WavesController/PlaylisteAutomate'
+            - Récupére les Musiques correspondantes a la Playliste
+            - Affiche les musique via 'music.append()' dans la Div mére
+    */
+    $('#play_liste_all li').click(function(){
+        var value =  $(this).attr('id');
+        var music = $('#playermusic');
+        $.ajax({
+            url: "{{ path('PlaylisteAutomate') }}",
+            type: "POST",
+            dataType: "html",
+            data: {
+                id : value
+            },
+            success: function (data) {
+                var tab = JSON.parse(data);
+                console.log(tab);
+                document.getElementById('playermusic').innerHTML = "";
+                    for(var i=0; i < tab.length; i++ ){ 
+                        //music.append('<img src="'+tab[i].image+'" height="45" width="45">');
+                        music.append('<audio id="audio" controls="controls"> <source src="'+tab[i].src+'" type="audio/mp3"> </audio> <br>');
+                        
+                    }
+            }
+        });
+    })
+
+
     </script>
 {% endblock %}

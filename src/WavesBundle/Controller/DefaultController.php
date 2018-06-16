@@ -4,6 +4,7 @@ namespace WavesBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Leafo\ScssPhp\Compiler;
+use Symfony\Component\Security\Core\Authentication\Token\UsernamePasswordToken;
 
 class DefaultController extends Controller
 {
@@ -32,6 +33,13 @@ class DefaultController extends Controller
         $playlist = $this->getDoctrine()
         ->getRepository('WavesBundle:Playlist')
         ->findAll();
+        //Récupére les PlayListe User
+        //$UserId = $this->container->get('security.context')->getToken()->getUser()->getCandidat()->getId();
+        $UserId = $this->getUser()->getId();
+        if(!empty($UserId)){
+            $PlayListUser = [];
+            $PlayListUser = $this->getDoctrine()->getManager()->getRepository('WavesBundle:Music')->getPlaylisteUser($UserId);
+        }else { $PlayListUser = false;}
         //Récupération des music (all)
         $music = $this->getDoctrine()
         ->getRepository('WavesBundle:Music')
@@ -43,6 +51,7 @@ class DefaultController extends Controller
 
         return $this->render('WavesBundle:Default:home.html.twig', array(
             'playlist' => $playlist,
+            'PlayListUser' => $PlayListUser,
             'music' => $music,
             'commentaire' => $commentaire,
         ));
