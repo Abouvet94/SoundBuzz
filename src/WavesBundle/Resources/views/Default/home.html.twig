@@ -60,9 +60,10 @@
                     </div>
             </div>
             {# Page Playlist #}
-            <div id="Playlist_all_pages" class="pages">
-                <h2>Page Playliste</h2>
-                <p>Mettre le code  Ici<p>
+            <div id="Playlist_all_pages" >
+                <h2>Page Playliste</h2> 
+                    <ul id="playermusic" style="list-style: none">
+                    </ul>
             </div>
     </section>
 
@@ -192,24 +193,23 @@
             - Affiche les musique via 'music.append()' dans la Div mére
     */
     $('#play_liste_all li').click(function(){
-        var value =  $(this).attr('id');
-        var music = $('#playermusic');
+        var id =  $(this).attr('id');
+        music = $('#Playlist_all_pages ul');
+        //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
         $.ajax({
             url: "{{ path('PlaylisteAutomate') }}",
             type: "POST",
             dataType: "html",
             data: {
-                id : value
+                id : id
             },
             success: function (data) {
                 var tab = JSON.parse(data);
-               
-                document.getElementById('playermusic').innerHTML = "";
-                    for(var i=0; i < tab.length; i++ ){ 
-                        //music.append('<img src="'+tab[i].image+'" height="45" width="45">');
-                        music.append('<audio id="audio" controls="controls"> <source src="'+tab[i].src+'" type="audio/mp3"> </audio> <br>');
-                        
-                    }
+                //Vide la playliste acuel
+                music.empty();
+                for(var i=0; i < tab.length; i++ ){ 
+                    music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
+                }
             }
         });
     })
