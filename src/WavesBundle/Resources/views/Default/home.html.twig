@@ -1,5 +1,6 @@
 {%  extends '::base.html.twig' %}
-{% block title %}SoundBuzz{% endblock %}
+{% block title %}{{ parent() }}
+{% endblock %}
 {% block stylesheets %}{{ parent() }}
 {% endblock %}
 {% block body %}
@@ -62,8 +63,13 @@
             {# Page Playlist #}
             <div id="Playlist_all_pages" >
                 <h2>Page Playliste</h2> 
-                    <ul id="playermusic" style="list-style: none">
-                    </ul>
+                <table id="playermusic">
+                </table>
+                {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
+                <audio id="audio_a" controls="controls" style="display: none;">
+                    <source id="audioSource" src=""></source>
+                    Your browser does not support the audio format.
+                </audio>
             </div>
     </section>
 
@@ -180,11 +186,8 @@
 
 {% endblock %}
 {% block javascripts %}{{ parent() }}
-        <script src="{{ asset('framework/js/function.js') }}"></script>
-<script src="{{ asset('framework/js/ajax.js') }}"></script>
-{# <script src="{{ asset('framework/js/p5/waves.js') }}"></script> #}
 <script>  
-    // ## Partie Ajax ##
+// ## Partie Ajax ##
     /*
         play_liste_all :
             - Récupére l'id du Li Selectionné
@@ -194,7 +197,7 @@
     */
     $('#play_liste_all li').click(function(){
         var id =  $(this).attr('id');
-        music = $('#Playlist_all_pages ul');
+        music = $('#Playlist_all_pages table');
         //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
         $.ajax({
             url: "{{ path('PlaylisteAutomate') }}",
@@ -208,11 +211,18 @@
                 //Vide la playliste acuel
                 music.empty();
                 for(var i=0; i < tab.length; i++ ){ 
-                    music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
+                   // music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
+                   music.append('<tr>');
+                   music.append('<td><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
+                   music.append('<td>'+tab[i].artiste+'</td>');
+                   music.append('<td>'+tab[i].album+'</td>');
+                   music.append('<td>'+tab[i].times+'</td>');
+                   music.append('</tr>');
                 }
             }
         });
     })
 
 </script>
+<script src="{{ asset('framework/js/p5/radialsound.js') }}"></script>
 {% endblock %}

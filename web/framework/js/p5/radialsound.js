@@ -6,19 +6,9 @@ var barWidth = 20;
 var lastBar = -1;
 var source, resulta;
 
-//Function Pause souris
-function mousePressed() {
-  if ( song.isPlaying() ) { // .isPlaying() returns a boolean
-    song.stop(); // .play() will resume from .pause() position
-    background(255,0,0);
-  } else {
-    song.play();
-    background(0,255,0);
-  }
-}
 //Récupération de la Source du Son
-$('#playermusic').each(function(){
-  playermusic.onclick = function(e) {
+$('#Playlist_all_pages').each(function(){
+  Playlist_all_pages.onclick = function(e) {
     e.preventDefault();
     var elm = e.target, 
     audio = document.getElementById('audio_a'), 
@@ -102,3 +92,14 @@ function keyPressed() {
     song.stop();
   } 
 }
+
+//Function Pause souris
+// function mousePressed() {
+//   if ( song.isPlaying() ) { // .isPlaying() returns a boolean
+//     song.stop(); // .play() will resume from .pause() position
+//     background(255,0,0);
+//   } else {
+//     song.play();
+//     background(0,255,0);
+//   }
+// }
