@@ -6,6 +6,8 @@ var barWidth = 20;
 var lastBar = -1;
 var source, resulta;
 
+
+
 //Récupération de la Source du Son
 $('#Playlist_all_pages').each(function(){
   Playlist_all_pages.onclick = function(e) {
@@ -22,6 +24,7 @@ $('#Playlist_all_pages').each(function(){
     }
   };
 });
+
 //function LineOndes
 function LineOndes(volhistory, vol, i, max, mini, maxi){
   var r = map(volhistory[i], vol, max, mini, maxi);
@@ -103,3 +106,41 @@ function keyPressed() {
 //     background(0,255,0);
 //   }
 // }
+
+// function ButtonPlayer(){
+//   $('#Play_Button div button').click(function(){
+//     var id = $(this).attr("id");
+//     console.log(id);
+//       switch(id){
+//         case 'icon_play':
+//           if (song.isPlaying() === true) { 
+//             song.pause();
+//             background(255,0,0);
+//           }else{
+//             song.play();
+//             background(0,255,0);
+//           }
+//         break;
+//         //put your cases here
+//       }
+//   });
+// }
+
+//Test button
+// $(document).ready(function() {
+//   //Button Play
+//   $('#Play_Button div button').click(function(){
+//     var id = $(this).attr("id");
+//       switch(id){
+//         case 'icon_play':
+//           if(song.isPlaying() === true){ 
+//             song.pause();
+//             background(255,0,0);
+//           }else{
+//             song.play();
+//             background(0,255,0);
+//           }
+//         break;
+//       }
+//   });
+// });
