@@ -2,14 +2,14 @@ function play(idPlayer, control) {
     var player = document.querySelector('#' + idPlayer);
     if (player.paused) {
         if ( song.isPlaying() ) { 
-            song.stop(); 
+            player.pause(); 
             background(255,0,0);
             control.textContent = 'Pause';
         }else {
-            song.load();
-            song.play();
+            //song.load();
+            //song.play();
             background(0,255,0);
-            control.textContent = 'Play';
+            control.Content = 'Play';
         }
     }
 }

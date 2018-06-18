@@ -46,3 +46,6 @@
 
 # Embedded web-server pid file
 /.web-server-pid
+
+# Dossier et Fichier supplémentaire (à modifier si besoin)
+/app/config/parameters.yml

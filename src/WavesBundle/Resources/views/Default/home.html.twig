@@ -131,7 +131,7 @@
             </div>
             <div id="Play_Button" class="play">
                 <div class="icon_last"><button id="icon_last" /><img  src="{{ asset('framework/images/icon_last.svg') }}"/></div>
-                <div class="icon_play"><button class="control" onclick="play('audio_a', this)"></button><img  src="{{ asset('framework/images/icon_play.svg') }}"/></div>
+                <div class="icon_play"><button class="control" onclick="play('audio_a', this)"></button></div>
                 <div class="icon_next"><button id="icon_next" /><img  src="{{ asset('framework/images/icon_next.svg') }}"/></div>
             </div>
             <div class="order">
@@ -190,6 +190,9 @@
 {% endblock %}
 {% block javascripts %}{{ parent() }}
 <script>  
+//Tableau playliste_music qui comporte dynamiquement la liste des musique
+// de la playlist selectionné
+var playliste_music = [];
 // ## Partie Ajax ##
     /*
         play_liste_all :
@@ -201,6 +204,7 @@
     $('#play_liste_all li').click(function(){
         var id =  $(this).attr('id');
         music = $('#Playlist_all_pages table');
+        playliste_music = [];
         //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
         $.ajax({
             url: "{{ path('PlaylisteAutomate') }}",
@@ -215,7 +219,7 @@
                 music.empty();
                 for(var i=0; i < tab.length; i++ ){ 
                    // music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
-                    console.log(tab[i].src);
+                   playliste_music.push(tab[i].src)
                    music.append('<tr>');
                    music.append('<td><a href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
                    music.append('<td>'+tab[i].artiste+'</td>');
