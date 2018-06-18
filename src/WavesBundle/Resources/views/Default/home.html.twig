@@ -215,8 +215,9 @@
                 music.empty();
                 for(var i=0; i < tab.length; i++ ){ 
                    // music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
+                    console.log(tab[i].src);
                    music.append('<tr>');
-                   music.append('<td><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
+                   music.append('<td><a href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
                    music.append('<td>'+tab[i].artiste+'</td>');
                    music.append('<td>'+tab[i].album+'</td>');
                    music.append('<td>'+tab[i].times+'</td>');

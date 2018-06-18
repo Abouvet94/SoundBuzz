@@ -36,12 +36,13 @@ class DefaultController extends Controller
         ->findAll();
         //Récupére les PlayListe User
         //$UserId = $this->container->get('security.context')->getToken()->getUser()->getCandidat()->getId();
-        if ($UserId = $this->getUser()->getId()){
-            if(!empty($UserId)){
-                $PlayListUser = [];
-                $PlayListUser = $this->getDoctrine()->getManager()->getRepository('WavesBundle:Music')->getPlaylisteUser($UserId);
-            }
-        }else { $PlayListUser = false;}
+        // if ($UserId = $this->getUser()->getId()){
+        //     if(!empty($UserId)){
+        //         $PlayListUser = [];
+        //         $PlayListUser = $this->getDoctrine()->getManager()->getRepository('WavesBundle:Music')->getPlaylisteUser($UserId);
+        //     }
+        // }else { $PlayListUser = false;}
+        $PlayListUser = false;
         //Récupération des music (all)
         $music = $this->getDoctrine()
         ->getRepository('WavesBundle:Music')
