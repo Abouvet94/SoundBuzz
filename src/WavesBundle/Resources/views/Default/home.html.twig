@@ -3,6 +3,17 @@
 {% endblock %}
 {% block stylesheets %}{{ parent() }}
 
+<style>
+.button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+</style>
+
 {% endblock %}
 {% block body %}
 
@@ -69,10 +80,22 @@
                 <table id="playermusic">
                 </table>
                 {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
-                <audio id="audio_a" controls="controls" style="display: none;">
+                <audio id="audio_a" style="display: none;" >
                     <source id="audioSource" src=""></source>
-                    Your browser does not support the audio format.
                 </audio>
+                <div id="divPlayer">
+                    <div id="progressBarControl">
+                        <div id="progressBar" onclick="clickProgress('audio_a', this, event)">Pas de lecture</div>
+                        <span id="progressTime">00:00</span>
+                    </div>
+                          <span class="volume">
+                            <a class="stick1" onclick="volume('audio_a', 0)"></a>
+                            <a class="stick2" onclick="volume('audio_a', 0.3)"></a>
+                            <a class="stick3" onclick="volume('audio_a', 0.5)"></a>
+                            <a class="stick4" onclick="volume('audio_a', 0.7)"></a>
+                            <a class="stick5" onclick="volume('audio_a', 1)"></a>
+                        </span>
+                </div>
             </div>
     </section>
 
@@ -124,14 +147,18 @@
         </div>
 
         <div class="player">
+            {# Progress Bar #}
+                {# <span id="progressTime">00:00</span> #}
+
             <div class="followers">
                 <div class="icon_like"><button id="icon_like" /><img  src="{{ asset('framework/images/icon_like.svg') }}"/></div>
                 <div class="icon_dislike"><button id="icon_dislike" /><img  src="{{ asset('framework/images/icon_dislike.svg') }}"/></div>
-                <div class="icon_add"><button id="icon_add" /><img  src="{{ asset('framework/images/icon_add.svg') }}"/></div>
+                <div class="icon_add"><button type="image" id="icon_add" /><img  src="{{ asset('framework/images/icon_add.svg') }}"/></div>
             </div>
             <div id="Play_Button" class="play">
+
                 <div class="icon_last"><button id="icon_last" /><img  src="{{ asset('framework/images/icon_last.svg') }}"/></div>
-                <div class="icon_play"><button class="control" onclick="play('audio_a', this)"></button></div>
+                <div class="icon_play"><button class="control" onclick="play('audio_a', this)" /></div>
                 <div class="icon_next"><button id="icon_next" /><img  src="{{ asset('framework/images/icon_next.svg') }}"/></div>
             </div>
             <div class="order">
@@ -190,9 +217,11 @@
 {% endblock %}
 {% block javascripts %}{{ parent() }}
 <script>  
+
 //Tableau playliste_music qui comporte dynamiquement la liste des musique
 // de la playlist selectionné
 var playliste_music = [];
+
 // ## Partie Ajax ##
     /*
         play_liste_all :
@@ -230,6 +259,10 @@ var playliste_music = [];
             }
         });
     })
+
+    {# $( function() { 
+        $( '#audio_b' ).audioPlayer(); 
+    } ); #}
 
 </script>
 <script src="{{ asset('framework/js/p5/radialsound.js') }}"></script>
