@@ -37,24 +37,16 @@ function volume(idPlayer, vol) {
 }
 
 function update() {
-    //var player = document.querySelector('#' + idPlayer);
-        while(song.isPlaying() ){
-            consoletext('test');
-            var duration = song.duration();    // Durée totale
-            var time = song.currentTime();
-            consoletext(time);
-                //consoletext();
-                var time     = song.currentTime(); // Temps écoulé
-                var fraction = time / duration;
-                var percent  = Math.ceil(fraction * 100);
-            
-                var progress = document.querySelector('#progressBar');
-            
-                progress.style.width = percent + '%';
-                progress.textContent = percent + '%';
-            
-                document.querySelector('#progressTime').textContent = formatTime(time);
-        }
+    if(typeof song !== 'undefined'){       
+            var time     = getTimeMusic(); // Temps écoulé
+            var fraction = time / getDurationMusic();
+            var percent  = Math.ceil(fraction * 100);
+        
+            var progress = document.querySelector('#progressBar');
+            progress.style.width = percent + '%';
+            //progress.textContent = percent + '%';
+            document.querySelector('#progressTime').textContent = formatTime(time); 
+    }
 }
 
 function formatTime(time) {

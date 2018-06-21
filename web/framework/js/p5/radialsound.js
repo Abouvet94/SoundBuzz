@@ -5,7 +5,8 @@ var volhistory = [];
 var barWidth = 20;
 var lastBar = -1;
 var source, resulta;
-
+var BtnPlay = $('#icon_play');
+var music, Tmusic;
 
 
 //Récupération de la Source du Son
@@ -16,11 +17,13 @@ $('#Playlist_all_pages').each(function(){
     audio = document.getElementById('audio_a'), 
     source = document.getElementById('audioSource');
     source.src = elm.getAttribute('data-value');
+    id_music = elm.getAttribute('id');
     var idframe = source.src.indexOf('framework');
     if (typeof source.src === 'string' && idframe > 15 ) {
       var result = source.src.substring(idframe);
       resulta = result;
       setup();
+      getMusic(id_music);
     }
   };
 });
@@ -48,16 +51,36 @@ function setup() {
     //Initialisation du fond
     createCanvas(800, 600);
     angleMode(DEGREES);
+    //défillement auto
+    // if( song ){
+    //   song.onended(myCallback);
+    // }
     //Récupération de l'amplitude
     if ( typeof song !== 'undefined'){
       amp = new p5.Amplitude();
     }
   }
 }
+
 //Function pour load la musique selectionné
 function loaded(){
   song.load();
+  console.log('Son Chargé');
 }
+
+var sound,
+     myCallback = function() {
+          console.info("sound finished");
+          oldsound = String("./"+resulta);
+          playliste_music = jQuery.grep(playliste_music, function( a ) {
+              return a !== oldsound;
+          });  
+
+          resulta = playliste_music[0];
+          console.log(resulta);
+          //resulta = playliste_music.first();
+       }
+
 //Test si un sons est en cours, false => lancer Sons, true => up flag
 function testSong(){
   var SonsPlaying = song.isPlaying();
@@ -76,6 +99,7 @@ function draw() {
     volhistory.push(vol);
     translate(width / 2, height / 2);
     beginShape();
+    update();
     //Joue sur la couleur de la ligne
     stroke(255, 200, 0);
     strokeWeight(1);
@@ -96,6 +120,27 @@ function keyPressed() {
   } 
 }
 
+function togglePlaying() {
+  if (!song.isPlaying()) {
+    song.play();
+    // song.setVolume(0.3);
+  } else {
+    song.pause();
+  }
+}
+
+//Récupére les info son:
+
+//Times sont
+function getTimeMusic(){
+  return song.currentTime();
+}
+function getDurationMusic(){
+  return song.duration();
+}
+
+
+
 //Function Pause souris
 // function mousePressed() {
 //   if ( song.isPlaying() ) { // .isPlaying() returns a boolean
@@ -106,41 +151,3 @@ function keyPressed() {
 //     background(0,255,0);
 //   }
 // }
-
-// function ButtonPlayer(){
-//   $('#Play_Button div button').click(function(){
-//     var id = $(this).attr("id");
-//     console.log(id);
-//       switch(id){
-//         case 'icon_play':
-//           if (song.isPlaying() === true) { 
-//             song.pause();
-//             background(255,0,0);
-//           }else{
-//             song.play();
-//             background(0,255,0);
-//           }
-//         break;
-//         //put your cases here
-//       }
-//   });
-// }
-
-//Test button
-// $(document).ready(function() {
-//   //Button Play
-//   $('#Play_Button div button').click(function(){
-//     var id = $(this).attr("id");
-//       switch(id){
-//         case 'icon_play':
-//           if(song.isPlaying() === true){ 
-//             song.pause();
-//             background(255,0,0);
-//           }else{
-//             song.play();
-//             background(0,255,0);
-//           }
-//         break;
-//       }
-//   });
-// });

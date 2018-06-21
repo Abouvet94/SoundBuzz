@@ -84,10 +84,7 @@
                     <source id="audioSource" src=""></source>
                 </audio>
                 <div id="divPlayer">
-                    <div id="progressBarControl">
-                        <div id="progressBar" onclick="clickProgress('audio_a', this, event)">Pas de lecture</div>
-                        <span id="progressTime">00:00</span>
-                    </div>
+
                           <span class="volume">
                             <a class="stick1" onclick="volume('audio_a', 0)"></a>
                             <a class="stick2" onclick="volume('audio_a', 0.3)"></a>
@@ -139,37 +136,36 @@
             </div>
             <div class="info_cover">
                 <div class="title_artist_name">
-                    <div>Titre de la Chanson, Titre de la Chanson</div>
-                    <div>Artiste</div>
+                    <div id='Titre_music'></div>
+                    <div id='Artiste_music'></div>
                 </div>
                 <div class="icons icon_comm"></div>
             </div>
         </div>
 
         <div class="player">
-            {# Progress Bar #}
-                {# <span id="progressTime">00:00</span> #}
-
             <div class="followers">
                 <div class="icon_like"><button id="icon_like" /><img  src="{{ asset('framework/images/icon_like.svg') }}"/></div>
                 <div class="icon_dislike"><button id="icon_dislike" /><img  src="{{ asset('framework/images/icon_dislike.svg') }}"/></div>
                 <div class="icon_add"><button type="image" id="icon_add" /><img  src="{{ asset('framework/images/icon_add.svg') }}"/></div>
             </div>
-            <div id="Play_Button" class="play">
+                <div id="progressBarControl">
+                    <div id="progressBar" onclick="clickProgress('audio_a', this, event)"></div>
+                </div>
 
+            <div id="Play_Button" class="play">
                 <div class="icon_last"><button id="icon_last" /><img  src="{{ asset('framework/images/icon_last.svg') }}"/></div>
-                <div class="icon_play"><button class="control" onclick="play('audio_a', this)" /></div>
+                <div class="icon_play"><button id="icon_play" class="control" onclick="play('audio_a', this)" /></div>
                 <div class="icon_next"><button id="icon_next" /><img  src="{{ asset('framework/images/icon_next.svg') }}"/></div>
             </div>
             <div class="order">
                 <div class="icon_random"><button id="icon_random" /><img  src="{{ asset('framework/images/icon_random.svg') }}"/></div>
                 <div class="icon_loop"><button id="icon_loop" /><img  src="{{ asset('framework/images/icon_loop.svg') }}"/></div>
-                <div class="time">0'50/3'30</div>
+                <div id="progressTime" class="time"></div>
             </div>
         </div>
 
-        <div class="current_listening">
-            Playlist jouée actuellement
+        <div id="Name_Playlist" class="current_listening">
         </div>
 
     </div>
@@ -232,8 +228,11 @@ var playliste_music = [];
     */
     $('#play_liste_all li').click(function(){
         var id =  $(this).attr('id');
+        var value =  $(this).html();
         music = $('#Playlist_all_pages table');
+        Name_Playlist = $('#Name_Playlist');
         playliste_music = [];
+        var id_music;
         //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
         $.ajax({
             url: "{{ path('PlaylisteAutomate') }}",
@@ -245,24 +244,51 @@ var playliste_music = [];
             success: function (data) {
                 var tab = JSON.parse(data);
                 //Vide la playliste acuel
+                Name_Playlist.empty();
                 music.empty();
                 for(var i=0; i < tab.length; i++ ){ 
-                   // music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
-                   playliste_music.push(tab[i].src)
+                    id_music = tab[i].music_id;
+                   playliste_music.push(tab[i].src);
                    music.append('<tr>');
-                   music.append('<td><a href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
+                   music.append('<td><a id="'+tab[i].music_id+'" href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
                    music.append('<td>'+tab[i].artiste+'</td>');
                    music.append('<td>'+tab[i].album+'</td>');
                    music.append('<td>'+tab[i].times+'</td>');
+                   music.append('<td><a href="{{ path('dowload_music', {'id': "+id_musi+" }) }}"> test </a></td>');
                    music.append('</tr>');
+
                 }
+                Name_Playlist.append(value);
             }
         });
     })
 
-    {# $( function() { 
-        $( '#audio_b' ).audioPlayer(); 
-    } ); #}
+    /*
+       -1 Récupére un objet Music - 
+    */
+    function getMusic(id){
+        //Variables Music
+        artiste = $('#Artiste_music');
+        titre = $('#Titre_music');
+        var end_time, start_time;
+        titre.empty();
+        artiste.empty();
+        if(id){
+            $.ajax({
+            url: "{{ path('getMusicid') }}",
+            type: "POST",
+            dataType: "html",
+            data: {
+                id : id
+            },
+            success: function (data) {
+                var tab = JSON.parse(data);
+                titre.append(tab.titre);
+                artiste.append(tab.artiste);
+            }
+            });
+        }
+    }
 
 </script>
 <script src="{{ asset('framework/js/p5/radialsound.js') }}"></script>

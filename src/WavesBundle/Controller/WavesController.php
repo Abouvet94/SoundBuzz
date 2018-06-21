@@ -8,6 +8,8 @@ use Symfony\Component\HttpFoundation\Request;
 use WavesBundle\Entity\Music;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\File\File;
+
 
 //Import Sass
 
@@ -52,5 +54,32 @@ class WavesController extends Controller {
             }
         }
         return new Response('Error!', 400);
+    }
+
+    public function getMusicidAction(Request $request){
+        if ($request->isXMLHttpRequest()) {
+            $content = $request->getContent();
+            $em = $this->getDoctrine()->getManager();
+            if (!empty($content)) {
+                $params = json_decode($content, true);
+                $id = $request->get('id');
+                //Récupére Playliste dans un tableau
+                $result = [];
+                $resutl = $this->getDoctrine()->getManager()->getRepository('WavesBundle:Music')->getMusic($id);                
+                return new JsonResponse($resutl);
+            }
+        }
+        return new Response('Error!', 400);
+    } 
+
+    public function dowloadmusic($id){
+        $music = $this->getDoctrine()->getRepository('WavesBundle:Music')->find($id);
+        if(!$music){
+            throw new createNotFoundException('la Music na pas ete trouvé !');
+            
+        }
+
+        $samplePdf = new File($this->getParameter('dir.downloads').$music['src']);
+        return $this->file($samplePdf);
     }
 }
