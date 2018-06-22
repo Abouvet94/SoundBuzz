@@ -65,7 +65,7 @@
             {# Page Ma Mussique #}
             <div id="mymusic_pages" class="pages">
                 <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
-                    <ul>
+                    <ul> <a href="{{ path('dowload_music', {'id' : '1'}) }}" >TeST</a>
                     <h4>Liste Playliste Créé :</h4>
                         {% for PlayListeUser in PlayListUser %}
                             <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
@@ -83,16 +83,6 @@
                 <audio id="audio_a" style="display: none;" >
                     <source id="audioSource" src=""></source>
                 </audio>
-                <div id="divPlayer">
-
-                          <span class="volume">
-                            <a class="stick1" onclick="volume('audio_a', 0)"></a>
-                            <a class="stick2" onclick="volume('audio_a', 0.3)"></a>
-                            <a class="stick3" onclick="volume('audio_a', 0.5)"></a>
-                            <a class="stick4" onclick="volume('audio_a', 0.7)"></a>
-                            <a class="stick5" onclick="volume('audio_a', 1)"></a>
-                        </span>
-                </div>
             </div>
     </section>
 
@@ -162,6 +152,13 @@
                 <div class="icon_random"><button id="icon_random" /><img  src="{{ asset('framework/images/icon_random.svg') }}"/></div>
                 <div class="icon_loop"><button id="icon_loop" /><img  src="{{ asset('framework/images/icon_loop.svg') }}"/></div>
                 <div id="progressTime" class="time"></div>
+                    <span class="volume">
+                        <a class="stick1" onclick="volume('audio_a', 0)"></a>
+                        <a class="stick2" onclick="volume('audio_a', 0.3)"></a>
+                        <a class="stick3" onclick="volume('audio_a', 0.5)"></a>
+                        <a class="stick4" onclick="volume('audio_a', 0.7)"></a>
+                        <a class="stick5" onclick="volume('audio_a', 1)"></a>
+                    </span>
             </div>
         </div>
 
@@ -214,6 +211,8 @@
 {% block javascripts %}{{ parent() }}
 <script>  
 
+
+
 //Tableau playliste_music qui comporte dynamiquement la liste des musique
 // de la playlist selectionné
 var playliste_music = [];
@@ -232,6 +231,7 @@ var playliste_music = [];
         music = $('#Playlist_all_pages table');
         Name_Playlist = $('#Name_Playlist');
         playliste_music = [];
+        var url_music = "{{ path('dowload_music') }}";
         var id_music;
         //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
         $.ajax({
@@ -254,7 +254,8 @@ var playliste_music = [];
                    music.append('<td>'+tab[i].artiste+'</td>');
                    music.append('<td>'+tab[i].album+'</td>');
                    music.append('<td>'+tab[i].times+'</td>');
-                   music.append('<td><a href="{{ path('dowload_music', {'id': "+id_musi+" }) }}"> test </a></td>');
+                   music.append('<td id="TwigLien"><a href="'+url_music+'/'+id_music+'"> Dowload </a></td>');
+                  // music.append('<td><a href="javascript:alert('Hello World!');">Execute JavaScript</a></td>');
                    music.append('</tr>');
 
                 }
@@ -263,8 +264,9 @@ var playliste_music = [];
         });
     })
 
+
     /*
-       -1 Récupére un objet Music - 
+       - Récupére un objet Music - 
     */
     function getMusic(id){
         //Variables Music

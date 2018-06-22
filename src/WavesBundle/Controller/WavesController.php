@@ -9,6 +9,8 @@ use WavesBundle\Entity\Music;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\BinaryFileResponse;
+use Symfony\Component\HttpFoundation\ResponseHeaderBag;
 
 
 //Import Sass
@@ -72,14 +74,33 @@ class WavesController extends Controller {
         return new Response('Error!', 400);
     } 
 
-    public function dowloadmusic($id){
-        $music = $this->getDoctrine()->getRepository('WavesBundle:Music')->find($id);
-        if(!$music){
-            throw new createNotFoundException('la Music na pas ete trouvé !');
-            
+    public function dowloadmusicAction(Request $request,$id){
+        try {
+            $file = $this->getDoctrine()->getRepository('WavesBundle:Music')->find($id);
+            if (! $file) {
+                $array = array (
+                    'status' => 0,
+                    'message' => 'Fichier :'.$id.' Non Trouvé !' 
+                );
+                $response = new JsonResponse ( $array, 200 );
+                return $response;
+            }
+            $Music_Titre = $file->getTitre();
+            $Music_Src = $file->getSrc();
+            $Music_Type = $file->getType();
+            if(empty($Music_Type)){ $Music_Type = 'mp3';}
+            $file_with_path = $this->container->getParameter ( 'file_dowload' ) . $Music_Src;
+            $response = new BinaryFileResponse ( $file_with_path );
+            $response->headers->set ( 'Content-Type', 'audio/mpeg3;audio/wave;audio/webm;' );
+            $response->setContentDisposition ( ResponseHeaderBag::DISPOSITION_ATTACHMENT, $Music_Titre .'.'.$Music_Type );
+            return $response;
+        } catch ( Exception $e ) {
+            $array = array (
+                'status' => 0,
+                'message' => 'Erreur de télchargement !' 
+            );
+            $response = new JsonResponse ( $array, 400 );
+            return $response;
         }
-
-        $samplePdf = new File($this->getParameter('dir.downloads').$music['src']);
-        return $this->file($samplePdf);
     }
 }

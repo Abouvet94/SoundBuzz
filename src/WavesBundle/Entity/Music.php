@@ -61,9 +61,9 @@ class Music
     private $image;
 
     /**
-    * @ORM\Column(name="times", type="string", length=255, nullable=true)
+    * @ORM\Column(name="type", type="string", length=255, nullable=true)
     */
-    private $times;
+    private $type;
 
 
     //Getter Setter
@@ -199,16 +199,16 @@ class Music
     /**
     * @return mixed
     */
-    public function getTimes()
+    public function getType()
     {
-        return $this->times;
+        return $this->type;
     }
 
     /**
-    * @param mixed $times
+    * @param mixed $type
     */
-    public function setTimes($times)
+    public function setType($type)
     {
-        $this->times = $times;
+        $this->type = $type;
     }
 }
