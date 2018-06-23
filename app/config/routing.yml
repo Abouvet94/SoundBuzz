@@ -20,3 +20,7 @@ getMusicid:
 dowload_music:
     path: /dowl_music/{id}
     defaults: { _controller: WavesBundle:Waves:dowloadmusic, id:null }
+
+Playliste_add_music:
+    path: /Playliste_add_music/
+    defaults: { _controller: WavesBundle:Waves:Playliste_add_music }

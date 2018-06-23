@@ -11,6 +11,8 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\File\File;
 use Symfony\Component\HttpFoundation\BinaryFileResponse;
 use Symfony\Component\HttpFoundation\ResponseHeaderBag;
+use WavesBundle\Form\MusicType;
+
 
 
 //Import Sass
@@ -69,6 +71,23 @@ class WavesController extends Controller {
                 $result = [];
                 $resutl = $this->getDoctrine()->getManager()->getRepository('WavesBundle:Music')->getMusic($id);                
                 return new JsonResponse($resutl);
+            }
+        }
+        return new Response('Error!', 400);
+    } 
+
+    public function Playliste_add_musicAction(Request $request){
+        if ($request->isXMLHttpRequest()) {
+            $content = $request->getContent();
+            $em = $this->getDoctrine()->getManager();
+            if (!empty($content)) {
+                $params = json_decode($content, true);
+                //Récupére Playliste dans un tableau
+                $playlist = $this->getDoctrine()
+                ->getRepository('WavesBundle:Playlist')
+                ->findAll();   
+                var_dump($playlist);            
+                return new JsonResponse($playlist);
             }
         }
         return new Response('Error!', 400);

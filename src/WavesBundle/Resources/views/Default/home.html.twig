@@ -48,9 +48,30 @@
      #}
     <section id="corp_section">
             {# Page Ajouter Musique #}
+            {#  Formulaire visible seulement aprés identification de l'utilisateur  #}
             <div id="addmusic_pages" class="pages">
-                <h2>Page Ajouter Musique</h2>
-                <p>Mettre le code  Ici<p>
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                    <h2>Page Ajouter Musique</h2>
+                        {{ form_start(FormMusic) }}
+                        {{ form_widget(FormMusic) }}
+                        {{ form_end(FormMusic) }}
+                        <select id="monselect">
+                            {% for ListeUser in PlayListUser %}
+                            <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
+                            {% endfor %}
+                        </select>                        
+                {% else %} 
+                <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
+                {% endif %}
+                
+
+                {# <select id="Add_Music_Ajax">
+                    {% for playlistes in playlistcopie %}
+                        <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option> 
+                    {% endfor %}
+                <selected> #}
+                    
+                </selected>
             </div>
             {# Page Découvrir #}
             <div id="decouvrir_pages" class="pages">
@@ -65,7 +86,7 @@
             {# Page Ma Mussique #}
             <div id="mymusic_pages" class="pages">
                 <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
-                    <ul> <a href="{{ path('dowload_music', {'id' : '1'}) }}" >TeST</a>
+                    <ul> 
                     <h4>Liste Playliste Créé :</h4>
                         {% for PlayListeUser in PlayListUser %}
                             <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
@@ -211,7 +232,7 @@
 {% block javascripts %}{{ parent() }}
 <script>  
 
-
+var Url_Playlist = "{{ path('PlaylisteAutomate') }}";
 
 //Tableau playliste_music qui comporte dynamiquement la liste des musique
 // de la playlist selectionné
@@ -265,6 +286,7 @@ var playliste_music = [];
     })
 
 
+
     /*
        - Récupére un objet Music - 
     */
@@ -294,4 +316,5 @@ var playliste_music = [];
 
 </script>
 <script src="{{ asset('framework/js/p5/radialsound.js') }}"></script>
+<script type="text/javascript" src="{{ asset('framework/js/ajax.js') }}"></script>
 {% endblock %}
