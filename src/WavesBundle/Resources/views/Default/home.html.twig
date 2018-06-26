@@ -3,6 +3,17 @@
 {% endblock %}
 {% block stylesheets %}{{ parent() }}
 
+<style>
+.button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+</style>
+
 {% endblock %}
 {% block body %}
 
@@ -37,9 +48,30 @@
      #}
     <section id="corp_section">
             {# Page Ajouter Musique #}
+            {#  Formulaire visible seulement aprés identification de l'utilisateur  #}
             <div id="addmusic_pages" class="pages">
-                <h2>Page Ajouter Musique</h2>
-                <p>Mettre le code  Ici<p>
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                    <h2>Page Ajouter Musique</h2>
+                        {{ form_start(FormMusic) }}
+                        {{ form_widget(FormMusic) }}
+                        {{ form_end(FormMusic) }}
+                        <select id="monselect">
+                            {% for ListeUser in PlayListUser %}
+                            <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
+                            {% endfor %}
+                        </select>                        
+                {% else %} 
+                <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
+                {% endif %}
+                
+
+                {# <select id="Add_Music_Ajax">
+                    {% for playlistes in playlistcopie %}
+                        <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option> 
+                    {% endfor %}
+                <selected> #}
+                    
+                </selected>
             </div>
             {# Page Découvrir #}
             <div id="decouvrir_pages" class="pages">
@@ -54,7 +86,7 @@
             {# Page Ma Mussique #}
             <div id="mymusic_pages" class="pages">
                 <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
-                    <ul>
+                    <ul> 
                     <h4>Liste Playliste Créé :</h4>
                         {% for PlayListeUser in PlayListUser %}
                             <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
@@ -69,9 +101,8 @@
                 <table id="playermusic">
                 </table>
                 {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
-                <audio id="audio_a" controls="controls" style="display: none;">
+                <audio id="audio_a" style="display: none;" >
                     <source id="audioSource" src=""></source>
-                    Your browser does not support the audio format.
                 </audio>
             </div>
     </section>
@@ -116,8 +147,8 @@
             </div>
             <div class="info_cover">
                 <div class="title_artist_name">
-                    <div>Titre de la Chanson, Titre de la Chanson</div>
-                    <div>Artiste</div>
+                    <div id='Titre_music'></div>
+                    <div id='Artiste_music'></div>
                 </div>
                 <div class="icons icon_comm"></div>
             </div>
@@ -127,22 +158,32 @@
             <div class="followers">
                 <div class="icon_like"><button id="icon_like" /><img  src="{{ asset('framework/images/icon_like.svg') }}"/></div>
                 <div class="icon_dislike"><button id="icon_dislike" /><img  src="{{ asset('framework/images/icon_dislike.svg') }}"/></div>
-                <div class="icon_add"><button id="icon_add" /><img  src="{{ asset('framework/images/icon_add.svg') }}"/></div>
+                <div class="icon_add"><button type="image" id="icon_add" /><img  src="{{ asset('framework/images/icon_add.svg') }}"/></div>
             </div>
+                <div id="progressBarControl">
+                    <div id="progressBar" onclick="clickProgress('audio_a', this, event)"></div>
+                </div>
+
             <div id="Play_Button" class="play">
                 <div class="icon_last"><button id="icon_last" /><img  src="{{ asset('framework/images/icon_last.svg') }}"/></div>
-                <div class="icon_play"><button class="control" onclick="play('audio_a', this)"></button><img  src="{{ asset('framework/images/icon_play.svg') }}"/></div>
+                <div class="icon_play"><button id="icon_play" class="control" onclick="play('audio_a', this)" /></div>
                 <div class="icon_next"><button id="icon_next" /><img  src="{{ asset('framework/images/icon_next.svg') }}"/></div>
             </div>
             <div class="order">
                 <div class="icon_random"><button id="icon_random" /><img  src="{{ asset('framework/images/icon_random.svg') }}"/></div>
                 <div class="icon_loop"><button id="icon_loop" /><img  src="{{ asset('framework/images/icon_loop.svg') }}"/></div>
-                <div class="time">0'50/3'30</div>
+                <div id="progressTime" class="time"></div>
+                    <span class="volume">
+                        <a class="stick1" onclick="volume('audio_a', 0)"></a>
+                        <a class="stick2" onclick="volume('audio_a', 0.3)"></a>
+                        <a class="stick3" onclick="volume('audio_a', 0.5)"></a>
+                        <a class="stick4" onclick="volume('audio_a', 0.7)"></a>
+                        <a class="stick5" onclick="volume('audio_a', 1)"></a>
+                    </span>
             </div>
         </div>
 
-        <div class="current_listening">
-            Playlist jouée actuellement
+        <div id="Name_Playlist" class="current_listening">
         </div>
 
     </div>
@@ -190,6 +231,13 @@
 {% endblock %}
 {% block javascripts %}{{ parent() }}
 <script>  
+
+var Url_Playlist = "{{ path('PlaylisteAutomate') }}";
+
+//Tableau playliste_music qui comporte dynamiquement la liste des musique
+// de la playlist selectionné
+var playliste_music = [];
+
 // ## Partie Ajax ##
     /*
         play_liste_all :
@@ -200,7 +248,12 @@
     */
     $('#play_liste_all li').click(function(){
         var id =  $(this).attr('id');
+        var value =  $(this).html();
         music = $('#Playlist_all_pages table');
+        Name_Playlist = $('#Name_Playlist');
+        playliste_music = [];
+        var url_music = "{{ path('dowload_music') }}";
+        var id_music;
         //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
         $.ajax({
             url: "{{ path('PlaylisteAutomate') }}",
@@ -212,21 +265,56 @@
             success: function (data) {
                 var tab = JSON.parse(data);
                 //Vide la playliste acuel
+                Name_Playlist.empty();
                 music.empty();
                 for(var i=0; i < tab.length; i++ ){ 
-                   // music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
-                    console.log(tab[i].src);
+                    id_music = tab[i].music_id;
+                   playliste_music.push(tab[i].src);
                    music.append('<tr>');
-                   music.append('<td><a href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
+                   music.append('<td><a id="'+tab[i].music_id+'" href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
                    music.append('<td>'+tab[i].artiste+'</td>');
                    music.append('<td>'+tab[i].album+'</td>');
                    music.append('<td>'+tab[i].times+'</td>');
+                   music.append('<td id="TwigLien"><a href="'+url_music+'/'+id_music+'"> Dowload </a></td>');
+                  // music.append('<td><a href="javascript:alert('Hello World!');">Execute JavaScript</a></td>');
                    music.append('</tr>');
+
                 }
+                Name_Playlist.append(value);
             }
         });
     })
 
+
+
+    /*
+       - Récupére un objet Music - 
+    */
+    function getMusic(id){
+        //Variables Music
+        artiste = $('#Artiste_music');
+        titre = $('#Titre_music');
+        var end_time, start_time;
+        titre.empty();
+        artiste.empty();
+        if(id){
+            $.ajax({
+            url: "{{ path('getMusicid') }}",
+            type: "POST",
+            dataType: "html",
+            data: {
+                id : id
+            },
+            success: function (data) {
+                var tab = JSON.parse(data);
+                titre.append(tab.titre);
+                artiste.append(tab.artiste);
+            }
+            });
+        }
+    }
+
 </script>
 <script src="{{ asset('framework/js/p5/radialsound.js') }}"></script>
+<script type="text/javascript" src="{{ asset('framework/js/ajax.js') }}"></script>
 {% endblock %}

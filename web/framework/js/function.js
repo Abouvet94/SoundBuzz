@@ -12,10 +12,10 @@ $(menuli).click(function(){
 })
 
 //Hide div au double click
-$(body).dblclick(function(){
-    var div = $(this).children('div');
-    HideDiv(div);
-});
+// $(body).dblclick(function(){
+//     var div = $(this).children('div');
+//     HideDiv(div);
+// });
 
 //Function Div (Hide + Show)
 function HideDiv(id){ setTimeout(function(){ $(id).hide();}, 2500);}

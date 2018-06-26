@@ -141,6 +141,18 @@ table {
 .container_player .player .play .icon_last, .container_player .player .play .icon_play, .container_player .player .play .icon_next {
   margin: 14px 0 14px 14px;
 }
+.container_player .player .play .icon_last button {
+  width: 32px;
+  height: 25px;
+}
+.container_player .player .play .icon_play button {
+  width: 32px;
+  height: 25px;
+}
+.container_player .player .play .icon_next button {
+  width: 32px;
+  height: 25px;
+}
 .container_player .player .order {
   display: flex;
   flex-direction: row;

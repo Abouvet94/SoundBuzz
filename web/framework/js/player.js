@@ -1,15 +1,26 @@
+//Player Mp3 SoundBuzz 
+//AB
+
+//Function consoletest(var)
+function consoletext(variable){
+    console.log(String(variable));
+}
+
+
 function play(idPlayer, control) {
     var player = document.querySelector('#' + idPlayer);
-    if (player.paused) {
-        if ( song.isPlaying() ) { 
-            song.stop(); 
-            background(255,0,0);
-            control.textContent = 'Pause';
-        }else {
-            song.load();
-            song.play();
-            background(0,255,0);
-            control.textContent = 'Play';
+    if ( typeof song !== 'undefined'){
+        if (player.paused) {
+            if ( song.isPlaying()) { 
+                song.pause(); 
+                background(255,0,0);
+                consoletext('pause');
+                //control.textContent = 'Pause';
+            }else {
+                song.load();
+                background(0,255,0);
+                //control.Content = 'Play';
+            }
         }
     }
 }
@@ -22,23 +33,20 @@ function resume(idPlayer) {
 }
 
 function volume(idPlayer, vol) {
-    var player = document.querySelector('#' + idPlayer);
-
-    player.volume = vol;
+    song.setVolume(vol);
 }
 
-function update(player) {
-    var duration = player.duration;    // Durée totale
-    var time     = player.currentTime; // Temps écoulé
-    var fraction = time / duration;
-    var percent  = Math.ceil(fraction * 100);
-
-    var progress = document.querySelector('#progressBar');
-
-    progress.style.width = percent + '%';
-    //progress.textContent = percent + '%';
-
-    document.querySelector('#progressTime').textContent = formatTime(time);
+function update() {
+    if(typeof song !== 'undefined'){       
+            var time     = getTimeMusic(); // Temps écoulé
+            var fraction = time / getDurationMusic();
+            var percent  = Math.ceil(fraction * 100);
+        
+            var progress = document.querySelector('#progressBar');
+            progress.style.width = percent + '%';
+            //progress.textContent = percent + '%';
+            document.querySelector('#progressTime').textContent = formatTime(time); 
+    }
 }
 
 function formatTime(time) {
@@ -94,3 +102,4 @@ function getPosition(element){
 
     return { x: left, y: top };
 }
+
