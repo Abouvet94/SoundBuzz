@@ -1,7 +1,8 @@
 {%  extends '::base.html.twig' %}
-{% block title %}{% endblock %}
+{% block title %}{{ parent() }}
+{% endblock %}
 {% block stylesheets %}{{ parent() }}
-    {# <script src="{{ asset('framework/js/p5/waves.js') }}"></script> #}
+
 {% endblock %}
 {% block body %}
 
@@ -10,100 +11,108 @@
     {{ asset('framework/js/p5/waves.js') }}
  #}
 
-
-
+    {# Menu #}
     <nav class="left_panel">
-        <ul>
-            <li><a><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="42" width="42"></a></li>
-            <li><a>Ajouter Musique</a></li>
-            <li><a>Découvrir</a></li>
-            <li><a>Styles</a></li>
-            <li><a id="mymusic">Ma Musique</a></li>
-            <li>
+        <ul id="Menu">
+            <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
+            <li id="addmusic"><a>Ajouter Musique</a></li>
+            <li id="decouvrir"><a>Découvrir</a></li>
+            <li id="styles"><a>Styles</a></li>
+            <li id="mymusic"><a>Ma Musique</a></li>
+            <li id="Playlist_all">
             <a>Playlist</a>
                 <ul>
+                <div id="play_liste_all">
                     {% for playliste in playlist %}
-                        <li>{{ playliste.nom }}</li>
+                        <li id="{{ playliste.play_id }}">{{ playliste.nom }}</li>
                     {% endfor %}
+                </div>
                 </ul>
              </li>
         </ul>
-
     </nav>
 
-    <section>
-        <h2>Home sweet Home</h2>
-
-        <div id="musicA" class="pages">
-            <p> TESTTEST </p>
-        </div>
+    {# Corp Dynamique
+        Ingrid : => Ton Taff est surtout ici !
+     #}
+    <section id="corp_section">
+            {# Page Ajouter Musique #}
+            <div id="addmusic_pages" class="pages">
+                <h2>Page Ajouter Musique</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
+            {# Page Découvrir #}
+            <div id="decouvrir_pages" class="pages">
+                <h2>Page Découvrire</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
+            {# Page Styles #}
+            <div id="styles_pages" class="pages">
+                <h2>Page Styles</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
+            {# Page Ma Mussique #}
+            <div id="mymusic_pages" class="pages">
+                <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
+                    <ul>
+                    <h4>Liste Playliste Créé :</h4>
+                        {% for PlayListeUser in PlayListUser %}
+                            <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div id="playermusic" style="border:1px solid black; height:20px;">
+                    </div>
+            </div>
+            {# Page Playlist #}
+            <div id="Playlist_all_pages" >
+                <h2>Page Playliste</h2> 
+                <table id="playermusic">
+                </table>
+                {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
+                <audio id="audio_a" controls="controls" style="display: none;">
+                    <source id="audioSource" src=""></source>
+                    Your browser does not support the audio format.
+                </audio>
+            </div>
     </section>
 
+    {# Menu de droite (Commentaires / Premium / Ect.. ) #}
     <nav class="right_panel">
         <ul>
-            <li>Utilistaeur</li>
+            <li>
+                {# Petite condition - Si la sexion actuelle comporte un Utilisateur, afficher son Nom. Sinon Afficher Bienvenue #}
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                <p><b>{{ app.user.username }}</b></p>
+                {% else %} <p><b>Bienvenue</b></p>
+                {% endif %}
+            </li>
             <li><button>Premium</button></li>
-            <li>
-                <div>Mozart à aimé :</div>
-                <div>"Ah que je t'aimeuh".</div>
-                <div>Il y a 5 minutes</div>
-            </li>
-            <li>
-                <div>Sonsass à commenté "Despacito" :</div>
-                <div>Pitié arrachez moi les oreilles avec des pinces chauffées à blanc...</div>
-                <div>Il y a 2 heures</div>
-            </li>
-            <li>
-                <div>Frank Mickael a sorti un nouvel album :</div>
-                <div>"Ecouter les femmes".</div>
-                <div>Il y a 3 jours.</div>
-            </li>
+            {# 
+                Premiére Boucle - Récupération des Objets Commentaires.
+                Condition - Si le commentaires date d'aujourd'hui alors l'affichier. Sinon ne rien faire.
+                Html - Remplissage des balises Div par les Variables Twig de l'objet Commentaires.
+             #}
+            {% for Commentaires in commentaire %}
+                {% if Commentaires.date_creation|date('Y-m-d') == "now"|date("Y-m-d") %}
+                    <li>
+                        <div>
+                        {{ Commentaires.user_id.username }} {{ Commentaires.action }} :</br>
+                        {{ Commentaires.titre }} 
+                        </div>
+                        <div>{{ Commentaires.text }}</div>
+                        <div>Aujourd'hui à {{ Commentaires.date_creation|date('H:m:s') }}</div>
+                    </li>
+                {% endif %}
+            {% endfor %}
         </ul>
-    </nav>
+    </nav> 
 
-
-    {#<div class="cover_info">
-        <div class="cover">
-            <img src="smiley.gif" alt="Smiley face" height="42" width="42">
-        </div>
-        <div class="info_cover">
-            <div class="title_artist_name">
-                <div>Titre de la Chanson, Titre de la Chanson</div>
-                <div>Artiste</div>
-            </div>
-            <div class="icons icon_comm"></div>
-        </div>
-    </div>
-
-    <div class="player">
-        <div class="followers">
-            <div class="icons icon_like"></div>
-            <div class="icons icon_dislike"></div>
-            <div class="icons icon_add"></div>
-        </div>
-        <div class="play">
-            <div class="icons icon_last"></div>
-            <div class=" icon_play">
-                <button id="btn_play"></button>
-            </div>
-            <div class="icons icon_next"></div>
-        </div>
-        <div class="order">
-            <div class="icons icon_random"></div>
-            <div class="icons icon_loop"></div>
-            <div class="time"><span id="progressTime">00:00</span></div>
-        </div>
-    </div>
-
-    <div class="current_listening">
-        Playlist jouée actuellement
-    </div>#}
-
+    {# La Partie Player #}
     <div class="container_player">
 
         <div class="cover_info">
             <div class="cover">
-                <img src="smiley.gif" alt="Smiley face" height="42" width="42">
+                <img src="{{ asset('framework/images/smiley.gif') }}" alt="Smiley face" height="42" width="42">
             </div>
             <div class="info_cover">
                 <div class="title_artist_name">
@@ -116,18 +125,18 @@
 
         <div class="player">
             <div class="followers">
-                <div class="icons icon_like"></div>
-                <div class="icons icon_dislike"></div>
-                <div class="icons icon_add"></div>
+                <div class="icon_like"><button id="icon_like" /><img  src="{{ asset('framework/images/icon_like.svg') }}"/></div>
+                <div class="icon_dislike"><button id="icon_dislike" /><img  src="{{ asset('framework/images/icon_dislike.svg') }}"/></div>
+                <div class="icon_add"><button id="icon_add" /><img  src="{{ asset('framework/images/icon_add.svg') }}"/></div>
             </div>
-            <div class="play">
-                <div class="icons icon_last"></div>
-                <div class="icons icon_play"></div>
-                <div class="icons icon_next"></div>
+            <div id="Play_Button" class="play">
+                <div class="icon_last"><button id="icon_last" /><img  src="{{ asset('framework/images/icon_last.svg') }}"/></div>
+                <div class="icon_play"><button class="control" onclick="play('audio_a', this)"></button><img  src="{{ asset('framework/images/icon_play.svg') }}"/></div>
+                <div class="icon_next"><button id="icon_next" /><img  src="{{ asset('framework/images/icon_next.svg') }}"/></div>
             </div>
             <div class="order">
-                <div class="icons icon_random"></div>
-                <div class="icons icon_loop"></div>
+                <div class="icon_random"><button id="icon_random" /><img  src="{{ asset('framework/images/icon_random.svg') }}"/></div>
+                <div class="icon_loop"><button id="icon_loop" /><img  src="{{ asset('framework/images/icon_loop.svg') }}"/></div>
                 <div class="time">0'50/3'30</div>
             </div>
         </div>
@@ -138,13 +147,86 @@
 
     </div>
 
+
+    {# Heuu ^^ il faudra m'expliquer cette partie plzzzz :) #}
+
+            {#<div class="cover_info">
+                <div class="cover">
+                    <img src="smiley.gif" alt="Smiley face" height="42" width="42">
+                </div>
+                <div class="info_cover">
+                    <div class="title_artist_name">
+                        <div>Titre de la Chanson, Titre de la Chanson</div>
+                        <div>Artiste</div>
+                    </div>
+                    <div class="icons icon_comm"></div>
+                </div>
+            </div>
+
+            <div class="player">
+                <div class="followers">
+                    <div class="icons icon_like"></div>
+                    <div class="icons icon_dislike"></div>
+                    <div class="icons icon_add"></div>
+                </div>
+                <div class="play">
+                    <div class="icons icon_last"></div>
+                    <div class=" icon_play">
+                        <button id="btn_play"></button>
+                    </div>
+                    <div class="icons icon_next"></div>
+                </div>
+                <div class="order">
+                    <div class="icons icon_random"></div>
+                    <div class="icons icon_loop"></div>
+                    <div class="time"><span id="progressTime">00:00</span></div>
+                </div>
+            </div>
+
+            <div class="current_listening">
+                Playlist jouée actuellement
+            </div>#}
+
 {% endblock %}
 {% block javascripts %}{{ parent() }}
-    <script>
-        //Partie Music :
-        // Met en premiére plan la div Music
-        $('#mymusic').click(function(){
-            $('#musicA').show();
-        })
-    </script>
+<script>  
+// ## Partie Ajax ##
+    /*
+        play_liste_all :
+            - Récupére l'id du Li Selectionné
+            - Envoie en Post l'id dans une function 'WavesController/PlaylisteAutomate'
+            - Récupére les Musiques correspondantes a la Playliste
+            - Affiche les musique via 'music.append()' dans la Div mére
+    */
+    $('#play_liste_all li').click(function(){
+        var id =  $(this).attr('id');
+        music = $('#Playlist_all_pages table');
+        //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
+        $.ajax({
+            url: "{{ path('PlaylisteAutomate') }}",
+            type: "POST",
+            dataType: "html",
+            data: {
+                id : id
+            },
+            success: function (data) {
+                var tab = JSON.parse(data);
+                //Vide la playliste acuel
+                music.empty();
+                for(var i=0; i < tab.length; i++ ){ 
+                   // music.append('<li><a href="#" data-value="'+'../'+tab[i].src+'">"'+tab[i].titre+'"</a></li>');
+                    console.log(tab[i].src);
+                   music.append('<tr>');
+                   music.append('<td><a href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
+                   music.append('<td>'+tab[i].artiste+'</td>');
+                   music.append('<td>'+tab[i].album+'</td>');
+                   music.append('<td>'+tab[i].times+'</td>');
+                   music.append('</tr>');
+                }
+            }
+        });
+    })
+
+</script>
+<script src="{{ asset('framework/js/p5/radialsound.js') }}"></script>
 {% endblock %}

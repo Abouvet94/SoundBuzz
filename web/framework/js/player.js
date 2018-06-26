@@ -1,12 +1,16 @@
 function play(idPlayer, control) {
     var player = document.querySelector('#' + idPlayer);
-
     if (player.paused) {
-        player.play();
-        control.textContent = 'Pause';
-    } else {
-        player.pause();
-        control.textContent = 'Play';
+        if ( song.isPlaying() ) { 
+            song.stop(); 
+            background(255,0,0);
+            control.textContent = 'Pause';
+        }else {
+            song.load();
+            song.play();
+            background(0,255,0);
+            control.textContent = 'Play';
+        }
     }
 }
 

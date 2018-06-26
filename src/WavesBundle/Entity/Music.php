@@ -60,8 +60,10 @@ class Music
     */
     private $image;
 
-
-
+    /**
+    * @ORM\Column(name="times", type="string", length=255, nullable=true)
+    */
+    private $times;
 
 
     //Getter Setter
@@ -192,5 +194,21 @@ class Music
     public function setImage($image)
     {
         $this->image = $image;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getTimes()
+    {
+        return $this->times;
+    }
+
+    /**
+    * @param mixed $times
+    */
+    public function setTimes($times)
+    {
+        $this->times = $times;
     }
 }

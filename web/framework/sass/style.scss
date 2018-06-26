@@ -1,3 +1,5 @@
+@import "framework/sass/reset.scss";
+
 @import "framework/sass/variables.scss";
 @import "framework/sass/mixins.scss";
 
@@ -25,7 +27,8 @@ body {
     font-family: "Myriad Pro Regular", "Trebuchet MS";
 }
 
-html {
+html{
+
 }
 
 ul {
