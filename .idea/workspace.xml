@@ -2,33 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d6e9d3-5c07-471e-97d0-89323348f36a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.old.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/css/style.css.old" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/about_us.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/bozzo.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/home.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/landing.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/log_sign.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/music_styles.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/my_account.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/nav.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/pages_app.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/sections.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/settings.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/web/framework/sass/util.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.old.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.old.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/framework/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/js/p5/radialsound.js" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/js/p5/radialsound.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/container_player.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/container_player.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/left_panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/left_panel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/mixins.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/reset.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/reset.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/right_panel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/right_panel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/framework/sass/bozzo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/bozzo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/framework/sass/pages_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/pages_app.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/framework/sass/style.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/style.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/variables.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/variables.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -44,20 +25,65 @@
     <splitter split-orientation="horizontal" split-proportion="0.5">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="false">
+          <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="375">
-                  <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
+                <state relative-caret-position="591">
+                  <caret line="1045" column="13" lean-forward="true" selection-start-line="1045" selection-start-column="13" selection-end-line="1045" selection-end-column="13" />
+                  <folding>
+                    <element signature="e#348#1121#0#HTML" />
+                    <element signature="e#2345#7005#0#HTML" />
+                    <element signature="e#7143#11318#0#HTML" />
+                    <element signature="e#11344#15474#0#HTML" />
+                    <element signature="e#18509#19364#0#HTML" />
+                    <element signature="e#19387#22361#0#HTML" />
+                    <element signature="e#22367#33865#0#HTML" />
+                    <element signature="e#23404#24822#0#HTML" />
+                    <element signature="e#24832#29155#0#HTML" />
+                    <element signature="e#29165#33850#0#HTML" />
+                    <element signature="e#33871#36438#0#HTML" />
+                    <element signature="e#43891#45736#0#HTML" />
+                  </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="left_panel.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="ajouter_musique.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="415">
+                  <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="player.css" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/framework/css/player.css">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="249">
+                  <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="home.old.html" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.old.html">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="135">
+                  <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+                  <folding>
+                    <element signature="n#nav#0;n#!!top" />
+                    <element signature="n#section#0;n#!!top" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="left_panel.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/framework/sass/left_panel.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+                <state relative-caret-position="135">
+                  <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
                 </state>
               </provider>
             </entry>
@@ -75,16 +101,34 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+          <file leaf-file-name="style.scss" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/web/framework/sass/style.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="71">
-                  <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
+                <state relative-caret-position="359">
+                  <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="style.css" pinned="false" current-in-tab="true">
+          <file leaf-file-name="bozzo.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/framework/sass/bozzo.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="824">
+                  <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="pages_app.scss" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/web/framework/sass/pages_app.scss">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="955">
+                  <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/framework/css/style.css">
               <provider selected="true" editor-type-id="text-editor" />
             </entry>
@@ -101,8 +145,8 @@
           <file leaf-file-name="variables.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/web/framework/sass/variables.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret selection-end-line="62" />
+                <state relative-caret-position="825">
+                  <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
                 </state>
               </provider>
             </entry>
@@ -124,6 +168,15 @@
       <find>====</find>
       <find>&lt;&lt;&lt;&lt;&lt;&lt;</find>
       <find>&lt;&lt;&lt;</find>
+      <find>corp_se</find>
+      <find>nav {</find>
+      <find>71%</find>
+      <find>app</find>
+      <find>bozzo</find>
+      <find>styles_buttons</find>
+      <find>Vous de</find>
+      <find>container</find>
+      <find>player.css</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,9 +186,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/web/framework/sass/left_panel.scss" />
-        <option value="$PROJECT_DIR$/web/framework/sass/style.scss" />
         <option value="$PROJECT_DIR$/web/framework/css/style.css" />
         <option value="$PROJECT_DIR$/var/logs/dev.log" />
+        <option value="$PROJECT_DIR$/web/framework/sass/pages_app.scss" />
+        <option value="$PROJECT_DIR$/web/framework/sass/bozzo.scss" />
+        <option value="$PROJECT_DIR$/web/framework/sass/style.scss" />
+        <option value="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" />
+        <option value="$PROJECT_DIR$/web/framework/css/player.css" />
+        <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.old.html" />
+        <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" />
       </list>
     </option>
   </component>
@@ -167,12 +226,6 @@
               <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
               <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
-              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
@@ -225,6 +278,13 @@
               <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
               <item name="web" type="462c0819:PsiDirectoryNode" />
               <item name="framework" type="462c0819:PsiDirectoryNode" />
+              <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="web" type="462c0819:PsiDirectoryNode" />
+              <item name="framework" type="462c0819:PsiDirectoryNode" />
               <item name="sass" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -264,18 +324,18 @@
       <workItem from="1528982891636" duration="6634000" />
       <workItem from="1529047720940" duration="15825000" />
       <workItem from="1530096115167" duration="9175000" />
-      <workItem from="1530545854866" duration="438000" />
+      <workItem from="1530545854866" duration="5330000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="464000" />
+    <option name="totallyTimeSpent" value="5356000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.06793049" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.1490258" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
@@ -305,6 +365,20 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
           <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+          <folding>
+            <element signature="e#348#1121#0#HTML" />
+            <element signature="e#2345#7005#0#HTML" />
+            <element signature="e#7143#11318#0#HTML" />
+            <element signature="e#11344#15474#0#HTML" />
+            <element signature="e#18509#19364#0#HTML" />
+            <element signature="e#19387#22361#0#HTML" />
+            <element signature="e#22367#33865#0#HTML" />
+            <element signature="e#23404#24822#0#HTML" />
+            <element signature="e#24832#29155#0#HTML" />
+            <element signature="e#29165#33850#0#HTML" />
+            <element signature="e#33871#36438#0#HTML" />
+            <element signature="e#43891#45736#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -435,24 +509,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/var/cache/dev/ContainerOxhnywp/appDevDebugProjectContainer.php" />
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/variables.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/right_panel.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="17" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="25" column="52" selection-start-line="25" selection-start-column="52" selection-end-line="25" selection-end-column="52" />
         </state>
       </provider>
     </entry>
@@ -469,16 +529,6 @@
           <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="102" column="29" selection-start-line="102" selection-start-column="29" selection-end-line="102" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/css/style.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/var/logs/dev.log">
       <provider selected="true" editor-type-id="text-editor">
@@ -501,10 +551,87 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/css/style.css">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/left_panel.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="9" lean-forward="true" selection-start-line="20" selection-start-column="9" selection-end-line="20" selection-end-column="9" />
+        <state relative-caret-position="135">
+          <caret line="9" column="19" selection-start-line="9" selection-start-column="19" selection-end-line="9" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/variables.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="825">
+          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/pages_app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="955">
+          <caret line="94" column="11" selection-start-line="94" selection-start-column="11" selection-end-line="94" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/bozzo.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="824">
+          <caret line="132" column="19" selection-start-line="132" selection-start-column="19" selection-end-line="132" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="37" column="39" selection-start-line="37" selection-start-column="39" selection-end-line="37" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="415">
+          <caret line="43" column="32" selection-start-line="43" selection-start-column="32" selection-end-line="43" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/css/player.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="20" column="24" selection-start-line="20" selection-start-column="24" selection-end-line="20" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.old.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="85" column="29" selection-start-line="85" selection-start-column="29" selection-end-line="85" selection-end-column="29" />
+          <folding>
+            <element signature="n#nav#0;n#!!top" />
+            <element signature="n#section#0;n#!!top" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="591">
+          <caret line="1045" column="13" lean-forward="true" selection-start-line="1045" selection-start-column="13" selection-end-line="1045" selection-end-column="13" />
+          <folding>
+            <element signature="e#348#1121#0#HTML" />
+            <element signature="e#2345#7005#0#HTML" />
+            <element signature="e#7143#11318#0#HTML" />
+            <element signature="e#11344#15474#0#HTML" />
+            <element signature="e#18509#19364#0#HTML" />
+            <element signature="e#19387#22361#0#HTML" />
+            <element signature="e#22367#33865#0#HTML" />
+            <element signature="e#23404#24822#0#HTML" />
+            <element signature="e#24832#29155#0#HTML" />
+            <element signature="e#29165#33850#0#HTML" />
+            <element signature="e#33871#36438#0#HTML" />
+            <element signature="e#43891#45736#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>

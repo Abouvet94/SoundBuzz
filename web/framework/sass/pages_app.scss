@@ -18,8 +18,7 @@
   }
 
   section {
-    width: 71%;
-    padding: 0px 15px;
+    width: 100%;
 
     h2 {
       font-size: $box-pad;
@@ -40,5 +39,58 @@
       //background:         linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
    
     }
+
+    table {
+      width: 100%;
+	  thead > tr > th, tbody > tr > td {
+		padding: $box-pad/3.5;
+		border-bottom: 1px solid $color_text_secondary;
+		text-align: left;
+	  }
+	  thead {
+		tr {
+		  th {
+			text-transform: uppercase;
+			color: $color_text_secondary;
+			font-size: $box-pad/2.5;
+		  }
+		}
+		tbody {
+		  tr {
+			padding: 5px;
+			td {
+			  font-size: $box-pad/2 !important;
+			  padding: .4rem;
+			  vertical-align: middle;
+			}
+		  }
+		}
+	  }
+    }
+	.container_styles_buttons {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		.styles_buttons {
+		  width: 25%;
+		  text-align: center;
+		  margin: $box-pad/2 0;
+		  button {
+			@include button-base;
+			width: $box-pad*5;
+		  }
+		  .button_folk {
+			background: linear-gradient(to right, $flash_pink, $flash_red);
+			&:hover {
+			  background: rgba($white, 0.1);
+			}
+		  }
+		}
+	}
   }
+}
+
+#corp_section {
+  width: 100%;
+  padding: $box-pad;
 }

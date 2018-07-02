@@ -1,0 +1,80 @@
+.ajouter_musique {
+  margin: $box-pad 0 $box-pad*3 0;
+  //background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple)
+  display: flex;
+  flex-direction: column;
+  .main-content {
+	.form-group {
+	  display: flex;
+	  flex-direction: row;
+	  align-items: center;
+	  @media screen and (max-width: $break-sm) {
+		flex-direction: column;
+	  }
+	  label {
+		display: block;
+		width: 130px;
+		font-size: 1em;
+		margin-bottom: $box-pad/1.5+3px;
+		padding-right: $box-pad/1.5;
+		text-align: right;
+		@media screen and (max-width: $break-sm) {
+		  padding: 0;
+		  width: auto;
+		}
+	  }
+	  .right-inline {
+		text-align: right;
+		width: auto;
+		margin-left: $box-pad/1.5;
+		@media screen and (max-width: $break-sm) {
+		  text-align: left;
+		  padding-right: 0;
+		  padding-left: 0;
+		}
+	  }
+	  .input-control, .select-control {
+		background-color: $white;
+		flex: 4 auto;
+		display: block;
+		margin-bottom: $box-pad/1.5;
+		margin-right: $box-pad/1.5;
+		padding: 10px;
+		border: none;
+		font-size: $box-pad/1.5;
+		&:hover {
+		  background: rgba($white, 0.5s);
+		}
+		@media screen and (max-width: $break-sm) {
+		  margin-top: 2px;
+		  margin-right: 0;
+		  width: 75%;
+		}
+	  }
+	  .select-control {
+		padding: $box-pad/1.5;
+	  	height: 63px;
+	  }
+	  .btn_mid {
+		width: 100%;
+		.btn_w {
+		  height: $box-pad+5px;
+		  font-size: $box-pad/2;
+		  padding: 0px $box-pad/2;
+		  border: solid 1px $white;
+		  background-color: transparent;
+		  color: $white !important;
+		  &:hover {
+			background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple);
+			color: $color_fond;
+			border: 1px solid $color_fond;
+		  }
+		  @media screen and (max-width: $break-sm) {
+			margin-bottom: $box-pad/2;
+		  }
+		}
+	  }
+	}
+  }
+}
+
