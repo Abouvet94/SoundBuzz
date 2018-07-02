@@ -1,0 +1,164 @@
+    {# Menu #}
+    <nav class="left_panel">
+        <ul id="Menu">
+            <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
+            <li id="addmusic"><a>Ajouter Musique</a></li>
+            <li id="decouvrir"><a>Découvrir</a></li>
+            <li id="styles"><a>Styles</a></li>
+            <li id="mymusic"><a>Ma Musique</a></li>
+            <li id="Playlist_all">
+            <a>Playlist</a>
+                <ul>
+                <div id="play_liste_all">
+                    {% for playliste in playlist %}
+                        <li id="{{ playliste.play_id }}">{{ playliste.nom }}</li>
+                    {% endfor %}
+                </div>
+                </ul>
+             </li>
+        </ul>
+    </nav>
+
+    {# Corp Dynamique
+        Ingrid : => Ton Taff est surtout ici !
+     #}
+    <section id="corp_section">
+            {# Page Ajouter Musique #}
+            {#  Formulaire visible seulement aprés identification de l'utilisateur  #}
+            <div id="addmusic_pages" class="pages">
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                    <h2>Page Ajouter Musique</h2>
+                        {{ form_start(FormMusic) }}
+                        {{ form_widget(FormMusic) }}
+                        {{ form_end(FormMusic) }}
+                        <select id="monselect">
+                            {% for ListeUser in PlayListUser %}
+                            <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
+                            {% endfor %}
+                        </select>                        
+                {% else %} 
+                <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
+                {% endif %}
+                
+
+                {# <select id="Add_Music_Ajax">
+                    {% for playlistes in playlistcopie %}
+                        <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option> 
+                    {% endfor %}
+                <selected> #}
+                    
+                </selected>
+            </div>
+            {# Page Découvrir #}
+            <div id="decouvrir_pages" class="pages">
+
+            </div>
+            {# Page Styles #}
+            <div id="styles_pages" class="pages">
+                <h2>Page Styles</h2>
+                <p>Mettre le code  Ici<p>
+            </div>
+            {# Page Ma Mussique #}
+            <div id="mymusic_pages" class="pages">
+                <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
+                    <ul> 
+                    <h4>Liste Playliste Créé :</h4>
+                        {% for PlayListeUser in PlayListUser %}
+                            <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
+                        {% endfor %}
+                    </ul>
+                    <div id="playermusic" style="border:1px solid black; height:20px;">
+                    </div>
+            </div>
+            {# Page Playlist #}
+            <div id="Playlist_all_pages" >
+                <h2>Page Playliste</h2> 
+                <table id="playermusic">
+                </table>
+                {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
+                <audio id="audio_a" style="display: none;" >
+                    <source id="audioSource" src=""></source>
+                </audio>
+            </div>
+    </section>
+
+    {# Menu de droite (Commentaires / Premium / Ect.. ) #}
+    <nav class="right_panel">
+        <ul>
+            <li>
+                {# Petite condition - Si la sexion actuelle comporte un Utilisateur, afficher son Nom. Sinon Afficher Bienvenue #}
+                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                <p><b>{{ app.user.username }}</b></p>
+                {% else %} <p><b>Bienvenue</b></p>
+                {% endif %}
+            </li>
+            <li><button>Premium</button></li>
+            {# 
+                Premiére Boucle - Récupération des Objets Commentaires.
+                Condition - Si le commentaires date d'aujourd'hui alors l'affichier. Sinon ne rien faire.
+                Html - Remplissage des balises Div par les Variables Twig de l'objet Commentaires.
+             #}
+            {% for Commentaires in commentaire %}
+                {% if Commentaires.date_creation|date('Y-m-d') == "now"|date("Y-m-d") %}
+                    <li>
+                        <div>
+                        {{ Commentaires.user_id.username }} {{ Commentaires.action }} :</br>
+                        {{ Commentaires.titre }} 
+                        </div>
+                        <div>{{ Commentaires.text }}</div>
+                        <div>Aujourd'hui à {{ Commentaires.date_creation|date('H:m:s') }}</div>
+                    </li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </nav> 
+
+    {# La Partie Player #}
+    <div class="container_player">
+
+        <div class="cover_info">
+            <div class="cover">
+                <img src="{{ asset('framework/images/smiley.gif') }}" alt="Smiley face" height="42" width="42">
+            </div>
+            <div class="info_cover">
+                <div class="title_artist_name">
+                    <div id='Titre_music'></div>
+                    <div id='Artiste_music'></div>
+                </div>
+                <div class="icons icon_comm"></div>
+            </div>
+        </div>
+
+        <div class="player">
+            <div class="followers">
+                <div class="icon_like"><button id="icon_like" /><img  src="{{ asset('framework/images/icon_like.svg') }}"/></div>
+                <div class="icon_dislike"><button id="icon_dislike" /><img  src="{{ asset('framework/images/icon_dislike.svg') }}"/></div>
+                <div class="icon_add"><button type="image" id="icon_add" /><img  src="{{ asset('framework/images/icon_add.svg') }}"/></div>
+            </div>
+                <div id="progressBarControl">
+                    <div id="progressBar" onclick="clickProgress('audio_a', this, event)"></div>
+                </div>
+
+            <div id="Play_Button" class="play">
+                <div class="icon_last"><button id="icon_last" /><img  src="{{ asset('framework/images/icon_last.svg') }}"/></div>
+                <div class="icon_play"><button id="icon_play" class="control" onclick="play('audio_a', this)" /></div>
+                <div class="icon_next"><button id="icon_next" /><img  src="{{ asset('framework/images/icon_next.svg') }}"/></div>
+            </div>
+            <div class="order">
+                <div class="icon_random"><button id="icon_random" /><img  src="{{ asset('framework/images/icon_random.svg') }}"/></div>
+                <div class="icon_loop"><button id="icon_loop" /><img  src="{{ asset('framework/images/icon_loop.svg') }}"/></div>
+                <div id="progressTime" class="time"></div>
+                    <span class="volume">
+                        <a class="stick1" onclick="volume('audio_a', 0)"></a>
+                        <a class="stick2" onclick="volume('audio_a', 0.3)"></a>
+                        <a class="stick3" onclick="volume('audio_a', 0.5)"></a>
+                        <a class="stick4" onclick="volume('audio_a', 0.7)"></a>
+                        <a class="stick5" onclick="volume('audio_a', 1)"></a>
+                    </span>
+            </div>
+        </div>
+
+        <div id="Name_Playlist" class="current_listening">
+        </div>
+
+    </div>

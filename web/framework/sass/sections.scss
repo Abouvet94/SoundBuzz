@@ -1,0 +1,184 @@
+//.about_us, .cars, .fidelites, .locations, .settings, .filters, .payment
+// padding-top: 65px
+.main {
+  //position: absolute
+  //top: 60px
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  //top: 80px
+  //padding-top: $box-pad/2
+  text-align: center;
+
+  @media screen and (max-width: $break-sm) {
+    padding-top: 80px;
+  }
+
+  .section_gray_light {
+    padding: ($box-pad * 3) ($box-pad / 2);
+    background-color: rgba($gray-light, 0.3);
+
+    @media screen and (max-width: $break-sm) {
+      padding: $box-pad / 2;
+    }
+  }
+
+  .section_turquoise {
+    padding: ($box-pad * 3) ($box-pad / 2);
+    background-color: $turquoise;
+
+    @media screen and (max-width: $break-sm) {
+      padding: $box-pad / 2;
+    }
+  }
+
+  .section_grey {
+    background-color: $gray_header;
+
+    //padding: 50px 0 70px 0
+    color: $white;
+  }
+
+  .section_dark_grey {
+    //background-color: $dark_grey !important
+ 
+  }
+
+  .section_white {
+    padding: ($box-pad * 3) ($box-pad / 2);
+    background-color: $white;
+
+    @media screen and (max-width: $break-sm) {
+      padding: $box-pad / 2;
+    }
+  }
+
+  .scroll {
+    margin-top: -27px;
+    z-index: 5;
+    height: 50px;
+  }
+
+  .scroll2 {
+    z-index: 5;
+    height: 50px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 30px;
+  }
+
+  .wrapper {
+    //max-width: 1100px
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-right: 0px;
+    padding-left: 0px;
+    -webkit-align-items: center;
+    align-items: center;
+  }
+
+  //.section_3
+  // padding: $box-pad*2.5 0  $box-pad*1.5 0
+
+  h2 {
+    font-size: 38px;
+
+    @media screen and (max-width: $break-sm) {
+      font-size: 28px;
+    }
+  }
+
+  h3 {
+    font-size: 25px;
+  }
+
+  #landigns {
+    .description {
+      font-size: 20px;
+      line-height: 1.5;
+
+      @media screen and (max-width: $break-sm) {
+        font-size: 15px;
+      }
+    }
+  }
+
+  @media screen and (min-width: $break-sm) and (max-width: $break-lg) {
+    .text, figure {
+      padding: 0;
+      width: 90%;
+    }
+  }
+
+  .btn_mid {
+    .btn_s {
+      margin: 10px auto 50px auto;
+
+      @media screen and (max-width: $break-sm) {
+        margin: 0 auto 20px auto;
+      }
+    }
+  }
+}
+
+.btn_mid {
+  width: 100%;
+
+  @media screen and (max-width: $break-sm) {
+    //padding-bottom: 40px
+  }
+
+  .btn_w {
+    @include button-ingrid-white;
+    @include transition(0.6s);
+
+    padding: 10px 15px;
+
+    //width: 25%
+    @media screen and (max-width: $break-sm) {
+      width: 75%;
+
+      //margin: 30px auto 40px auto
+      height: 45px;
+      font-size: 1.1em;
+    }
+  }
+
+  //.btn_page-scroll
+  // @include button-ingrid
+  // background-color: $white
+  // border: solid 1px $white
+  // @include transition(0.6s)
+  // @include shadow-ingrid-2
+  // padding: 15px
+  // width: 50px
+  // height: 50px
+  // transition-property: transform
+  // -webkit-transition-property: transform
+  // transition-duration: .5s
+  // transition-timing-function: ease-out
+  // &:hover
+  //     transform: scale(1.1)
+  //     -webkit-transform: scale(1.1)
+  //.btn_s
+  // @include button-ingrid
+  // @include transition(0.6s)
+  // padding: 10px 15px
+  // width: 30%
+  // @media screen and (max-width: $break-sm)
+  //     width: 75%
+  // a
+  //     color: $white
+  // &:hover
+  //     background-color: transparent
+  //     a
+}
+
+.js-scrollTo {
+  margin-bottom: 100px;
+}

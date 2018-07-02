@@ -1,44 +1,160 @@
+@import "framework/sass/reset.scss";
+
 @import "framework/sass/variables.scss";
 @import "framework/sass/mixins.scss";
+@import "framework/sass/util.scss";
+@import "framework/sass/animated.scss";
+
+// LANDING
+
+@import "framework/sass/nav.scss";
+@import "framework/sass/sections.scss";
+@import "framework/sass/footer.scss";
+
+@import "framework/sass/landing.scss";
+
+//@import "framework/sass/payment.scss";
+
+@import "framework/sass/about_us.scss";
+
+@import "framework/sass/my_account.scss";
+@import "framework/sass/settings.scss";
+
+
+
+@import "framework/sass/log_sign.scss";
+
+// APP
 
 @import "framework/sass/left_panel.scss";
 @import "framework/sass/right_panel.scss";
 @import "framework/sass/container_player.scss";
 
-.icons {
-    width: 30px;
-    height: 30px;
-    background-color: #955ba5;
+@import "framework/sass/pages_app.scss";
+
+@import "framework/sass/home.scss";
+@import "framework/sass/music_styles.scss";
+@import "framework/sass/bozzo.scss";
+
+
+
+
+$emofiont: "emofiont", sans-serif;
+
+@font-face {
+  font-family: "emofiont";
+  src: url("../fonts/emofiont/emofiont-webfont.eot") format("eot"), url("../fonts/emofiont/emofiont-webfont.otf") format("truetype"), url("../fonts/emofiont/emofiont-webfont.woff") format("woff"), url("../fonts/emofiont/emofiont-webfont.svg") format("svg");
 }
+
+//@include font-face("emofiont", font-files("../fonts/emofiont/emofiont-webfont.ttf", "../fonts/emofiont/emofiont-webfont.otf"))
+
+// Google Fonts
+//@import url(https://fonts.googleapis.com/css?family=Roboto)
+
+//@import url('https://fonts.googleapis.com/css?family=Roboto:900')
+
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800')
+
+//@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700')
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand:300,400,500,700");
+
+@import url("https://fonts.googleapis.com/css?family=Muli:200,300,400,600,700,800,900");
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #383838;
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+/*::-webkit-scrollbar-thumb:hover
+ * background: #b30000 */
+
+* {
+  outline: 0;
+}
+
+//body
+//
+//    font-family: 'Muli', sans-serif
+//    font-weight: 300
+//
+//    letter-spacing: initial
+//    width: 100%
 
 // CLASS GLOBAL
 
-body {
-    background-color: $color_fond;
-    color: $color_text_primary;
-    width: 100%;
-    height: 100%;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: row;
-    font-family: "Myriad Pro Regular", "Trebuchet MS";
+html, body {
+  min-height: 100vh;
 }
 
-html {
+body {
+  background-color: $color_fond;
+  color: $color_text_primary;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: row;
+  font-family: "Myriad Pro Light", "Trebuchet MS";
+  display: flex;
+  flex-direction: column;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+  list-style-type: none;
+  padding: 0;
 }
 
 // HOME
 
 nav {
-    width: 250px !important;
+  width: 250px !important;
 }
 
-section {
-    width: 73.7%;
+a {
+  text-transform: none;
+  text-decoration: none;
+  color: $white;
+  cursor: pointer;
 }
+
+//
+//video
+//    max-width: 100%
+//
+//a
+//    text-decoration: none
+//    color: inherit !important
+//
+//h1, h2, h3, h4, p
+//    margin-bottom: 20px
+//    @media screen and (max-width: $break-sm)
+//        margin-bottom: 15px
+//
+//h3
+//    width: 100%
+//    font-size: 25px
+//
+//
+//section
+//    padding: $box-pad*2 0
+//    @media screen and (max-width: $break-sm)
+//        padding: $box-pad 0
+//
+//
+//.btn_mid
+//    .btn_w
+//        &:hover
+//            transform: scale(1.1)
+//            -webkit-transform: scale(1.1)

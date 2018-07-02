@@ -1,0 +1,44 @@
+.app {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 100vh;
+
+  .big_cover {
+    @include size($box-pad * 6);
+
+    background-color: $purple;
+    margin: 0 ($box-pad / 2) ($box-pad / 2) 0;
+  }
+
+  .icons {
+    width: 30px;
+    height: 30px;
+    background-color: $purple;
+  }
+
+  section {
+    width: 71%;
+    padding: 0px 15px;
+
+    h2 {
+      font-size: $box-pad;
+      margin: $box-pad 0;
+    }
+
+    .border-bottom {
+      border: 0;
+      margin-bottom: $box-pad / 2;
+      height: 1px;
+      background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple);
+
+      //background: -webkit-gradient(linear, left top, right top, color-stop(0%,hsla(0,0%,0%,0)), color-stop(50%,hsla(0,0%,0%,.75)), color-stop(100%,hsla(0,0%,0%,0)))
+      //background: -webkit-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
+      //background:    -moz-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
+      //background:     -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
+      //background:      -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
+      //background:         linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
+   
+    }
+  }
+}

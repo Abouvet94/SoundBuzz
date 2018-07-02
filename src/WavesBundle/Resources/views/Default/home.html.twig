@@ -17,12 +17,8 @@
 {% endblock %}
 {% block body %}
 
-{# 
-    Pour faire un lien :
-    {{ asset('framework/js/p5/waves.js') }}
- #}
+<div class="app">
 
-    {# Menu #}
     <nav class="left_panel">
         <ul id="Menu">
             <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
@@ -43,69 +39,480 @@
         </ul>
     </nav>
 
-    {# Corp Dynamique
-        Ingrid : => Ton Taff est surtout ici !
-     #}
-    <section id="corp_section">
-            {# Page Ajouter Musique #}
-            {#  Formulaire visible seulement aprés identification de l'utilisateur  #}
-            <div id="addmusic_pages" class="pages">
-                {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                    <h2>Page Ajouter Musique</h2>
-                        {{ form_start(FormMusic) }}
-                        {{ form_widget(FormMusic) }}
-                        {{ form_end(FormMusic) }}
-                        <select id="monselect">
-                            {% for ListeUser in PlayListUser %}
-                            <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
-                            {% endfor %}
-                        </select>                        
-                {% else %} 
-                <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
-                {% endif %}
-                
-
-                {# <select id="Add_Music_Ajax">
-                    {% for playlistes in playlistcopie %}
-                        <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option> 
+    <section id="addmusic_pages" class="pages">
+        {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+            <h2>Page Ajouter Musique</h2>
+                {{ form_start(FormMusic) }}
+                {{ form_widget(FormMusic) }}
+                {{ form_end(FormMusic) }}
+                <select id="monselect">
+                    {% for ListeUser in PlayListUser %}
+                    <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
                     {% endfor %}
-                <selected> #}
-                    
-                </selected>
-            </div>
-            {# Page Découvrir #}
-            <div id="decouvrir_pages" class="pages">
-                <h2>Page Découvrire</h2>
-                <p>Mettre le code  Ici<p>
-            </div>
-            {# Page Styles #}
-            <div id="styles_pages" class="pages">
-                <h2>Page Styles</h2>
-                <p>Mettre le code  Ici<p>
-            </div>
-            {# Page Ma Mussique #}
-            <div id="mymusic_pages" class="pages">
-                <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
-                    <ul> 
-                    <h4>Liste Playliste Créé :</h4>
-                        {% for PlayListeUser in PlayListUser %}
-                            <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
-                        {% endfor %}
-                    </ul>
-                    <div id="playermusic" style="border:1px solid black; height:20px;">
-                    </div>
-            </div>
-            {# Page Playlist #}
-            <div id="Playlist_all_pages" >
-                <h2>Page Playliste</h2> 
-                <table id="playermusic">
-                </table>
-                {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
-                <audio id="audio_a" style="display: none;" >
-                    <source id="audioSource" src=""></source>
-                </audio>
-            </div>
+                </select>                        
+        {% else %} 
+        <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
+        {% endif %}
+        
+
+        {# <select id="Add_Music_Ajax">
+            {% for playlistes in playlistcopie %}
+                <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option> 
+            {% endfor %}
+        <selected> #}        
     </section>
+
+    <section id="decouvrir_pages" class="decouverte pages">
+
+        <div class="container_top_ecoute">
+            <h2>Nouveautés</h2>
+            <div class="border-bottom"></div>
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Titre</th>
+                    <th>Artiste</th>
+                    <th>Album</th>
+                    <th>Time</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container_albums">
+
+            <h2>Nouveaux albums</h2>
+            <div class="border-bottom"></div>
+
+            <div class="container_items_album">
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container_playlist_avec_artiste">
+
+            <h2>Playlist avec cet Artiste</h2>
+            <div class="border-bottom"></div>
+
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <ht></ht>
+                    <th>Nom playliste</th>
+                    <th>Nom créateur</th>
+                    <th>Nombres d'abonnés</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>Playliste</td>
+                    <td>Créateur</td>
+                    <td>XXX abonnés</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+
+        <div class="container_artist">
+            <h2>Artistes similaires</h2>
+            <div class="border-bottom"></div>
+
+            <div class="container_items_artistes">
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+                <div class="item_artiste">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container_styles">
+            <h2>Styles</h2>
+            <div class="border-bottom"></div>
+
+            <div class="container_styles_buttons">
+                <div class="styles_buttons">
+                    <button class="button_folk">Folk</button>
+                </div>
+                <div class="styles_buttons">
+                    <button class="button_dance">Dance</button>
+                </div>
+                <div class="styles_buttons">
+                    <button class="button_electro">Electro</button>
+                </div>
+                <div class="styles_buttons">
+                    <button class="button_metal">Métal</button>
+                </div>
+                <div class="styles_buttons">
+                    <button class="button_autres">Autres</button>
+                </div>
+
+            </div>
+        </div>
+
+
+    </section>
+
+        {# Page Styles #}
+    {# <div id="styles_pages" class="">
+        <h2>Page Styles</h2>
+        <p>Mettre le code  Ici<p>
+    </div> #}
+    {# Page Ma Mussique #}
+    {# <div id="mymusic_pages" class="">
+        <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
+            <ul> 
+            <h4>Liste Playliste Créé :</h4>
+                {% for PlayListeUser in PlayListUser %}
+                    <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
+                {% endfor %}
+            </ul>
+            <div id="playermusic" style="border:1px solid black; height:20px;">
+            </div>
+    </div> #}
+    {# Page Playlist #}
+    {# <div id="Playlist_all_pages" class="">
+        <h2>Page Playliste</h2> 
+        <table id="playermusic">
+        </table> #}
+        {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
+        {# <audio id="audio_a" style="display: none;" >
+            <source id="audioSource" src=""></source>
+        </audio>
+    </div> #}
+
+
 
     {# Menu de droite (Commentaires / Premium / Ect.. ) #}
     <nav class="right_panel">
@@ -137,6 +544,7 @@
             {% endfor %}
         </ul>
     </nav> 
+
 
     {# La Partie Player #}
     <div class="container_player">
@@ -188,45 +596,7 @@
 
     </div>
 
-
-    {# Heuu ^^ il faudra m'expliquer cette partie plzzzz :) #}
-
-            {#<div class="cover_info">
-                <div class="cover">
-                    <img src="smiley.gif" alt="Smiley face" height="42" width="42">
-                </div>
-                <div class="info_cover">
-                    <div class="title_artist_name">
-                        <div>Titre de la Chanson, Titre de la Chanson</div>
-                        <div>Artiste</div>
-                    </div>
-                    <div class="icons icon_comm"></div>
-                </div>
-            </div>
-
-            <div class="player">
-                <div class="followers">
-                    <div class="icons icon_like"></div>
-                    <div class="icons icon_dislike"></div>
-                    <div class="icons icon_add"></div>
-                </div>
-                <div class="play">
-                    <div class="icons icon_last"></div>
-                    <div class=" icon_play">
-                        <button id="btn_play"></button>
-                    </div>
-                    <div class="icons icon_next"></div>
-                </div>
-                <div class="order">
-                    <div class="icons icon_random"></div>
-                    <div class="icons icon_loop"></div>
-                    <div class="time"><span id="progressTime">00:00</span></div>
-                </div>
-            </div>
-
-            <div class="current_listening">
-                Playlist jouée actuellement
-            </div>#}
+</div>
 
 {% endblock %}
 {% block javascripts %}{{ parent() }}

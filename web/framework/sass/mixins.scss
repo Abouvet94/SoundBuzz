@@ -1,0 +1,242 @@
+@mixin transition($transition...) {
+  -moz-transition: $transition {}
+  -o-transition: $transition {}
+  -webkit-transition: $transition {}
+  transition: $transition {}
+}
+
+@mixin transition-property($property...) {
+  -moz-transition-property: $property {}
+  -o-transition-property: $property {}
+  -webkit-transition-property: $property {}
+  transition-property: $property {}
+}
+
+@mixin transition-duration($duration...) {
+  -moz-transition-property: $duration {}
+  -o-transition-property: $duration {}
+  -webkit-transition-property: $duration {}
+  transition-property: $duration {}
+}
+
+// generic transform
+@mixin transform($transforms) {
+  -moz-transform: $transforms;
+  -o-transform: $transforms;
+  -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+  transform: $transforms;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+// rotate
+@mixin rotate($deg) {
+  @include transform(rotate(#{$deg}deg));
+}
+
+// scale
+@mixin scale($scale) {
+  @include transform(scale($scale));
+}
+
+// translate
+@mixin translate($x, $y) {
+  @include transform(translate($x, $y));
+}
+
+// skew
+@mixin skew($x, $y) {
+  @include transform(skew(#{$x}deg, #{$y}deg));
+}
+
+//transform origin
+@mixin transform-origin($origin) {
+  moz-transform-origin: $origin;
+  -o-transform-origin: $origin;
+  -ms-transform-origin: $origin;
+  -webkit-transform-origin: $origin;
+  transform-origin: $origin;
+}
+
+@mixin shadow-ingrid {
+  -moz-box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 5px 5px 30px 0px rgba(0, 0, 0, 0.5);
+}
+
+@mixin shadow-ingrid-2 {
+  -moz-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.13);
+  -webkit-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.13);
+  -o-box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.13);
+  box-shadow: 0 0 7px 0 rgba(0, 0, 0, 0.13);
+}
+
+@mixin shadow-ingrid-3 {
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+}
+
+@mixin shadow-ingrid-4 {
+  -moz-box-shadow: 0 0 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.05);
+  -webkit-box-shadow: 0 0 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.05);
+  -o-box-shadow: 0 0 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 0 60px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 0, 0, 0.05);
+}
+
+@mixin button-ingrid-white {
+  height: 50px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  padding: 10px 15px;
+  font-size: 1.3em;
+  font-weight: 300;
+  color: $white;
+  border-radius: 50px;
+  border: none;
+  letter-spacing: 0.7px;
+}
+
+@mixin button-ingrid {
+  height: 48px;
+  cursor: pointer;
+  display: block;
+  margin: auto;
+  padding: 10px 15px;
+  font-size: 1.1em;
+  font-weight: 300;
+  color: $white;
+  border-radius: 50px;
+  border: none;
+  letter-spacing: 0.7px;
+}
+
+@mixin btn-border {
+  text-align: center;
+  display: inline-block;
+
+  //padding: 15px 40px
+  cursor: pointer;
+  letter-spacing: 1px;
+  position: relative;
+
+  //overflow: hidden
+  padding: 0 20px;
+  margin: 10px 0;
+  line-height: 40px;
+
+  &:before {
+	content: "";
+	position: absolute;
+	width: 0;
+	background: $white;
+	left: 45%;
+	height: 2px;
+	bottom: 0;
+	transition: all 0.3s;
+	opacity: 0.7;
+
+	&:hover:before {
+	  width: 100%;
+	  left: 0;
+	}
+  }
+}
+
+@mixin banner-content {
+  text-align: center;
+  width: 100%;
+  color: $white;
+  -webkit-transition: 0.1s;
+  -moz-transition: 0.1s;
+  transition: 0.1s;
+  position: relative;
+  line-height: 1.3em;
+  padding: 0.5em 2.5em;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.25);
+
+  a {
+	text-decoration: underline;
+	color: inherit;
+	cursor: pointer;
+  }
+}
+
+@mixin notice-info {
+  &:before {
+	vertical-align: middle;
+	font-family: $ionicons-font-family;
+	font-size: 30px;
+	display: inline-block;
+	margin-right: $box-pad / 4;
+	margin-bottom: 5px;
+  }
+
+  font-size: 15px;
+  color: white;
+
+  //max-width: $break-sm
+  padding: $box-pad;
+  border-radius: 2px;
+  position: relative;
+
+  a {
+	text-decoration: underline;
+	color: inherit;
+	cursor: pointer;
+  }
+}
+
+@mixin notice-lien {
+  text-decoration: underline;
+  color: inherit;
+  cursor: pointer;
+}
+
+//	button
+// width: 50%
+// height: 40px
+// @include button-ingrid
+// @media screen and (min-width: $break-sm) and (max-width: $break-sm)
+// 	width: 70%
+// 	margin: auto
+// 	height: 40px
+// 	font-size: 1.1em
+// @media screen and (max-width: $break-sm)
+// 	width: 100%
+// 	margin: 0
+// 	height: 40px
+// 	font-size: 1.1em
+
+@mixin button-base {
+  text-transform: uppercase;
+  height: 35px;
+  line-height: 35px;
+  cursor: pointer;
+
+  //display: block
+  margin: auto;
+  padding: 0px $box-pad;
+  font-size: $box-pad / 2;
+  font-weight: 300;
+  color: $white;
+  border-radius: 50px;
+  border: none;
+  letter-spacing: 0.7px;
+}
+
+@mixin size($width, $height: $width) {
+  min-width: $width;
+  min-height: $height;
+  max-width: $width;
+  max-height: $height;
+}

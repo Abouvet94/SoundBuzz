@@ -1,0 +1,137 @@
+.music_styles {
+  .container_styles_buttons {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    .styles_buttons {
+      width: 25%;
+      text-align: center;
+      margin: ($box-pad / 2) 0;
+
+      button {
+        @include button-base;
+      }
+
+      .button_folk {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_dance {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_electro {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_metal {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_rock {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_pop {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_reggae {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_rnb {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_rap {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_internat {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_variete {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_classique {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_jazz {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_soul {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .button_blues {
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+    }
+  }
+}
