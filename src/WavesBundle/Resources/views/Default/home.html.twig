@@ -19,9 +19,9 @@
 
 <div class="app">
 
-    <nav class="left_panel">
+<nav class="left_panel">
         <ul id="Menu">
-            <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
+            <li id="home"><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
             <li id="addmusic"><a>Ajouter Musique</a></li>
             <li id="decouvrir"><a>Découvrir</a></li>
             <li id="styles"><a>Styles</a></li>
@@ -38,8 +38,14 @@
              </li>
         </ul>
     </nav>
-
 <section id="corp_section">
+
+    <section class="home_pages">
+        <h2>Home sweet Home</h2>
+        <div class="border-bottom"></div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+
     <section id="addmusic_pages" class="pages">
         {% if is_granted("IS_AUTHENTICATED_FULLY") %}
             <h2>Page Ajouter Musique</h2>
@@ -484,6 +490,397 @@
 
 
     </section>
+
+    <section id="styles_pages" class="music_styles pages">
+
+        <div class="container_description">
+            <div class="big_cover"></div>
+            <div class="artist_description">
+                <div class="artist_info">
+                    <div class="button_h1">
+                        <h2>Styles</h2>
+                        <div class="border-bottom"></div>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae ipsum dolor. Curabitur dapibus condimentum dolor a interdum. Mauris rhoncus, elit eu suscipit cursus, mi odio efficitur odio, nec rhoncus ante arcu viverra est. Pellentesque nec sapien aliquam, consectetur nisl eu, luctus augue. Phasellus fermentum elementum vestibulum. Ut vehicula eget justo id tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ac sagittis nisi. Curabitur eu nunc a ex elementum euismod. Aenean in risus pretium, tristique augue at, gravida mauris. Sed at purus eget lacus facilisis pulvinar.</p>
+            </div>
+
+        </div>
+
+        <div class="container_styles_buttons">
+            <div class="styles_buttons">
+                <button class="button_folk">Folk</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_dance">Dance</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_electro">Electro</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_metal">Métal</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_rock">Rock</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_pop">Pop</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_reggae">Reggae</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_rnb">R'N'B</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_rap">Rap</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_internat">Internat</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_variete">Variété</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_classique">Classique</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_jazz">Jazz</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_soul">Soul</button>
+            </div>
+            <div class="styles_buttons">
+                <button class="button_blues">Blues</button>
+            </div>
+        </div>
+
+
+    </section>
+
+    <section id="mymusic_pages" class="bozzo pages">
+        <div class="container_description">
+            <div class="big_cover"></div>
+            <div class="artist_description">
+                <div class="artist_info">
+                    <div class="button_h1">
+                        <h1>Ma musique</h1>
+                    </div>
+                </div>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae ipsum dolor. Curabitur dapibus condimentum dolor a interdum. Mauris rhoncus, elit eu suscipit cursus, mi odio efficitur odio, nec rhoncus ante arcu viverra est. Pellentesque nec sapien aliquam, consectetur nisl eu, luctus augue. Phasellus fermentum elementum vestibulum. Ut vehicula eget justo id tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ac sagittis nisi. Curabitur eu nunc a ex elementum euismod. Aenean in risus pretium, tristique augue at, gravida mauris. Sed at purus eget lacus facilisis pulvinar.</p>
+            </div>
+
+        </div>
+
+        <div class="container_top_ecoute">
+            <h2>Mes playlists</h2>
+            <div class="border-bottom"></div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Nombres de morceaux</th>
+                        <th>Nombres d'abonnés</th>
+                        <th>Temps</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Playlist 1</td>
+                        <td>XX morceaux</td>
+                        <td>XX abonnés</td>
+                        <td>XX:XX</td>
+                        <td><div class="icons icon_delete"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Playlist 2</td>
+                        <td>XX morceaux</td>
+                        <td>XX abonnés</td>
+                        <td>XX:XX</td>
+                        <td><div class="icons icon_delete"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Playlist 3</td>
+                        <td>XX morceaux</td>
+                        <td>XX abonnés</td>
+                        <td>XX:XX</td>
+                        <td><div class="icons icon_delete"></div></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="container_albums">
+
+            <h2>Mes albums préférés</h2>
+            <div class="border-bottom"></div>
+
+            <div class="container_items_album">
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+                <div class="item_album">
+                    <div class="big_cover"></div>
+                    <div class="text_album">
+                        <div class="title_album">Sur le thème des grandes découvertes</div>
+                        <div class="border-bottom"></div>
+                        <div class="subtitle_album">Salut c'est cool</div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="container_playlist_avec_artiste">
+
+            <h2>Mes Morceaux préférés</h2>
+            <div class="border-bottom"></div>
+
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Titre</th>
+                    <th>Artiste</th>
+                    <th>Album</th>
+                    <th>Time</th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                <tr>
+                    <td><div class="icons icon_play"></div></td>
+                    <td><div class="icons icon_heart"></div></td>
+                    <td>The Rocking Grounds</td>
+                    <td>The Skies Above</td>
+                    <td>The Black Mages</td>
+                    <td>3:56</td>
+                    <td><div class="icons icon_more"></div></td>
+                </tr>
+                </tbody>
+            </table>
+
+        </div>
+    </section>
+
+    <section id="Playlist_all_pages" class="playlists pages">
+
+            <!--<div class="container_description">
+                <div class="big_cover"></div>
+                <div class="artist_description">
+                    <div class="artist_info">
+                        <div class="button_h1">
+                            <h1>Ma musique</h1>
+                        </div>
+                    </div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae ipsum dolor. Curabitur dapibus condimentum dolor a interdum. Mauris rhoncus, elit eu suscipit cursus, mi odio efficitur odio, nec rhoncus ante arcu viverra est. Pellentesque nec sapien aliquam, consectetur nisl eu, luctus augue. Phasellus fermentum elementum vestibulum. Ut vehicula eget justo id tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ac sagittis nisi. Curabitur eu nunc a ex elementum euismod. Aenean in risus pretium, tristique augue at, gravida mauris. Sed at purus eget lacus facilisis pulvinar.</p>
+                </div>
+
+            </div>-->
+
+            <div class="container_top_ecoute">
+                <h2>Playlists</h2>
+                <div class="border-bottom"></div>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>Titre</th>
+                        <th>Nombres de morceaux</th>
+                        <th>Nombres d'abonnés</th>
+                        <th>Temps</th>
+                        <th></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>Playlist 1</td>
+                        <td>XX morceaux</td>
+                        <td>XX abonnés</td>
+                        <td>XX:XX</td>
+                        <td><div class="icons icon_delete"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Playlist 2</td>
+                        <td>XX morceaux</td>
+                        <td>XX abonnés</td>
+                        <td>XX:XX</td>
+                        <td><div class="icons icon_delete"></div></td>
+                    </tr>
+                    <tr>
+                        <td>Playlist 3</td>
+                        <td>XX morceaux</td>
+                        <td>XX abonnés</td>
+                        <td>XX:XX</td>
+                        <td><div class="icons icon_delete"></div></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+    </section>
+
 </section>
 
         {# Page Styles #}

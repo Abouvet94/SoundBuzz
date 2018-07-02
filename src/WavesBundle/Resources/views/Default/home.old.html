@@ -1,24 +1,22 @@
     {# Menu #}
     <nav class="left_panel">
-        <ul>
-            <li><a><img src="images/logo v2-1.png" alt="Logo SoundBuzz" height="42" width="42"></a></li>
-            <li><a href="ajouter_musique.html">Ajouter Musique</a></li>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="decouverte.html">Découverte</a></li>
-            <li><a href="music_styles.html">Styles</a></li>
-            <li><a href="ma_musique.html">Ma Musique</a></li>
-            <li>
-                <a href="playlists.html">Playlists</a>
+        <ul id="Menu">
+            <li><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
+            <li id="addmusic"><a>Ajouter Musique</a></li>
+            <li id="decouvrir"><a>Découvrir</a></li>
+            <li id="styles"><a>Styles</a></li>
+            <li id="mymusic"><a>Ma Musique</a></li>
+            <li id="Playlist_all">
+            <a>Playlist</a>
                 <ul>
-                    <li><a href="playlist.html">Playlist</a></li>
-                    <li><a href="">Playlist</a></li>
-                    <li><a href="">Playlist</a></li>
-                    <li><a href="">Playlist</a></li>
-                    <li><a href="">Playlist</a></li>
+                <div id="play_liste_all">
+                    {% for playliste in playlist %}
+                        <li id="{{ playliste.play_id }}">{{ playliste.nom }}</li>
+                    {% endfor %}
+                </div>
                 </ul>
-            </li>
+             </li>
         </ul>
-
     </nav>
 
     {# Corp Dynamique
