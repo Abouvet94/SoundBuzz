@@ -1,37 +1,49 @@
 .left_panel {
   font-size: 20px;
   border-right: 1px solid $line;
-  height: 100%;
   flex-direction: column;
   justify-content: space-between;
+  background-color: $color_fond;
+
+  //bottom: 0
+  //left: 0
+  overflow: scroll;
+  overflow-x: hidden;
+
+  //position: absolute
+
   ul {
-	height: 100%;
-	padding: 0;
-	margin: 0;
-	li a {
-	  img {
-		width: 100%;
-		height: auto;
-	  }
-	  border-bottom: 1px solid $black;
-	  color: $color_text_secondary;
-	  display: block;
-	  padding: $box-pad/2;
-	  &:first-child {
-		&:hover {
-		  background-color: rgba($white, 0);
-		}
-	  }
-	  &:hover {
-		background-color: rgba($white, 0.1);
-	  }
-	  ul {
-		li {
-		  color: $color_text_primary;
-		  font-size: 15px;
-		  border-bottom: 0;
-		}
-	  }
-	}
+    li {
+      ul {
+        li {
+          font-size: 15px;
+          border-bottom: 0;
+        }
+
+        a {
+          padding: ($box-pad / 2) $box-pad;
+
+          &:hover {
+            background-color: rgba($white, 0.1);
+          }
+        }
+      }
+    }
+    a {
+      img {
+        width: 90%;
+        height: auto;
+      }
+
+      border-bottom: 1px solid $black;
+      color: $color_text_secondary;
+      display: block;
+      padding: $box-pad / 2;
+
+      &:hover, &:focus, &:active {
+        color: $white;
+        background-color: rgba($white, 0.1);
+      }
+    }
   }
 }

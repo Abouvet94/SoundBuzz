@@ -1,11 +1,64 @@
 .right_panel {
   border-left: 1px solid $line;
-  height: 100%;
-  position: absolute;
+
+  //bottom: 0
+  //left: 0
+  overflow: scroll;
+  overflow-x: hidden;
+
+  //position: absolute
   right: 0;
+  top: 0;
+
   ul {
-	li {
-	  padding: $box-pad/2;
-	}
+    li {
+      padding: $box-pad / 2;
+
+      button {
+        @include button-base;
+
+        background: linear-gradient(to right, $flash_pink, $flash_red);
+        display: block;
+
+        &:hover {
+          background: rgba($white, 0.1);
+        }
+      }
+
+      .picture_title_comm {
+        display: flex;
+
+        .picture_comm {
+          @include size($box-pad);
+
+          background: $purple;
+          margin: 0 ($box-pad / 2) ($box-pad / 2) 0;
+        }
+
+        .title_comm {
+          line-height: 18px;
+
+          > div {
+            margin-bottom: 0;
+            line-height: 18px;
+
+            &:first-child {
+              font-size: $box-pad / 2.2;
+            }
+
+            &:last-child {
+              font-size: $box-pad / 2.5;
+              color: $color_text_ters;
+            }
+          }
+        }
+      }
+
+      .time_comm {
+        font-size: $box-pad / 2.5;
+        color: $color_text_ters;
+        text-align: right;
+      }
+    }
   }
 }

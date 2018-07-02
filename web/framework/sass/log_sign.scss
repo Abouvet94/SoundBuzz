@@ -1,0 +1,155 @@
+.log, .sig {
+  background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+
+  .main-content {
+    width: 40%;
+    margin: 0 auto;
+    padding: ($box-pad * 1.5) $box-pad;
+    background-color: $color_fond;
+    margin-top: 50vh;
+    transform: translateY(-50%);
+
+    @media screen and (max-width: $break-sm) {
+      padding: 0px;
+      width: 100%;
+
+      //margin: $box-pad/2
+      // form specific formatting
+    }
+
+    h4 {
+      font-size: $box-pad / 1.5;
+      background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: $box-pad;
+
+      @media screen and (max-width: $break-sm) {
+        padding-top: $box-pad;
+      }
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      @media screen and (max-width: $break-sm) {
+        flex-direction: column;
+      }
+
+      .btn_l_s {
+        // height: 45px;
+        // padding: 10px 20px;
+        margin-bottom: $box-pad;
+        height: $box-pad * 1.5;
+        font-size: $box-pad / 1.5;
+        padding: ($box-pad / 3) ($box-pad / 1.5);
+        border: solid 1px $white;
+        background: transparent;
+        color: $white;
+
+        &:first-child {
+          border-radius: 50px 0 0 50px;
+          margin-right: -3px;
+        }
+
+        &:last-child {
+          border-radius: 0 50px 50px 0;
+          margin-left: -3px;
+        }
+
+        @media screen and (max-width: $break-sm) {
+          margin-bottom: $box-pad / 2;
+        }
+
+        &:hover {
+          background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple);
+          color: $color_fond;
+          border: 1px solid $color_fond;
+        }
+      }
+
+      label {
+        display: block;
+        width: 130px;
+        font-size: 1em;
+        margin-bottom: $box-pad / 1.5 + 3px;
+        padding-right: $box-pad / 1.5;
+        text-align: right;
+
+        @media screen and (max-width: $break-sm) {
+          padding: 0;
+          width: auto;
+        }
+      }
+
+      .right-inline {
+        text-align: right;
+        width: auto;
+        margin-left: $box-pad / 1.5;
+
+        @media screen and (max-width: $break-sm) {
+          text-align: left;
+          padding-right: 0;
+          padding-left: 0;
+        }
+      }
+
+      .input-control, .select-control {
+        background-color: $white;
+        flex: 4 auto;
+        display: block;
+        margin-bottom: $box-pad / 1.5;
+        margin-right: $box-pad / 1.5;
+        padding: 10px;
+        border: none;
+        font-size: $box-pad / 1.5;
+
+        &:hover {
+          background: rgba($white, 0.5s);
+        }
+
+        @media screen and (max-width: $break-sm) {
+          margin-top: 2px;
+          margin-right: 0;
+          width: 75%;
+        }
+      }
+
+      .select-control {
+        padding: $box-pad / 1.5;
+        height: 63px;
+      }
+
+      .btn_mid {
+        //margin: $box-pad/2 auto $box-pad auto
+        width: 100%;
+
+        // &:last-child
+        //     margin-bottom: 0
+        .btn_w {
+          height: $box-pad + 5px;
+          font-size: $box-pad / 2;
+          padding: 0px ($box-pad / 2);
+          border: solid 1px $white;
+          background-color: transparent;
+          color: $white !important;
+
+          @media screen and (max-width: $break-sm) {
+            margin-bottom: $box-pad / 2;
+          }
+
+          &:hover {
+            background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple);
+            color: $color_fond;
+            border: 1px solid $color_fond;
+          }
+        }
+      }
+    }
+  }
+}

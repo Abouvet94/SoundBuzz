@@ -1,0 +1,288 @@
+.settings {
+  .diagonale {
+    background: linear-gradient(to right top, $white 50%, $turquoise 50%);
+  }
+
+  section {
+    padding: 0;
+  }
+
+  .formulaires {
+    padding: ($box-pad * 3) ($box-pad / 2) ($box-pad * 2) ($box-pad / 2);
+
+    //background-color: $turquoise
+    @media screen and (max-width: $break-sm) {
+      width: 100%;
+      padding: ($box-pad * 1.5) 0;
+    }
+
+    h3 {
+      //color: $white
+   
+    }
+
+    .border_bottom {
+      //background-color: $white
+   
+    }
+
+    .formulaire {
+      width: 90%;
+      padding: 0 ($box-pad / 2) ($box-pad / 2) ($box-pad / 2);
+      background-color: $white;
+
+      @media screen and (max-width: $break-sm) {
+        width: 100%;
+        padding: 0;
+      }
+
+      .main-content-1 {
+        padding: 0 ($box-pad / 1.5) ($box-pad / 1.5) ($box-pad / 1.5);
+
+        @media screen and (max-width: $break-sm) {
+          padding: 0;
+        }
+
+        .avatar {
+          background-color: $white !important;
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+
+          // label
+          //     width: 200px !important
+          // input
+          //     flex: 1 1 auto
+          //     display: block
+          //     margin-bottom: 20px
+          //     padding: 20px 15px
+          //     border: none
+          //     font-size: 20px
+          .container {
+            width: 70%;
+            margin: 0 auto ($box-pad / 1.5) auto;
+
+            @media screen and (max-width: $break-sm) {
+              width: 100%;
+            }
+          }
+
+          .containers {
+            height: 200px;
+            position: relative;
+            max-width: 250px;
+            margin: auto;
+
+            .imageWrapper {
+              //border: 1px solid $white
+              border: 1px solid $turquoise;
+              width: 70%;
+              padding-bottom: 70%;
+              border-radius: 50%;
+              overflow: hidden;
+              position: absolute;
+              top: 50%;
+              left: 50%;
+              transform: translate(-50%, -50%);
+
+              img {
+                height: 105%;
+                width: initial;
+                max-height: 100%;
+                max-width: initial;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+              }
+            }
+          }
+
+          .file-upload {
+            position: relative;
+            overflow: hidden;
+            margin: 10px;
+            width: auto;
+            text-align: center;
+            color: $turquoise;
+            background: transparent;
+            border-radius: 50px;
+
+            //border: 1px solid $white
+            border: 1px solid $turquoise;
+            background-color: transparent;
+            height: $box-pad + 5px;
+            font-size: $box-pad / 2;
+            padding: 0px ($box-pad / 2);
+
+            @include transition(0.6s);
+
+            &:hover {
+              background: $turquoise;
+              color: $white;
+              transform: scale(1.1);
+              -webkit-transform: scale(1.1);
+            }
+
+            input.file-input {
+              position: absolute;
+              top: 0;
+              right: 0;
+              margin: 0;
+              padding: 0;
+              font-size: 20px;
+              cursor: pointer;
+              opacity: 0;
+              filter: alpha(opacity = 0);
+              height: 100%;
+            }
+          }
+        }
+
+        .form_email_mdp, .form_coord {}
+
+        .main-content {
+          flex: 1 auto;
+          padding: ($box-pad * 1.5) $box-pad;
+          background-color: rgba($gray-light, 0.3);
+          margin: $box-pad / 1.5;
+
+          @media screen and (max-width: $break-sm) {
+            margin: $box-pad 0 0 0;
+
+            // form specific formatting
+          }
+
+          h4 {
+            font-size: $box-pad / 1.5;
+            color: $turquoise;
+            margin-bottom: $box-pad;
+          }
+
+          .form-group {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            @media screen and (max-width: $break-sm) {
+              flex-direction: column;
+              align-items: initial;
+            }
+
+            label {
+              display: block;
+              width: 130px;
+              font-size: 1em;
+              margin-bottom: $box-pad / 1.5 + 3px;
+              padding-right: $box-pad / 1.5;
+              text-align: right;
+
+              @media screen and (max-width: $break-sm) {
+                text-align: left;
+                width: auto;
+                padding: 0;
+              }
+            }
+
+            .right-inline {
+              text-align: right;
+              width: auto;
+
+              @media screen and (max-width: $break-sm) {
+                text-align: left;
+                padding-right: 0;
+                padding-left: 0;
+              }
+            }
+
+            .input-control, .select-control {
+              background-color: $white;
+              flex: 4 auto;
+              display: block;
+              margin-bottom: $box-pad / 1.5;
+              margin-right: $box-pad / 1.5;
+              padding: $box-pad / 1.5;
+              border: none;
+              font-size: $box-pad / 1.5;
+
+              &:hover {
+                background: rgba($black, 0.05s);
+              }
+
+              @media screen and (max-width: $break-sm) {
+                margin-top: 2px;
+                margin-right: 0;
+              }
+            }
+
+            .select-control {
+              padding: $box-pad / 1.5;
+              height: 63px;
+            }
+
+            .btn_mid {
+              //margin: $box-pad/2 auto $box-pad auto
+              width: 100%;
+
+              // &:last-child
+              //     margin-bottom: 0
+              .btn_w {
+                height: $box-pad + 5px;
+                font-size: $box-pad / 2;
+                padding: 0px ($box-pad / 2);
+                border: solid 1px $turquoise;
+                background: transparent;
+                color: $turquoise;
+
+                @media screen and (max-width: $break-sm) {
+                  margin-bottom: $box-pad / 2;
+                }
+
+                &:hover {
+                  background-color: $turquoise;
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+
+        .form_email_mdp {
+          display: flex;
+          flex-direction: row;
+
+          @media screen and (max-width: $break-sm) {
+            flex-direction: column;
+          }
+        }
+
+        .form_coord {
+          display: flex;
+          flex-direction: column;
+
+          .civi {
+            @media screen and (max-width: $break-sm) {
+              flex-direction: column;
+              width: auto;
+            }
+
+            .radio {
+              padding-right: 20px;
+            }
+          }
+
+          .group_label_input {
+            display: flex;
+            flex-direction: row;
+
+            > div {
+              flex: 1 auto;
+
+              input {}
+            }
+          }
+        }
+      }
+    }
+  }
+}

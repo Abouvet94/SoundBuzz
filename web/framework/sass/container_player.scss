@@ -1,5 +1,6 @@
 .container_player {
-  height: $box-pad*2;
+  background-color: $color_fond;
+  height: $box-pad * 2;
   border-top: 1px solid $line;
   width: 100%;
   position: absolute;
@@ -7,105 +8,91 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  position: fixed;
 
   .cover_info {
-	width: 250px;
-	display: flex;
-	justify-content: space-between;
-	border-right: 1px solid $line;
-	.cover {
-	  width: $box-pad*2;
-	  height: $box-pad*2;
-	  background-color: $white;
-	}
-	.info_cover {
-	  font-size: 13px;
-	  height: 45px;
-	  background-color: $color_fond;
-	  flex-direction: row;
-	  display: flex;
-	  .title_artist_name {
-		width: 125px;
-		height: 40px;
-		margin: 10px;
-		> div {
-		  overflow: hidden;
-		  text-overflow: ellipsis;
-		  white-space: nowrap;
-		  &:first-child {
-			margin-bottom: 5px
-		  }
-		}
-	  }
-	  .icon_comm {
-		margin: 14px 14px 14px 0;
-	  }
-	}
+    width: 250px;
+    display: flex;
+    justify-content: space-between;
+    border-right: 1px solid $line;
+
+    .cover {
+      width: $box-pad * 2;
+      height: $box-pad * 2;
+      background-color: $white;
+    }
+
+    .info_cover {
+      font-size: 13px;
+      height: 45px;
+      background-color: $color_fond;
+      flex-direction: row;
+      display: flex;
+
+      .title_artist_name {
+        width: 125px;
+        height: 40px;
+        margin: 10px;
+
+        > div {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &:first-child {
+            margin-bottom: 5px;
+          }
+        }
+      }
+
+      .icon_comm {
+        margin: 14px 14px 14px 0;
+      }
+    }
   }
 
   .player {
-	width: 74%;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	.followers {
-	  display: flex;
-	  flex-direction: row;
-	  .icon_like, .icon_dislike, .icon_add {
-		margin: 14px 0 14px 14px;
-	  }
-	  .icon_like {
+    width: 74%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 
-	  }
-	  .icon_dislike {
+    .followers {
+      display: flex;
+      flex-direction: row;
 
-	  }
-	  .icon_add {
+      .icon_like, .icon_dislike, .icon_add {
+        margin: 14px 0 14px 14px;
+      }
+    }
 
-	  }
-	}
-	.play {
-	  display: flex;
-	  flex-direction: row;
-	  .icon_last, .icon_play, .icon_next {
-		margin: 14px 0 14px 14px;
-	  }
-	  .icon_last button {
-			width: 32px;
-			height: 25px;
-	  }
-	  .icon_play button {
-			width: 32px;
-			height: 25px;
-	  }
-	  .icon_next button {
-			width: 32px;
-			height: 25px;
-	  }
-	}
-	.order {
-	  display: flex;
-	  flex-direction: row;
-	  .icon_random, .icon_loop {
-		margin: 14px 0 14px 14px;
-	  }
-	  .icon_random {
+    .play {
+      display: flex;
+      flex-direction: row;
 
-	  }
-	  .icon_loop {
+      .icon_last, .icon_play, .icon_next {
+        margin: 14px 0 14px 14px;
+      }
+    }
 
-	  }
-	  .time {
-		margin: $box-pad/2;
-		line-height: $box-pad;
-	  }
-	}
+    .order {
+      display: flex;
+      flex-direction: row;
+
+      .icon_random, .icon_loop {
+        margin: 14px 0 14px 14px;
+      }
+
+      .time {
+        margin: $box-pad / 2;
+        line-height: $box-pad;
+      }
+    }
   }
 
   .current_listening {
-		width: 220px;
-		margin: $box-pad/2;
-		line-height: 30px;
+    width: 220px;
+    margin: $box-pad / 2;
+    line-height: 30px;
   }
 }
-

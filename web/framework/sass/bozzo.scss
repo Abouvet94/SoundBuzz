@@ -1,0 +1,112 @@
+.bozzo {
+  .container_artist_description, .container_top_ecoute {
+    margin: $box-pad 0;
+  }
+
+  .container_artist_description {
+    display: flex;
+    flex-direction: row;
+
+    .artist_description {
+      display: flex;
+      flex-direction: column;
+
+      .artist_info {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-end;
+
+        .button_h1 {
+          button {
+            @include button-base;
+
+            background: linear-gradient(to right, $flash_pink, $flash_red);
+            display: block;
+            margin-bottom: $box-pad / 2;
+
+            &:hover {
+              background: rgba($white, 0.1);
+            }
+          }
+
+          h1 {
+            font-size: $box-pad;
+            margin-bottom: $box-pad / 2;
+          }
+        }
+
+        .artist_share {
+          display: flex;
+          flex-direction: row;
+          margin-bottom: $box-pad / 2;
+          align-items: flex-end;
+
+          .icons {
+            margin: 0 5px;
+          }
+        }
+      }
+
+      p {
+        text-align: left;
+        font-size: $box-pad / 2;
+      }
+    }
+  }
+
+  .container_top_ecoute {
+    table {
+      width: 100%;
+
+      thead > tr > th, tbody > tr > td {
+        padding: $box-pad / 3.5;
+        border-bottom: 1px solid $color_text_secondary;
+        text-align: left;
+      }
+
+      thead {
+        tr {
+          th {
+            text-transform: uppercase;
+            color: $color_text_secondary;
+            font-size: $box-pad / 2.5;
+          }
+        }
+      }
+
+      tbody {
+        tr {
+          padding: 5px;
+
+          td {
+            font-size: ($box-pad / 2) !important;
+            padding: 0.4rem;
+            vertical-align: middle;
+
+            //&:first-child
+            // padding: 0
+            // margin: 5px
+            .icons {
+              @include size(22px);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .container_albums {
+    .item_album {
+      .big_cover {
+        width: 100px;
+        height: 100px;
+        background: $purple;
+      }
+      .text_album {
+
+      }
+    }
+
+  }
+}

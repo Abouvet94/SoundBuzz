@@ -43,7 +43,7 @@ function setup() {
       song.stop();
     }
     song = loadSound(
-      String(resulta), 
+      String("../"+resulta), 
       loaded,
       null,
       testSong

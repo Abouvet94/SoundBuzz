@@ -1,0 +1,53 @@
+.landings {
+  background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple);
+  height: 900px;
+  width: 100%;
+
+  .header {
+    ///background: linear-gradient(to right top, $white 50%, $turquoise 50%)
+    //background: radial-gradient(ellipse at center, $white 20%, $turquoise 100%)
+    //background: radial-gradient(ellipse at center, #ffffff 0%,#36b1ac 46%,#ffffff 100%)
+    //background: radial-gradient(ellipse at center, $white 20%, $turquoise 100%)
+    background: radial-gradient(ellipse at center, $white 20%, rgba($turquoise, 0.5) 100%);
+    width: 100%;
+    position: relative;
+    padding: 0;
+
+    //@media screen and (max-width: $break-sm)
+    // min-height: 80%
+    // padding: $box-pad*1.5 0
+    .image {
+      width: 50%;
+      height: auto;
+
+      @media screen and (max-width: $break-sm) {
+        width: 100%;
+      }
+    }
+
+    //.text
+    // text-align: center
+    // @media screen and (max-width: $break-sm)
+    //     padding: 0 30px
+    // h1
+    //     font-size: 35px
+    // h2
+    //     font-size: 25px
+    //.btn_mid
+    // width: 100%
+    // .btn_w
+    //     background-color: $turquoise
+    //     border: solid 1px $turquoise
+    //     color: $white
+    //     width: $box-pad*7
+    //     &:hover
+    //         border: solid 1px $white
+    //         background-color: transparent
+    //         color: $white
+    //         a
+    //             color: $white
+ 
+  }
+
+  section {}
+}

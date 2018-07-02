@@ -1,0 +1,302 @@
+.about_us {
+  .formulaire {
+    padding: ($box-pad * 3) ($box-pad / 2);
+    background-color: $turquoise;
+
+    @media screen and (max-width: $break-sm) {
+      width: auto;
+      padding: ($box-pad / 2) 0;
+    }
+
+    .main-content {
+      //flex: 1 auto
+      //padding: $box-pad*1.5 $box-pad
+      color: $white;
+      background-color: transparent;
+      width: 50%;
+
+      //margin: $box-pad/1.5
+      @media screen and (max-width: $break-sm) {
+        margin: $box-pad 0 0 0;
+        width: 85%;
+        padding: $box-pad;
+
+        // form specific formatting
+      }
+
+      h4 {
+        font-size: $box-pad / 1.5;
+        margin-bottom: $box-pad;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+
+        @media screen and (max-width: $break-sm) {
+          flex-direction: column;
+          align-items: initial;
+        }
+
+        label {
+          display: block;
+          width: 130px;
+          font-size: 1em;
+          margin-bottom: $box-pad / 1.5 + 3px;
+          padding-right: $box-pad / 1.5;
+          text-align: right;
+
+          @media screen and (max-width: $break-sm) {
+            text-align: left;
+            width: auto;
+            padding: 0;
+          }
+        }
+
+        .right-inline {
+          text-align: right;
+          width: auto;
+
+          @media screen and (max-width: $break-sm) {
+            text-align: left;
+            padding-right: 0;
+            padding-left: 0;
+          }
+        }
+
+        .input-control, .select-control, textarea {
+          background-color: $white;
+          flex: 4 auto;
+          display: block;
+          margin-bottom: $box-pad / 1.5;
+          margin-right: 0;
+          padding: $box-pad / 1.5;
+          border: none;
+          font-size: $box-pad / 1.5;
+
+          &:hover {
+            background: rgba($white, 0.7);
+          }
+
+          @media screen and (max-width: $break-sm) {
+            margin-top: 2px;
+            margin-right: 0;
+          }
+        }
+
+        .select-control {
+          padding: $box-pad / 1.5;
+          height: 63px;
+        }
+
+        .btn_mid {
+          //margin: $box-pad/2 auto $box-pad auto
+          width: 100%;
+
+          // &:last-child
+          //     margin-bottom: 0
+          .btn_w {
+            height: $box-pad + 5px;
+            font-size: $box-pad / 2;
+            padding: 0px ($box-pad / 2);
+            border: solid 1px $white;
+            background: transparent;
+            color: $white;
+
+            @media screen and (max-width: $break-sm) {
+              margin-bottom: $box-pad / 2;
+            }
+
+            &:hover {
+              background-color: $white;
+              color: $turquoise;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .services {
+    padding: 0;
+
+    .image {
+      width: 80%;
+
+      @media screen and (max-width: $break-sm) {
+        width: 100%;
+      }
+    }
+
+    .container_text_vid {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      width: 80%;
+      margin: 0 auto;
+
+      @media screen and (max-width: $break-sm) {
+        flex-direction: column;
+        width: 100%;
+        margin: 0;
+      }
+
+      .text_e, .video_e {
+        width: 50%;
+        padding: $box-pad;
+
+        @media screen and (max-width: $break-sm) {
+          width: auto;
+          padding: $box-pad $box-pad 0 $box-pad;
+        }
+      }
+
+      .text_e {
+        text-align: left;
+      }
+    }
+  }
+
+  .rubriques_services {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 85%;
+    margin: 0 auto;
+
+    @media screen and (max-width: $break-sm) {
+      width: 100%;
+      margin: 0;
+    }
+
+    h3 {
+      width: 100%;
+      line-height: 33px;
+
+      @media screen and (max-width: $break-sm) {
+        margin: ($box-pad / 2) 0 !important;
+      }
+    }
+
+    .border_bottom {
+      height: 1px;
+      margin: 0 auto ($box-pad * 2) auto;
+      width: 30%;
+      background-color: $black;
+
+      @media screen and (max-width: $break-sm) {
+        width: 50%;
+        margin: 0 auto $box-pad;
+      }
+    }
+
+    .wrapper {
+      align-items: flex-start;
+      margin: 0;
+
+      // justify-content: space-around
+      // padding: 0 $box-pad*3
+      // display: initial
+   
+    }
+
+    h2 {
+      width: 100%;
+      margin-bottom: 40px;
+    }
+
+    .footer_description {
+      width: 25%;
+
+      //float: left
+      margin: ($box-pad / 2) ($box-pad * 1.5);
+
+      @media screen and (max-width: $break-sm) {
+        width: 40%;
+        margin: 0;
+        padding: ($box-pad / 2) ($box-pad / 2) 0 ($box-pad / 2);
+      }
+
+      .img_section_7, img {
+        width: 200px;
+        height: 200px;
+
+        @media screen and (max-width: $break-sm) {
+          width: 100px;
+          height: 100px;
+        }
+      }
+
+      &:hover {
+        @include transition(0.6s);
+
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+
+        //img
+        // width: 200px
+        // height: 200px
+        // @media screen and (max-width: $break-sm)
+        //     width: 100px
+        //     height: 100px
+     
+      }
+    }
+
+    .footer_description2 {
+      width: 15%;
+
+      //float: left
+      margin: ($box-pad / 2) ($box-pad * 1.5);
+
+      @media screen and (max-width: $break-sm) {
+        width: 40%;
+        margin: 0;
+        padding: ($box-pad / 2) ($box-pad / 2) 0 ($box-pad / 2);
+      }
+
+      .img_section_7 {
+        width: 150px;
+        height: 150px;
+
+        @media screen and (max-width: $break-sm) {
+          width: 100px;
+          height: 100px;
+        }
+
+        img {
+          width: 130px;
+          height: 130px;
+
+          @media screen and (max-width: $break-sm) {
+            width: 100px;
+            height: 100px;
+          }
+        }
+      }
+
+      h3 {
+        margin-bottom: $box-pad / 2;
+      }
+    }
+
+    .footer_description, .footer_description2 {
+      .img_section_7 {
+        margin: 0 auto;
+      }
+
+      .description {
+        font-size: 15px;
+        line-height: 1.5;
+      }
+    }
+
+    //@media screen and (max-width: $break-sm)
+    // .footer_description
+    //     width: 100%
+    // .btn_s
+    //     margin: 10px auto 0px auto
+ 
+  }
+}
