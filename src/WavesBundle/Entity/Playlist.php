@@ -55,6 +55,13 @@ class Playlist
     */
     private $all_temp;
 
+    /**
+    * @ORM\Column(name="image", type="string", length=255, nullable=true)
+    */
+    private $image;
+
+
+
     //Getter Setter
 
     /**
@@ -171,5 +178,21 @@ class Playlist
     public function setAllTemp($all_temp)
     {
         $this->all_temp = $all_temp;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getImage()
+    {
+        return $this->image;
+    }
+
+    /**
+    * @param mixed $image
+    */
+    public function setImage($image)
+    {
+        $this->image = $image;
     }
 }

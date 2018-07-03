@@ -46,9 +46,9 @@
 
             {% if is_granted("IS_AUTHENTICATED_FULLY") %}
 
-                        <article class="main-content">
+            <article class="main-content">
 
-            <h2>Ajouter une musique</h2>
+                <h2>Ajouter une musique</h2>
                 <div class="border-bottom"></div>
 
                 <div class="form-group">
@@ -955,24 +955,24 @@
 
         <div class="player">
             <div class="followers">
-                <div class="icons icon_like"><button id="icon_like"></button></div>
-                <div class="icons icon_dislike"><button id="icon_dislike"></button></div>
-                <div class="icons icon_add"><button type="image" id="icon_add" /></div>
+                <div class="icons icon_like"><button id="icon_like"class="control" onclick="LikeMusic('audio_a', this);" /></div>
+                <div class="icons icon_dislike"><button id="icon_dislike"class="control" onclick="DislikeMusic('audio_a', this);" /></div>
+                <div class="icons icon_add"><button id="icon_add" class="control" onclick="AddMusic('audio_a', this);" /></div>
             </div>
 
-            {#<div id="progressBarControl">
+            <div id="progressBarControl">
                 <div id="progressBar" onclick="clickProgress('audio_a', this, event)"></div>
-            </div>#}
+            </div>
 
             <div id="Play_Button" class="play">
-                <div class="icons icon_last"><button id="icon_last"></button></div>
-                <div class="icons icon_play"><button id="icon_play" class="control" onclick="play('audio_a', this)" /></div>
-                <div class="icons icon_next"><button id="icon_next"></button></div>
+                <div class="icons icon_last"><button id="icon_last" class="control" onclick="PreMusic('audio_a', this);" /></div>
+                <div class="icons icon_play"><button id="icon_play" class="control" onclick="play('audio_a', this);" /></div>
+                <div class="icons icon_next"><button id="icon_next" class="control" onclick="NextMusic('audio_a', this);" /></div>
             </div>
 
             <div class="order">
-                <div class="icons icon_random"><button id="icon_random"></button></div>
-                <div class="icons icon_loop"><button id="icon_loop"></button></div>
+                <div class="icons icon_random"><button id="icon_random" onclick="RandomMusic('audio_a', this);" /></div>
+                <div class="icons icon_loop"><button id="icon_loop" onclick="BoucleMusic('audio_a', this);" /></div>
 
                 <div id="progressTime" class="time"></div>
 
@@ -1084,7 +1084,6 @@ var playliste_music = [];
             });
         }
     }
-
 </script>
 <script src="{{ asset('framework/js/p5/radialsound.js') }}"></script>
 <script type="text/javascript" src="{{ asset('framework/js/ajax.js') }}"></script>

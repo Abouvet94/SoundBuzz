@@ -14,7 +14,9 @@
         {# Scripts  #}
         <script type="text/javascript" src="{{ asset('framework/js/p5/p5.js') }}"></script>  
             <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.1/addons/p5.dom.js"></script>
-        <script type="text/javascript" src="{{ asset('framework/js/p5/p5.sound.js') }}"></script>            
+        <script type="text/javascript" src="{{ asset('framework/js/p5/p5.sound.js') }}"></script>  
+                {# Script Player #}
+        <script type="text/javascript" src="{{ asset('framework/js/player.js') }}"></script>          
         {% endblock %}
     </head>
     <body>
@@ -24,8 +26,7 @@
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script type="text/javascript" src="{{ asset('framework/js/function.js') }}"></script>
 
-        {# Script Player #}
-        <script type="text/javascript" src="{{ asset('framework/js/player.js') }}"></script>
+
         {% endblock %}
     </body>
 </html>

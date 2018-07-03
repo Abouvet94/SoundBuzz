@@ -25,6 +25,60 @@ function play(idPlayer, control) {
     }
 }
 
+function Returnrest(playliste_music) {
+    oldsound = String("../"+resulta);
+    return playliste_music === oldsound;
+}
+
+
+function NextMusic(idPlayer, control) {
+    
+    //console.log(oldsound);
+    // var player = document.querySelector('#' + idPlayer);
+    // console.log(player.src);
+    //next = playliste_music[($.inArray(oldsound, playliste_music) + 1) % playliste_music.length];
+    //next =  playliste_music[playliste_music.length - 1]
+    next = playliste_music.find(Returnrest);
+    console.log(next);
+    // next = next.replace('../', "");
+    // resulta = next;
+    // console.log(resulta);
+    // setup(resulta);
+}
+
+function PreMusic(idPlayer, control){
+    var player = document.querySelector('#' + idPlayer);
+    consoletext('premusic');
+
+}
+
+function BoucleMusic(idPlayer, control){
+    var player = document.querySelector('#' + idPlayer);
+    consoletext('bouclemusic');
+}
+
+function RandomMusic(idPlayer, control){
+    var player = document.querySelector('#' + idPlayer);
+    consoletext('randommusic');
+}
+
+function LikeMusic(idPlayer, control){
+    var player = document.querySelector('#' + idPlayer);
+    consoletext('LikeMusic');
+}
+
+function DislikeMusic(idPlayer, control){
+    var player = document.querySelector('#' + idPlayer);
+    consoletext('DislikeMusic');
+}
+
+function AddMusic(idPlayer, control){
+    var player = document.querySelector('#' + idPlayer);
+    consoletext('AddMusic');
+}
+
+
+
 function resume(idPlayer) {
     var player = document.querySelector('#' + idPlayer);
 

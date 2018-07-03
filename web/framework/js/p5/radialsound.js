@@ -42,6 +42,8 @@ function setup() {
     if( flag === true ){
       song.stop();
     }
+    //resulta = resulta.replace(/../i, '');
+    //console.log(resulta);
     song = loadSound(
       String(resulta), 
       loaded,
@@ -52,7 +54,7 @@ function setup() {
     createCanvas(800, 600);
     angleMode(DEGREES);
     //défillement auto
-    // if( song ){
+    // if( song.isPlaying() === false ){
     //   song.onended(myCallback);
     // }
     //Récupération de l'amplitude
@@ -78,6 +80,7 @@ var sound,
 
           resulta = playliste_music[0];
           console.log(resulta);
+          setup();
           //resulta = playliste_music.first();
        }
 
