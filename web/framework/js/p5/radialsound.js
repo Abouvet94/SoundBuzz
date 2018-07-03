@@ -10,8 +10,8 @@ var music, Tmusic;
 
 
 //Récupération de la Source du Son
-$('#Playlist_all_pages').each(function(){
-  Playlist_all_pages.onclick = function(e) {
+$('#Playlist_pages table tbody').each(function(){
+  tab_music.onclick = function(e) {
     e.preventDefault();
     var elm = e.target, 
     audio = document.getElementById('audio_a'), 
@@ -43,7 +43,7 @@ function setup() {
       song.stop();
     }
     song = loadSound(
-      String("../"+resulta), 
+      String(resulta), 
       loaded,
       null,
       testSong
