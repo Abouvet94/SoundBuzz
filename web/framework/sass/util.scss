@@ -10,3 +10,79 @@
     flex-direction: column;
   }
 }
+
+.icons {
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+
+.icon_comm {
+  background-image: url(../images/icon_comm.svg);
+  &:hover {
+    background-image: url(../images/icon_comm_hover.svg);
+  }
+}
+
+.icon_like {
+  background-image: url(../images/icon_like.svg);
+  &:hover {
+    background-image: url(../images/icon_like_hover.svg);
+  }
+}
+
+.icon_dislike {
+   background-image: url(../images/icon_dislike.svg);
+   &:hover {
+     background-image: url(../images/icon_dislike_hover.svg);
+   }
+ }
+
+.icon_add {
+  background-image: url(../images/icon_add.svg);
+  &:hover {
+    background-image: url(../images/icon_add_hover.svg);
+  }
+}
+
+.icon_last {
+  background-image: url(../images/icon_last.svg);
+  &:hover {
+    background-image: url(../images/icon_last_hover.svg);
+  }
+}
+
+.icon_play {
+  background-image: url(../images/icon_play.svg);
+  &:hover {
+    background-image: url(../images/icon_play_hover.svg);
+  }
+}
+
+.icon_next {
+  background-image: url(../images/icon_next.svg);
+  &:hover {
+    background-image: url(../images/icon_next_hover.svg);
+  }
+}
+
+.icon_random {
+  background-image: url(../images/icon_random.svg);
+  &:hover {
+    background-image: url(../images/icon_random_hover.svg);
+  }
+}
+
+.icon_loop {
+  background-image: url(../images/icon_loop.svg);
+  &:hover {
+    background-image: url(../images/icon_loop_hover.svg);
+  }
+}
+
+.icon_more {
+  background-image: url(../images/icon_more.svg);
+  &:hover {
+    background-image: url(../images/icon_more_hover.svg);
+  }
+}
