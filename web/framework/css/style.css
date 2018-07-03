@@ -1976,13 +1976,61 @@ table {
   border-radius: 50px;
   border: none;
   letter-spacing: 0.7px;
-  width: 150px;
+  width: 180px;
+  height: 60px;
+  font-size: 20px;
+}
+.app section .container_styles_buttons .styles_buttons .button_folk:hover, .app section .container_styles_buttons .styles_buttons .button_dance:hover, .app section .container_styles_buttons .styles_buttons .button_electro:hover, .app section .container_styles_buttons .styles_buttons .button_metal:hover, .app section .container_styles_buttons .styles_buttons .button_rock:hover, .app section .container_styles_buttons .styles_buttons .button_pop:hover, .app section .container_styles_buttons .styles_buttons .button_reggae:hover, .app section .container_styles_buttons .styles_buttons .button_rnb:hover, .app section .container_styles_buttons .styles_buttons .button_rap:hover, .app section .container_styles_buttons .styles_buttons .button_internat:hover, .app section .container_styles_buttons .styles_buttons .button_variete:hover, .app section .container_styles_buttons .styles_buttons .button_classique:hover, .app section .container_styles_buttons .styles_buttons .button_jazz:hover, .app section .container_styles_buttons .styles_buttons .button_soul:hover, .app section .container_styles_buttons .styles_buttons .button_blues:hover, .app section .container_styles_buttons .styles_buttons .button_autres:hover {
+  background: rgba(255, 255, 255, 0.1);
 }
 .app section .container_styles_buttons .styles_buttons .button_folk {
+  background: linear-gradient(to right, #53af32, #007bc4);
+}
+.app section .container_styles_buttons .styles_buttons .button_dance {
+  background: linear-gradient(to right, #007bc4, #362784);
+}
+.app section .container_styles_buttons .styles_buttons .button_electro {
+  background: linear-gradient(to right, #0051a0, #651e82);
+}
+.app section .container_styles_buttons .styles_buttons .button_metal {
+  background: linear-gradient(to right, #502988, #b6107f);
+}
+.app section .container_styles_buttons .styles_buttons .button_rock {
+  background: linear-gradient(to right, #841c83, #e6007d);
+}
+.app section .container_styles_buttons .styles_buttons .button_pop {
+  background: linear-gradient(to right, #b6107f, #e60060);
+}
+.app section .container_styles_buttons .styles_buttons .button_reggae {
   background: linear-gradient(to right, #e6007d, #e4003b);
 }
-.app section .container_styles_buttons .styles_buttons .button_folk:hover {
-  background: rgba(255, 255, 255, 0.1);
+.app section .container_styles_buttons .styles_buttons .button_rnb {
+  background: linear-gradient(to right, #e60060, #e41d13);
+}
+.app section .container_styles_buttons .styles_buttons .button_rap {
+  background: linear-gradient(to right, #e4003b, #ee7402);
+}
+.app section .container_styles_buttons .styles_buttons .button_internat {
+  background: linear-gradient(to right, #ee7402, #fbbb00);
+}
+.app section .container_styles_buttons .styles_buttons .button_variete {
+  background: linear-gradient(to right, #fbbb00, #ffec00);
+}
+.app section .container_styles_buttons .styles_buttons .button_classique {
+  background: linear-gradient(to right, #ffec00, #b0ce00);
+}
+.app section .container_styles_buttons .styles_buttons .button_jazz {
+  background: linear-gradient(to right, #b0ce00, #53af32);
+}
+.app section .container_styles_buttons .styles_buttons .button_soul {
+  background: linear-gradient(to right, #53af32, #006a06);
+}
+.app section .container_styles_buttons .styles_buttons .button_blues {
+  background: linear-gradient(to right, #006a06, #004bc4);
+}
+.app section .container_styles_buttons .styles_buttons .button_autres {
+  width: auto;
+  background: linear-gradient(to right, #e6007d, #e4003b);
 }
 #corp_section {
   width: 100%;
