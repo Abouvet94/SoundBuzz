@@ -11,11 +11,11 @@
     margin: 0 ($box-pad / 2) ($box-pad / 2) 0;
   }
 
-  .icons {
+  /*.icons {
     width: 30px;
     height: 30px;
     background-color: $purple;
-  }
+  }*/
 
   section {
     width: 100%;
@@ -44,11 +44,12 @@
       width: 100%;
 	  thead > tr > th, tbody > tr > td {
 		padding: $box-pad/3.5;
-		border-bottom: 1px solid $color_text_secondary;
+		//border-bottom: 1px solid $color_text_secondary;
 		text-align: left;
 	  }
 	  thead {
 		tr {
+		  border-bottom: 1px solid $color_text_secondary;
 		  th {
 			text-transform: uppercase;
 			color: $color_text_secondary;
@@ -58,10 +59,20 @@
 		tbody {
 		  tr {
 			padding: 5px;
+			&:hover {
+			  background: rgba(0, 0, 0, 0.3);
+			}
+
+			&:nth-child(odd) {
+			  background: #252525;
+			}
 			td {
 			  font-size: $box-pad/2 !important;
 			  padding: .4rem;
 			  vertical-align: middle;
+			  &:first-child, &:nth-child(2) {
+				 width: 35px;
+			   }
 			}
 		  }
 		}

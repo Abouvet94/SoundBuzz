@@ -10,15 +10,22 @@
   justify-content: space-between;
   position: fixed;
 
+  .icons {
+    padding: 14px;
+    width: 30px;
+    height: 30px;
+    background-size: 30px;
+  }
+
   .cover_info {
     width: 250px;
     display: flex;
     justify-content: space-between;
     border-right: 1px solid $line;
+    height: 100%;
 
     .cover {
-      width: $box-pad * 2;
-      height: $box-pad * 2;
+      @include size($box-pad*2);
       background-color: $white;
     }
 
@@ -30,7 +37,7 @@
       display: flex;
 
       .title_artist_name {
-        width: 125px;
+        width: 112px;
         height: 40px;
         margin: 10px;
 
@@ -45,43 +52,167 @@
         }
       }
 
-      .icon_comm {
-        margin: 14px 14px 14px 0;
+      button, input[type='button'], input[type='submit'] {
+        border-radius: 2px;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+        background: transparent;
+        border: 0;
+        color: #444;
+        margin-bottom: 0px;
+        @include size($box-pad);
+        font-size: 12px;
+        cursor: pointer;
+        padding: 0;
+      }
+
+      button:hover, input[type='button']:hover, input[type='submit']:hover {
+        color: #222;
       }
     }
   }
 
   .player {
-    width: 74%;
+    width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 
+    #divPlayer {
+      width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+      border: 1px solid #aaa;
+      border-radius: 2px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-top: 50px;
+    }
+
+    h1 {
+      font-size: 17px;
+      line-height: 30px;
+      margin: 0;
+      padding: 0;
+      margin-bottom: 25px;
+      border-bottom: #000 1px solid;
+    }
+
+    button, input[type='button'], input[type='submit'] {
+      border-radius: 2px;
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      background: transparent;
+      border: 0;
+      color: #444;
+      margin-bottom: 0px;
+      @include size($box-pad);
+      font-size: 12px;
+      cursor: pointer;
+      padding: 0;
+    }
+
+    button:hover, input[type='button']:hover, input[type='submit']:hover {
+      color: #222;
+    }
+
+    .control {
+      width: 78px;
+    }
+
+    #progressBarControl {
+      width: 100%;
+      height: 15px;
+      /* border: 1px solid #aaa;
+	  border-radius: 2px; */
+      box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.1);
+      margin-bottom: 5px;
+      display: inline-block;
+    }
+
+    #progressBar {
+      width: 0px;
+      background: #ff00ff;
+      height: 15px;
+      text-align: right;
+      line-height: 15px;
+      font-size: 9px;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    #progressTime {
+      font-size: 10px;
+      color: #666;
+    }
+
+    .volume {
+      vertical-align: bottom;
+      display: inline-block;
+      @include size(45px, 25px);
+      white-space: nowrap;
+      position: relative;
+      margin: 15px;
+    }
+
+    .volume a {
+      display: inline-block;
+      background: #ebebeb;
+      width: 8px;
+      vertical-align: bottom;
+      margin-left: 0px;
+      margin-right: 0px;
+      cursor: pointer;
+      border-left: 1px solid #fff;
+      position: absolute;
+      bottom: 0;
+    }
+
+
+    .stick1 { height: 5px;  left: 0px; }
+    .stick2 { height: 10px; left: 9px; }
+    .stick3 { height: 15px; left: 18px; }
+    .stick4 { height: 20px; left: 27px; }
+    .stick5 { height: 25px; left: 36px; }
+
+    footer {
+      display: block;
+      font-size: 12px;
+      color: #999;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      padding: 10px;
+    }
+
+    footer a {
+      color: #999;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: #666;
+      text-decoration: none;
+    }
+
+    #btn_play {
+      background-image: url("../images/icon_play.svg");
+      height: 42px ;
+      width: 42px;
+
+    }
+
     .followers {
       display: flex;
       flex-direction: row;
-
-      .icon_like, .icon_dislike, .icon_add {
-        margin: 14px 0 14px 14px;
-      }
     }
 
     .play {
       display: flex;
       flex-direction: row;
-
-      .icon_last, .icon_play, .icon_next {
-        margin: 14px 0 14px 14px;
-      }
     }
 
     .order {
       display: flex;
       flex-direction: row;
-
-      .icon_random, .icon_loop {
-        margin: 14px 0 14px 14px;
-      }
 
       .time {
         margin: $box-pad / 2;
@@ -91,7 +222,7 @@
   }
 
   .current_listening {
-    width: 220px;
+    width: 381px;
     margin: $box-pad / 2;
     line-height: 30px;
   }
