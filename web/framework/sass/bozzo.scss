@@ -1,9 +1,8 @@
-.bozzo {
-  .container_artist_description, .container_top_ecoute {
-    margin: $box-pad 0;
+.bozzo, .decouverte, .music_styles, .playlists, .playlist {
+  .container_description, .container_top_ecoute, .container_albums, .container_playlist_avec_artiste, .container_commentaires, .container_artist, .container_styles {
+    margin-bottom: $box-pad*3;
   }
-
-  .container_artist_description {
+  .container_description {
     display: flex;
     flex-direction: row;
 
@@ -51,6 +50,7 @@
       p {
         text-align: left;
         font-size: $box-pad / 2;
+        line-height: 23px;
       }
     }
   }
@@ -97,16 +97,45 @@
   }
 
   .container_albums {
-    .item_album {
-      .big_cover {
-        width: 100px;
-        height: 100px;
-        background: $purple;
-      }
-      .text_album {
-
+    .container_items_album {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .item_album {
+        width: 180px;
+        margin: 0 $box-pad/2 $box-pad*2 0;
+        .big_cover {
+          margin-bottom: $box-pad/2;
+        }
+        .text_album {
+          .border-bottom {
+            margin-top: $box-pad/2;
+          }
+        }
       }
     }
+  }
 
+  .container_artist {
+    .container_items_artistes {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      .item_artiste {
+        width: 180px;
+        margin: 0 $box-pad/2 $box-pad*2 0;
+        .big_cover {
+          margin-bottom: $box-pad/2;
+          border-radius: $box-pad/1.5;
+        }
+        .text_album {
+          .border-bottom {
+            margin-top: $box-pad/2;
+          }
+        }
+      }
+    }
   }
 }

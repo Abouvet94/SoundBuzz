@@ -8,6 +8,32 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
   font: inherit;
   vertical-align: baseline;
 }
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  vertical-align: baseline;
+}
 article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
   display: block;
 }
@@ -1894,8 +1920,7 @@ table {
   background-color: #955ba5;
 }
 .app section {
-  width: 71%;
-  padding: 0px 15px;
+  width: 100%;
 }
 .app section h2 {
   font-size: 30px;
@@ -1906,6 +1931,110 @@ table {
   margin-bottom: 15px;
   height: 1px;
   background: linear-gradient(to right, #f39865, #cc83ae, #7f74b4);
+}
+.app section table {
+  width: 100%;
+}
+.app section table thead > tr > th, .app section table tbody > tr > td {
+  padding: 8.5714285714px;
+  border-bottom: 1px solid #666;
+  text-align: left;
+}
+.app section table thead tr th {
+  text-transform: uppercase;
+  color: #666;
+  font-size: 12px;
+}
+.app section table thead tbody tr {
+  padding: 5px;
+}
+.app section table thead tbody tr td {
+  font-size: 15px !important;
+  padding: 0.4rem;
+  vertical-align: middle;
+}
+.app section .container_styles_buttons {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.app section .container_styles_buttons .styles_buttons {
+  width: 25%;
+  text-align: center;
+  margin: 15px 0;
+}
+.app section .container_styles_buttons .styles_buttons button {
+  text-transform: uppercase;
+  height: 35px;
+  line-height: 35px;
+  cursor: pointer;
+  margin: auto;
+  padding: 0px 30px;
+  font-size: 15px;
+  font-weight: 300;
+  color: #fff;
+  border-radius: 50px;
+  border: none;
+  letter-spacing: 0.7px;
+  width: 180px;
+  height: 60px;
+  font-size: 20px;
+}
+.app section .container_styles_buttons .styles_buttons .button_folk:hover, .app section .container_styles_buttons .styles_buttons .button_dance:hover, .app section .container_styles_buttons .styles_buttons .button_electro:hover, .app section .container_styles_buttons .styles_buttons .button_metal:hover, .app section .container_styles_buttons .styles_buttons .button_rock:hover, .app section .container_styles_buttons .styles_buttons .button_pop:hover, .app section .container_styles_buttons .styles_buttons .button_reggae:hover, .app section .container_styles_buttons .styles_buttons .button_rnb:hover, .app section .container_styles_buttons .styles_buttons .button_rap:hover, .app section .container_styles_buttons .styles_buttons .button_internat:hover, .app section .container_styles_buttons .styles_buttons .button_variete:hover, .app section .container_styles_buttons .styles_buttons .button_classique:hover, .app section .container_styles_buttons .styles_buttons .button_jazz:hover, .app section .container_styles_buttons .styles_buttons .button_soul:hover, .app section .container_styles_buttons .styles_buttons .button_blues:hover, .app section .container_styles_buttons .styles_buttons .button_autres:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.app section .container_styles_buttons .styles_buttons .button_folk {
+  background: linear-gradient(to right, #53af32, #007bc4);
+}
+.app section .container_styles_buttons .styles_buttons .button_dance {
+  background: linear-gradient(to right, #007bc4, #362784);
+}
+.app section .container_styles_buttons .styles_buttons .button_electro {
+  background: linear-gradient(to right, #0051a0, #651e82);
+}
+.app section .container_styles_buttons .styles_buttons .button_metal {
+  background: linear-gradient(to right, #502988, #b6107f);
+}
+.app section .container_styles_buttons .styles_buttons .button_rock {
+  background: linear-gradient(to right, #841c83, #e6007d);
+}
+.app section .container_styles_buttons .styles_buttons .button_pop {
+  background: linear-gradient(to right, #b6107f, #e60060);
+}
+.app section .container_styles_buttons .styles_buttons .button_reggae {
+  background: linear-gradient(to right, #e6007d, #e4003b);
+}
+.app section .container_styles_buttons .styles_buttons .button_rnb {
+  background: linear-gradient(to right, #e60060, #e41d13);
+}
+.app section .container_styles_buttons .styles_buttons .button_rap {
+  background: linear-gradient(to right, #e4003b, #ee7402);
+}
+.app section .container_styles_buttons .styles_buttons .button_internat {
+  background: linear-gradient(to right, #ee7402, #fbbb00);
+}
+.app section .container_styles_buttons .styles_buttons .button_variete {
+  background: linear-gradient(to right, #fbbb00, #ffec00);
+}
+.app section .container_styles_buttons .styles_buttons .button_classique {
+  background: linear-gradient(to right, #ffec00, #b0ce00);
+}
+.app section .container_styles_buttons .styles_buttons .button_jazz {
+  background: linear-gradient(to right, #b0ce00, #53af32);
+}
+.app section .container_styles_buttons .styles_buttons .button_soul {
+  background: linear-gradient(to right, #53af32, #006a06);
+}
+.app section .container_styles_buttons .styles_buttons .button_blues {
+  background: linear-gradient(to right, #006a06, #004bc4);
+}
+.app section .container_styles_buttons .styles_buttons .button_autres {
+  width: auto;
+  background: linear-gradient(to right, #e6007d, #e4003b);
+}
+#corp_section {
+  width: 100%;
+  padding: 30px;
 }
 .music_styles .container_styles_buttons {
   display: flex;
@@ -2021,24 +2150,24 @@ table {
 .music_styles .container_styles_buttons .styles_buttons .button_blues:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.bozzo .container_artist_description, .bozzo .container_top_ecoute {
-  margin: 30px 0;
+.bozzo .container_description, .decouverte .container_description, .music_styles .container_description, .playlists .container_description, .playlist .container_description, .bozzo .container_top_ecoute, .decouverte .container_top_ecoute, .music_styles .container_top_ecoute, .playlists .container_top_ecoute, .playlist .container_top_ecoute, .bozzo .container_albums, .decouverte .container_albums, .music_styles .container_albums, .playlists .container_albums, .playlist .container_albums, .bozzo .container_playlist_avec_artiste, .decouverte .container_playlist_avec_artiste, .music_styles .container_playlist_avec_artiste, .playlists .container_playlist_avec_artiste, .playlist .container_playlist_avec_artiste, .bozzo .container_commentaires, .decouverte .container_commentaires, .music_styles .container_commentaires, .playlists .container_commentaires, .playlist .container_commentaires, .bozzo .container_artist, .decouverte .container_artist, .music_styles .container_artist, .playlists .container_artist, .playlist .container_artist, .bozzo .container_styles, .decouverte .container_styles, .music_styles .container_styles, .playlists .container_styles, .playlist .container_styles {
+  margin-bottom: 90px;
 }
-.bozzo .container_artist_description {
+.bozzo .container_description, .decouverte .container_description, .music_styles .container_description, .playlists .container_description, .playlist .container_description {
   display: flex;
   flex-direction: row;
 }
-.bozzo .container_artist_description .artist_description {
+.bozzo .container_description .artist_description, .decouverte .container_description .artist_description, .music_styles .container_description .artist_description, .playlists .container_description .artist_description, .playlist .container_description .artist_description {
   display: flex;
   flex-direction: column;
 }
-.bozzo .container_artist_description .artist_description .artist_info {
+.bozzo .container_description .artist_description .artist_info, .decouverte .container_description .artist_description .artist_info, .music_styles .container_description .artist_description .artist_info, .playlists .container_description .artist_description .artist_info, .playlist .container_description .artist_description .artist_info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 }
-.bozzo .container_artist_description .artist_description .artist_info .button_h1 button {
+.bozzo .container_description .artist_description .artist_info .button_h1 button, .decouverte .container_description .artist_description .artist_info .button_h1 button, .music_styles .container_description .artist_description .artist_info .button_h1 button, .playlists .container_description .artist_description .artist_info .button_h1 button, .playlist .container_description .artist_description .artist_info .button_h1 button {
   text-transform: uppercase;
   height: 35px;
   line-height: 35px;
@@ -2055,57 +2184,172 @@ table {
   display: block;
   margin-bottom: 15px;
 }
-.bozzo .container_artist_description .artist_description .artist_info .button_h1 button:hover {
+.bozzo .container_description .artist_description .artist_info .button_h1 button:hover, .decouverte .container_description .artist_description .artist_info .button_h1 button:hover, .music_styles .container_description .artist_description .artist_info .button_h1 button:hover, .playlists .container_description .artist_description .artist_info .button_h1 button:hover, .playlist .container_description .artist_description .artist_info .button_h1 button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.bozzo .container_artist_description .artist_description .artist_info .button_h1 h1 {
+.bozzo .container_description .artist_description .artist_info .button_h1 h1, .decouverte .container_description .artist_description .artist_info .button_h1 h1, .music_styles .container_description .artist_description .artist_info .button_h1 h1, .playlists .container_description .artist_description .artist_info .button_h1 h1, .playlist .container_description .artist_description .artist_info .button_h1 h1 {
   font-size: 30px;
   margin-bottom: 15px;
 }
-.bozzo .container_artist_description .artist_description .artist_info .artist_share {
+.bozzo .container_description .artist_description .artist_info .artist_share, .decouverte .container_description .artist_description .artist_info .artist_share, .music_styles .container_description .artist_description .artist_info .artist_share, .playlists .container_description .artist_description .artist_info .artist_share, .playlist .container_description .artist_description .artist_info .artist_share {
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
   align-items: flex-end;
 }
-.bozzo .container_artist_description .artist_description .artist_info .artist_share .icons {
+.bozzo .container_description .artist_description .artist_info .artist_share .icons, .decouverte .container_description .artist_description .artist_info .artist_share .icons, .music_styles .container_description .artist_description .artist_info .artist_share .icons, .playlists .container_description .artist_description .artist_info .artist_share .icons, .playlist .container_description .artist_description .artist_info .artist_share .icons {
   margin: 0 5px;
 }
-.bozzo .container_artist_description .artist_description p {
+.bozzo .container_description .artist_description p, .decouverte .container_description .artist_description p, .music_styles .container_description .artist_description p, .playlists .container_description .artist_description p, .playlist .container_description .artist_description p {
   text-align: left;
   font-size: 15px;
+  line-height: 23px;
 }
-.bozzo .container_top_ecoute table {
+.bozzo .container_top_ecoute table, .decouverte .container_top_ecoute table, .music_styles .container_top_ecoute table, .playlists .container_top_ecoute table, .playlist .container_top_ecoute table {
   width: 100%;
 }
-.bozzo .container_top_ecoute table thead > tr > th, .bozzo .container_top_ecoute table tbody > tr > td {
+.bozzo .container_top_ecoute table thead > tr > th, .decouverte .container_top_ecoute table thead > tr > th, .music_styles .container_top_ecoute table thead > tr > th, .playlists .container_top_ecoute table thead > tr > th, .playlist .container_top_ecoute table thead > tr > th, .bozzo .container_top_ecoute table tbody > tr > td, .decouverte .container_top_ecoute table tbody > tr > td, .music_styles .container_top_ecoute table tbody > tr > td, .playlists .container_top_ecoute table tbody > tr > td, .playlist .container_top_ecoute table tbody > tr > td {
   padding: 8.5714285714px;
   border-bottom: 1px solid #666;
   text-align: left;
 }
-.bozzo .container_top_ecoute table thead tr th {
+.bozzo .container_top_ecoute table thead tr th, .decouverte .container_top_ecoute table thead tr th, .music_styles .container_top_ecoute table thead tr th, .playlists .container_top_ecoute table thead tr th, .playlist .container_top_ecoute table thead tr th {
   text-transform: uppercase;
   color: #666;
   font-size: 12px;
 }
-.bozzo .container_top_ecoute table tbody tr {
+.bozzo .container_top_ecoute table tbody tr, .decouverte .container_top_ecoute table tbody tr, .music_styles .container_top_ecoute table tbody tr, .playlists .container_top_ecoute table tbody tr, .playlist .container_top_ecoute table tbody tr {
   padding: 5px;
 }
-.bozzo .container_top_ecoute table tbody tr td {
+.bozzo .container_top_ecoute table tbody tr td, .decouverte .container_top_ecoute table tbody tr td, .music_styles .container_top_ecoute table tbody tr td, .playlists .container_top_ecoute table tbody tr td, .playlist .container_top_ecoute table tbody tr td {
   font-size: 15px !important;
   padding: 0.4rem;
   vertical-align: middle;
 }
-.bozzo .container_top_ecoute table tbody tr td .icons {
+.bozzo .container_top_ecoute table tbody tr td .icons, .decouverte .container_top_ecoute table tbody tr td .icons, .music_styles .container_top_ecoute table tbody tr td .icons, .playlists .container_top_ecoute table tbody tr td .icons, .playlist .container_top_ecoute table tbody tr td .icons {
   min-width: 22px;
   min-height: 22px;
   max-width: 22px;
   max-height: 22px;
 }
-.bozzo .container_albums .item_album .big_cover {
-  width: 100px;
-  height: 100px;
-  background: #955ba5;
+.bozzo .container_albums .container_items_album, .decouverte .container_albums .container_items_album, .music_styles .container_albums .container_items_album, .playlists .container_albums .container_items_album, .playlist .container_albums .container_items_album {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.bozzo .container_albums .container_items_album .item_album, .decouverte .container_albums .container_items_album .item_album, .music_styles .container_albums .container_items_album .item_album, .playlists .container_albums .container_items_album .item_album, .playlist .container_albums .container_items_album .item_album {
+  width: 180px;
+  margin: 0 15px 60px 0;
+}
+.bozzo .container_albums .container_items_album .item_album .big_cover, .decouverte .container_albums .container_items_album .item_album .big_cover, .music_styles .container_albums .container_items_album .item_album .big_cover, .playlists .container_albums .container_items_album .item_album .big_cover, .playlist .container_albums .container_items_album .item_album .big_cover {
+  margin-bottom: 15px;
+}
+.bozzo .container_albums .container_items_album .item_album .text_album .border-bottom, .decouverte .container_albums .container_items_album .item_album .text_album .border-bottom, .music_styles .container_albums .container_items_album .item_album .text_album .border-bottom, .playlists .container_albums .container_items_album .item_album .text_album .border-bottom, .playlist .container_albums .container_items_album .item_album .text_album .border-bottom {
+  margin-top: 15px;
+}
+.bozzo .container_artist .container_items_artistes, .decouverte .container_artist .container_items_artistes, .music_styles .container_artist .container_items_artistes, .playlists .container_artist .container_items_artistes, .playlist .container_artist .container_items_artistes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.bozzo .container_artist .container_items_artistes .item_artiste, .decouverte .container_artist .container_items_artistes .item_artiste, .music_styles .container_artist .container_items_artistes .item_artiste, .playlists .container_artist .container_items_artistes .item_artiste, .playlist .container_artist .container_items_artistes .item_artiste {
+  width: 180px;
+  margin: 0 15px 60px 0;
+}
+.bozzo .container_artist .container_items_artistes .item_artiste .big_cover, .decouverte .container_artist .container_items_artistes .item_artiste .big_cover, .music_styles .container_artist .container_items_artistes .item_artiste .big_cover, .playlists .container_artist .container_items_artistes .item_artiste .big_cover, .playlist .container_artist .container_items_artistes .item_artiste .big_cover {
+  margin-bottom: 15px;
+  border-radius: 20px;
+}
+.bozzo .container_artist .container_items_artistes .item_artiste .text_album .border-bottom, .decouverte .container_artist .container_items_artistes .item_artiste .text_album .border-bottom, .music_styles .container_artist .container_items_artistes .item_artiste .text_album .border-bottom, .playlists .container_artist .container_items_artistes .item_artiste .text_album .border-bottom, .playlist .container_artist .container_items_artistes .item_artiste .text_album .border-bottom {
+  margin-top: 15px;
+}
+.ajouter_musique {
+  margin: 30px 0 90px 0;
+  display: flex;
+  flex-direction: column;
+}
+.ajouter_musique .main-content .form-group {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+@media screen and (max-width: 567px) {
+  .ajouter_musique .main-content .form-group {
+    flex-direction: column;
+  }
+}
+.ajouter_musique .main-content .form-group label {
+  display: block;
+  width: 130px;
+  font-size: 1em;
+  margin-bottom: 23px;
+  padding-right: 20px;
+  text-align: right;
+}
+@media screen and (max-width: 567px) {
+  .ajouter_musique .main-content .form-group label {
+    padding: 0;
+    width: auto;
+  }
+}
+.ajouter_musique .main-content .form-group .right-inline {
+  text-align: right;
+  width: auto;
+  margin-left: 20px;
+}
+@media screen and (max-width: 567px) {
+  .ajouter_musique .main-content .form-group .right-inline {
+    text-align: left;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+.ajouter_musique .main-content .form-group .input-control, .ajouter_musique .main-content .form-group .select-control {
+  background-color: #fff;
+  flex: 4 auto;
+  display: block;
+  margin-bottom: 20px;
+  margin-right: 20px;
+  padding: 10px;
+  border: none;
+  font-size: 20px;
+}
+.ajouter_musique .main-content .form-group .input-control:hover, .ajouter_musique .main-content .form-group .select-control:hover {
+  background: rgba(255, 255, 255, 0.5);
+}
+@media screen and (max-width: 567px) {
+  .ajouter_musique .main-content .form-group .input-control, .ajouter_musique .main-content .form-group .select-control {
+    margin-top: 2px;
+    margin-right: 0;
+    width: 75%;
+  }
+}
+.ajouter_musique .main-content .form-group .select-control {
+  padding: 20px;
+  height: 63px;
+}
+.ajouter_musique .main-content .form-group .btn_mid {
+  width: 100%;
+}
+.ajouter_musique .main-content .form-group .btn_mid .btn_w {
+  height: 35px;
+  font-size: 15px;
+  padding: 0px 15px;
+  border: solid 1px #fff;
+  background-color: transparent;
+  color: #fff !important;
+}
+.ajouter_musique .main-content .form-group .btn_mid .btn_w:hover {
+  background: linear-gradient(to right, #f39865, #cc83ae, #7f74b4);
+  color: #1a1a1a;
+  border: 1px solid #1a1a1a;
+}
+@media screen and (max-width: 567px) {
+  .ajouter_musique .main-content .form-group .btn_mid .btn_w {
+    margin-bottom: 15px;
+  }
 }
 @font-face {
   font-family: "emofiont";
@@ -2149,7 +2393,7 @@ ul {
   padding: 0;
 }
 nav {
-  width: 250px !important;
+  min-width: 250px !important;
 }
 a {
   text-transform: none;

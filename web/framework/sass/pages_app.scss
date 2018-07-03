@@ -18,8 +18,7 @@
   }
 
   section {
-    width: 71%;
-    padding: 0px 15px;
+    width: 100%;
 
     h2 {
       font-size: $box-pad;
@@ -38,7 +37,125 @@
       //background:     -ms-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
       //background:      -o-linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
       //background:         linear-gradient(left, hsla(0,0%,0%,0) 0%, hsla(0,0%,0%,.75) 50%, hsla(0,0%,0%,0) 100%)
-   
+
     }
+
+    table {
+      width: 100%;
+	  thead > tr > th, tbody > tr > td {
+		padding: $box-pad/3.5;
+		border-bottom: 1px solid $color_text_secondary;
+		text-align: left;
+	  }
+	  thead {
+		tr {
+		  th {
+			text-transform: uppercase;
+			color: $color_text_secondary;
+			font-size: $box-pad/2.5;
+		  }
+		}
+		tbody {
+		  tr {
+			padding: 5px;
+			td {
+			  font-size: $box-pad/2 !important;
+			  padding: .4rem;
+			  vertical-align: middle;
+			}
+		  }
+		}
+	  }
+    }
+	.container_styles_buttons {
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		.styles_buttons {
+		  width: 25%;
+		  text-align: center;
+		  margin: $box-pad/2 0;
+		  button {
+			@include button-base;
+			width: $box-pad * 6;
+			height: $box-pad * 2;
+			font-size: 20px;
+		  }
+		  .button_folk, .button_dance, .button_electro, .button_metal, .button_rock, .button_pop, .button_reggae, .button_rnb, .button_rap, .button_internat, .button_variete, .button_classique, .button_jazz, .button_soul, .button_blues, .button_autres {
+			&:hover {
+			  //-webkit-mask-image: -webkit-linear-gradient(left, rgba(255,255,255,1) 0%,rgba(255,255,255,0) 100%)
+			  background: rgba($white, 0.1);
+			}
+		  }
+		  .button_folk {
+			background: linear-gradient(to right, #53af32, #007bc4);
+		  }
+		  .button_dance {
+			background: linear-gradient(to right, #007bc4, #362784);
+		  }
+
+		  .button_electro {
+			background: linear-gradient(to right, #0051a0, #651e82);
+		  }
+
+		  .button_metal {
+			background: linear-gradient(to right, #502988, #b6107f);
+		  }
+
+		  .button_rock {
+			background: linear-gradient(to right, #841c83, #e6007d);
+		  }
+
+		  .button_pop {
+			background: linear-gradient(to right, #b6107f, #e60060);
+		  }
+
+		  .button_reggae {
+			background: linear-gradient(to right, #e6007d, #e4003b);
+		  }
+
+		  .button_rnb {
+			background: linear-gradient(to right, #e60060, #e41d13);
+		  }
+
+		  .button_rap {
+			background: linear-gradient(to right, #e4003b, #ee7402);
+		  }
+
+		  .button_internat {
+			background: linear-gradient(to right, #ee7402, #fbbb00);
+		  }
+
+		  .button_variete {
+			background: linear-gradient(to right, #fbbb00, #ffec00);
+		  }
+
+		  .button_classique {
+			background: linear-gradient(to right, #ffec00, #b0ce00);
+		  }
+
+		  .button_jazz {
+			background: linear-gradient(to right, #b0ce00, #53af32);
+		  }
+
+		  .button_soul {
+			background: linear-gradient(to right, #53af32, #006a06);
+		  }
+
+		  .button_blues {
+			background: linear-gradient(to right, #006a06, #004bc4);
+		  }
+
+		  .button_autres {
+			width: auto;
+			background: linear-gradient(to right, $flash_pink, $flash_red);
+		  }
+		}
+	}
   }
+}
+
+#corp_section {
+  width: 100%;
+  padding: $box-pad;
 }

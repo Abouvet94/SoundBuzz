@@ -35,6 +35,7 @@
 @import "framework/sass/home.scss";
 @import "framework/sass/music_styles.scss";
 @import "framework/sass/bozzo.scss";
+@import "framework/sass/ajouter_musique.scss";
 
 
 
@@ -98,6 +99,7 @@ html, body {
   min-height: 100vh;
 }
 
+
 body {
   background-color: $color_fond;
   color: $color_text_primary;
@@ -119,7 +121,7 @@ ul {
 // HOME
 
 nav {
-  width: 250px !important;
+  min-width: 250px !important;
 }
 
 a {
