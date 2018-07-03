@@ -40,6 +40,21 @@ class Playlist
     */
     private $nom;
 
+    /**
+    * @ORM\Column(name="nb_music", type="integer", nullable=true)
+    */
+    private $nb_music;
+
+    /**
+    * @ORM\Column(name="nb_abo", type="integer", nullable=true)
+    */
+    private $nb_abo;
+
+    /**
+    * @ORM\Column(name="all_temp", type="integer", nullable=true)
+    */
+    private $all_temp;
+
     //Getter Setter
 
     /**
@@ -108,5 +123,53 @@ class Playlist
     public function setNom($nom)
     {
         $this->nom = $nom;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getNbMusic()
+    {
+        return $this->nb_music;
+    }
+
+    /**
+    * @param mixed $nb_music
+    */
+    public function setNbMusic($nb_music)
+    {
+        $this->nb_music = $nb_music;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getNbAbo()
+    {
+        return $this->nb_abo;
+    }
+
+    /**
+    * @param mixed $nb_abo
+    */
+    public function setNbAbo($nb_abo)
+    {
+        $this->nb_abo = $nb_abo;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getAllTemp()
+    {
+        return $this->all_temp;
+    }
+
+    /**
+    * @param mixed $all_temp
+    */
+    public function setAllTemp($all_temp)
+    {
+        $this->all_temp = $all_temp;
     }
 }

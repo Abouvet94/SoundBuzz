@@ -65,6 +65,11 @@ class Music
     */
     private $type;
 
+    /**
+    * @ORM\Column(name="times", type="integer", nullable=true)
+    */
+    private $times;
+
 
     //Getter Setter
 
@@ -210,5 +215,21 @@ class Music
     public function setType($type)
     {
         $this->type = $type;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getTimes()
+    {
+        return $this->times;
+    }
+
+    /**
+    * @param mixed $times
+    */
+    public function setTimes($times)
+    {
+        $this->times = $times;
     }
 }
