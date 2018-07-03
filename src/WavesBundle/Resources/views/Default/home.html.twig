@@ -19,61 +19,36 @@
 
 <div class="app">
 
+{# Menu #}
     <nav class="left_panel">
-            <ul id="Menu">
-                <li id="home"><img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150"></li>
-                <li id="addmusic"><a>Ajouter Musique</a></li>
-                <li id="decouvrir"><a>Découvrir</a></li>
-                <li id="styles"><a>Styles</a></li>
-                <li id="mymusic"><a>Ma Musique</a></li>
-                <li id="Playlist_all">
-                <a>Playlist</a>
-                    <ul>
-                    <div id="play_liste_all">
-                        {% for playliste in playlist %}
-                            <li id="{{ playliste.play_id }}">{{ playliste.nom }}</li>
-                        {% endfor %}
-                    </div>
-                    </ul>
-                 </li>
-            </ul>
-        </nav>
+        <ul id="Menu">
+            <li id="home">
+                <img src="{{ asset('framework/images/logo v2-1.png') }}" alt="Logo SoundBuzz" height="55" width="150">
+            </li>
+            <li id="addmusic"><a>Ajouter Musique</a></li>
+            <li id="decouvrir"><a>Découvrir</a></li>
+            <li id="styles"><a>Styles</a></li>
+            <li id="mymusic"><a>Ma Musique</a></li>
+            <li id="Playlist_all"><a>Playlist</a>
+        </ul>
+    </nav>
 
+{# Corp du Site #}
     <div id="corp_section">
-
-        <section class="home_pages">
+    {# Page Home #}
+        <section id="home_pages">
             <h2>Home sweet Home</h2>
             <div class="border-bottom"></div>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </section>
-
+    {# Page Ajouter Musique #}
         <section id="addmusic_pages" class="ajouter_musique pages">
 
             {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                <h2>Page Ajouter Musique</h2>
-                    {{ form_start(FormMusic) }}
-                    {{ form_widget(FormMusic) }}
-                    {{ form_end(FormMusic) }}
-                    <select id="monselect">
-                        {% for ListeUser in PlayListUser %}
-                        <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
-                        {% endfor %}
-                    </select>
-            {% else %}
-            <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
-            {% endif %}
 
+                        <article class="main-content">
 
-            {# <select id="Add_Music_Ajax">
-                {% for playlistes in playlistcopie %}
-                    <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option>
-                {% endfor %}
-            <selected> #}
-
-
-            <article class="main-content">
-
-                <h2>Ajouter une musique</h2>
+            <h2>Ajouter une musique</h2>
                 <div class="border-bottom"></div>
 
                 <div class="form-group">
@@ -118,8 +93,28 @@
 
             </article>
 
-        </section>
+                <h2>Page Ajouter Musique</h2>
+                    {{ form_start(FormMusic) }}
+                    {{ form_widget(FormMusic) }}
+                    {{ form_end(FormMusic) }}
+                    <select id="monselect">
+                        {% for ListeUser in PlayListUser %}
+                        <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
+                        {% endfor %}
+                    </select>
+            {% else %}
+            <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
+            {% endif %}
 
+
+            {# <select id="Add_Music_Ajax">
+                {% for playlistes in playlistcopie %}
+                    <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option>
+                {% endfor %}
+            <selected> #}
+
+        </section>
+    {# Page Découvrire #}
         <section id="decouvrir_pages" class="decouverte pages">
 
             <div class="container_top_ecoute">
@@ -138,96 +133,18 @@
                     </tr>
                     </thead>
                     <tbody>
+                    {% for AllMusic in music %}
                     <tr>
                         <td><div class="icons icon_play"></div></td>
                         <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
+                        <td>{{ AllMusic.titre }}</td>
+                        <td>{{ AllMusic.artiste }}</td>
+                        <td>{{ AllMusic.album }}</td>
+                        <td>{{ AllMusic.times }}</td>
                         <td><div class="icons icon_more"></div></td>
                     </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
+                    {% endfor %}
+               
                     </tbody>
                 </table>
             </div>
@@ -573,7 +490,7 @@
 
 
         </section>
-
+    {# Page Style #}
         <section id="styles_pages" class="music_styles pages">
 
             <div class="container_description">
@@ -640,7 +557,7 @@
 
 
         </section>
-
+    {# Page Ma Musique #}
         <section id="mymusic_pages" class="bozzo pages">
             <div class="container_description">
                 <div class="big_cover"></div>
@@ -669,27 +586,17 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Playlist 1</td>
-                            <td>XX morceaux</td>
-                            <td>XX abonnés</td>
-                            <td>XX:XX</td>
-                            <td><div class="icons icon_delete"></div></td>
-                        </tr>
-                        <tr>
-                            <td>Playlist 2</td>
-                            <td>XX morceaux</td>
-                            <td>XX abonnés</td>
-                            <td>XX:XX</td>
-                            <td><div class="icons icon_delete"></div></td>
-                        </tr>
-                        <tr>
-                            <td>Playlist 3</td>
-                            <td>XX morceaux</td>
-                            <td>XX abonnés</td>
-                            <td>XX:XX</td>
-                            <td><div class="icons icon_delete"></div></td>
-                        </tr>
+                        {% for PlayListeUser in PlayListUser %}
+                            <tr>
+                                <tr>
+                                <td id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</td>
+                                <td>{{ PlayListeUser.nbmusic }}</td>
+                                <td>{{ PlayListeUser.nbabo }}</td>
+                                <td>{{ PlayListeUser.alltemp }}</td>
+                                <td><div class="icons icon_delete"></div></td>
+                            </tr>
+                            </tr>
+                        {% endfor %}                       
                     </tbody>
                 </table>
             </div>
@@ -908,7 +815,7 @@
 
             </div>
         </section>
-
+    {# Page All Playlists #}
         <section id="Playlist_all_pages" class="playlists pages">
 
                 <!--<div class="container_description">
@@ -924,7 +831,7 @@
 
                 </div>-->
 
-                <div class="container_top_ecoute">
+                <div id="Playlist_all_id" class="container_top_ecoute">
                     <h2>Playlists</h2>
                     <div class="border-bottom"></div>
                     <table>
@@ -938,113 +845,68 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td>Playlist 1</td>
-                            <td>XX morceaux</td>
-                            <td>XX abonnés</td>
-                            <td>XX:XX</td>
-                            <td><div class="icons icon_delete"></div></td>
-                        </tr>
-                        <tr>
-                            <td>Playlist 2</td>
-                            <td>XX morceaux</td>
-                            <td>XX abonnés</td>
-                            <td>XX:XX</td>
-                            <td><div class="icons icon_delete"></div></td>
-                        </tr>
-                        <tr>
-                            <td>Playlist 3</td>
-                            <td>XX morceaux</td>
-                            <td>XX abonnés</td>
-                            <td>XX:XX</td>
-                            <td><div class="icons icon_delete"></div></td>
-                        </tr>
+                         {% for playliste in playlist %}                        
+                            <tr>
+                                <td id="{{ playliste.play_id }}">{{ playliste.nom }}</td>
+                                <td>{{ playliste.nbmusic }}</td>
+                                <td>{{ playliste.nbabo }}</td>
+                                <td>{{ playliste.alltemp }}</td>
+                                <td><div class="icons icon_delete"></div></td>
+                            </tr>
+                        {% endfor %}
                         </tbody>
                     </table>
+
                 </div>
+
+        </section>
+    {# Page Playlist selectionné #}
+        <section id="Playlist_pages" class="playlist pages">
+
+            <div class="container_description">
+                <div class="big_cover"></div>
+                <div class="artist_description">
+                    <div class="artist_info">
+                        <div class="button_h1">
+                            <h3>Playlist</h3>
+                            <h2>Nom Playlist (nom)</h2>
+                            <h4>Créée par : (user)</h4>
+                        </div>
+                        <div class="artist_share">
+                            <div class="abonnes">nb_abo</div>
+                            <div class="icons icon_share"></div>
+                            <div class="icons icon_fb"></div>
+                            <div class="icons icon_twit"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <table id="tab_music">
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th></th>
+                        <th>Titre</th>
+                        <th>Artiste</th>
+                        <th>Album</th>
+                        <th>Time</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+            {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
+            <audio id="audio_a" style="display: none;" >
+                <source id="audioSource" src=""></source>
+            </audio>
         </section>
 
     </div>
 
-        {# Page Styles #}
-    {# <div id="styles_pages" class="">
-        <h2>Page Styles</h2>
-        <p>Mettre le code  Ici<p>
-    </div> #}
-    {# Page Ma Mussique #}
-    {# <div id="mymusic_pages" class="">
-        <h3>Bonjour  {% if is_granted("IS_AUTHENTICATED_FULLY") %}<b>{{ app.user.username }}</b>{% endif %}
-            <ul> 
-            <h4>Liste Playliste Créé :</h4>
-                {% for PlayListeUser in PlayListUser %}
-                    <li id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</li>
-                {% endfor %}
-            </ul>
-            <div id="playermusic" style="border:1px solid black; height:20px;">
-            </div>
-    </div> #}
-    {# Page Playlist #}
-    {# <div id="Playlist_all_pages" class="">
-        <h2>Page Playliste</h2> 
-        <table id="playermusic">
-        </table>  #}
-        {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
-        {# <audio id="audio_a" style="display: none;" >
-            <source id="audioSource" src=""></source>
-        </audio>
-    </div> #}
-
-
-
     {# Menu de droite (Commentaires / Premium / Ect.. ) #}
     <nav class="right_panel">
-        <ul>
-            <li>Utilisateur</li>
-            <li>
-                <button>Premium</button>
-            </li>
-            <li>
-                <div class="picture_title_comm">
-                    <div class="picture_comm"></div>
-                    <div class="title_comm">
-                        <div> Mozart à aimé :</div>
-                        <div>"Ah que je t'aimeuh".</div>
-                    </div>
-                </div>
-                <div class="time_comm">Il y a 5 minutes</div>
-            </li>
-            <li>
-                <div class="picture_title_comm">
-                    <div class="picture_comm"></div>
-                    <div class="title_comm">
-                        <div>Sonsass à commenté "Despacito" :</div>
-                        <div>Pitié arrachez moi les oreilles avec des pinces chauffées à blanc...</div>
-                    </div>
-                </div>
-                <div class="time_comm">Il y a 2 heures</div>
-            </li>
-            <li>
-                <div class="picture_title_comm">
-                    <div class="picture_comm"></div>
-                    <div class="title_comm">
-                        <div>Frank Mickael a sorti un nouvel album :</div>
-                        <div>"Ecouter les femmes".</div>
-                    </div>
-                </div>
-                <div class="time_comm">Il y a 3 jours.</div>
-            </li>
-            <li>
-                <div class="picture_title_comm">
-                    <div class="picture_comm"></div>
-                    <div class="title_comm">
-                        <div>Nostalgeek a créé une nouvelle playlist :</div>
-                        <div>«Good old Chiptune»</div>
-                    </div>
-                </div>
-                <div class="time_comm">Il y a 5 jours.</div>
-            </li>
-        </ul>
-
         <ul>
             <li>
                 {# Petite condition - Si la sexion actuelle comporte un Utilisateur, afficher son Nom. Sinon Afficher Bienvenue #}
@@ -1073,7 +935,6 @@
             {% endfor %}
         </ul>
     </nav> 
-
 
     {# La Partie Player #}
     <div class="container_player">
@@ -1145,18 +1006,21 @@ var playliste_music = [];
 
 // ## Partie Ajax ##
     /*
-        play_liste_all :
-            - Récupére l'id du Li Selectionné
+        Playlist_all_id :
+            - Récupére l'id du td (ligne tableau) Selectionné
             - Envoie en Post l'id dans une function 'WavesController/PlaylisteAutomate'
             - Récupére les Musiques correspondantes a la Playliste
-            - Affiche les musique via 'music.append()' dans la Div mére
+            - Affiche les musique via 'music_table.append()' dans la Div mére
     */
-    $('#play_liste_all li').click(function(){
+    $('#Playlist_all_id td').click(function(){
         var id =  $(this).attr('id');
         var value =  $(this).html();
-        music = $('#Playlist_all_pages table');
+        music_page = $('#Playlist_pages');
+        music_table = $('#Playlist_pages table tbody');
+        playlists_all = $('#Playlist_all_pages');
         Name_Playlist = $('#Name_Playlist');
         playliste_music = [];
+        playlists_all.hide();
         var url_music = "{{ path('dowload_music') }}";
         var id_music;
         //var jObj = $("option", this).filter(":selected"), id = jObj.get(0).id;
@@ -1168,26 +1032,28 @@ var playliste_music = [];
                 id : id
             },
             success: function (data) {
+                music_table.empty();
+                music_page.show();
                 var tab = JSON.parse(data);
                 //Vide la playliste acuel
                 Name_Playlist.empty();
-                music.empty();
                 for(var i=0; i < tab.length; i++ ){ 
                     id_music = tab[i].music_id;
                    playliste_music.push(tab[i].src);
-                   music.append('<tr>');
-                   music.append('<td><a id="'+tab[i].music_id+'" href="#" data-value="'+tab[i].src+'">"'+tab[i].titre+'"</a></td>');
-                   music.append('<td>'+tab[i].artiste+'</td>');
-                   music.append('<td>'+tab[i].album+'</td>');
-                   music.append('<td>'+tab[i].times+'</td>');
-                   music.append('<td id="TwigLien"><a href="'+url_music+'/'+id_music+'"> Dowload </a></td>');
-                  // music.append('<td><a href="javascript:alert('Hello World!');">Execute JavaScript</a></td>');
-                   music.append('</tr>');
-
+                   music_table.append('<tr>');
+                   music_table.append('<td><a id="'+tab[i].music_id+'" href="#" data-value="'+tab[i].src+'">play</a></td>');
+                   music_table.append('<td><div class="icons icon_heart"></div></td>');
+                   music_table.append('<td>"'+tab[i].titre+'"</td>');
+                   music_table.append('<td>'+tab[i].artiste+'</td>');
+                   music_table.append('<td>'+tab[i].album+'</td>');
+                   music_table.append('<td>'+tab[i].times+'</td>');
+                   music_table.append('<td id="TwigLien"><a href="'+url_music+'/'+id_music+'"> Dowload </a></td>');
+                   music_table.append('</tr>');
                 }
                 Name_Playlist.append(value);
             }
         });
+        
     })
 
 
