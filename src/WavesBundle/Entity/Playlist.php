@@ -84,7 +84,7 @@ class Playlist
     /**
     * @return mixed
     */
-    public function getActive_Flag()
+    public function getActiveFlag()
     {
         return $this->active_flag;
     }
@@ -92,7 +92,7 @@ class Playlist
     /**
     * @param mixed $active_flag
     */
-    public function setActive_Flag($active_flag)
+    public function setActiveFlag($active_flag)
     {
         $this->active_flag = $active_flag;
     }
