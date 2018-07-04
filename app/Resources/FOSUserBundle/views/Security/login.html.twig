@@ -1,0 +1,62 @@
+{%  extends '::base.html.twig' %}
+{% block title %}{{ parent() }}
+{% endblock %}
+{% block stylesheets %}{{ parent() }}
+
+<style>
+.button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+</style>
+
+{% endblock %}
+{% block body %}
+
+	<body style="background: linear-gradient(to right, #F39865, #CC83AE, #7F74B4)">
+
+
+
+			<div class="log">
+
+				<article class="main-content">
+
+					<h4>Connexion à votre compte !</h4>
+
+					<div class="form-group">
+						<div class="btn_mid">
+							<button class="btn_l_s"> <a href="log.html">Se connecter</a> </button>
+							<button class="btn_l_s"> <a href="sig.html">S'inscrire</a> </button>
+						</div>
+					</div>
+                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                        {% if csrf_token %}
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}" />
+                        {% endif %}
+
+                        <div class="form-group">
+						<label>UserName :</label>
+                        <input type="text" id="username" name="_username" value="{{ last_username }}" class="input-control" required="required" autocomplete="username" />
+					    </div>
+                        
+                        <div class="form-group">
+						<label>Mot de passe :</label>
+                        <input type="password" id="password" name="_password" required="required" autocomplete="current-password" class="input-control" />
+					    </div>
+                        <div class="form-group">
+						<div class="btn_mid"><button class="btn_w" id="_submit" name="_submit" value="Se connecter"></button></div>
+					</div>
+                    </form>
+
+				</article>
+
+
+			</div>
+
+	</body>
+
+{% endblock %}

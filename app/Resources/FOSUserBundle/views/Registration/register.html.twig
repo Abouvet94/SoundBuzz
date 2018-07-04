@@ -1,0 +1,91 @@
+{%  extends '::base.html.twig' %}
+{% block title %}{{ parent() }}
+{% endblock %}
+{% block stylesheets %}{{ parent() }}
+
+<style>
+.button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+</style>
+
+{% endblock %}
+{% block body %}
+
+<body style="background: linear-gradient(to right, #F39865, #CC83AE, #7F74B4)">
+
+			<div class="sig">
+
+				<article class="main-content">
+
+					<h4>Inscrivez-vous c'est gratuit !</h4>
+
+					<div class="form-group">
+						<div class="btn_mid">
+							<button class="btn_l_s"> <a href="log.html">Se connecter</a> </button>
+							<button class="btn_l_s"> <a href="sig.html">S'inscrire</a> </button>
+						</div>
+					</div>
+
+                    <form action="{{ path('fos_user_registration_register') }}" method="POST">
+                        <div id="fos_user_registration_form">
+                            {{ form_widget(form.email, { 'attr': {'class': 'form-group input-control', 'placeholder': 'form.email'|trans } }) }}
+                            {{ form_errors(form.email) }}
+
+                            {{ form_widget(form.username, { 'attr': {'class': 'form-group input-control', 'placeholder': 'form.username'|trans } }) }}
+                            {{ form_errors(form.username) }}
+
+                            {{ form_widget(form.plainPassword.first, { 'attr': {'class': 'form-group input-control', 'placeholder': 'form.password'|trans } }) }}
+                            {{ form_errors(form.plainPassword.first) }}
+
+                            {{ form_widget(form.plainPassword.second, { 'attr': {'class': 'form-group input-control', 'placeholder': 'form.password_confirmation'|trans } }) }}
+                            {{ form_errors(form.plainPassword.second) }}
+
+                            {{ form_rest(form) }}
+
+                        </div>
+
+                        <div>
+                            <div class="btn_mid">
+                                <input class="btn_w" type="submit" value="S'inscrire">
+                            </div>
+                            
+                        </div>
+                    </form>
+
+                    {# <div class="form-group">
+                        <label>Prénom* :</label>
+                        <input type="text" value="" class="input-control" />
+
+                    </div>
+
+					<div class="form-group">
+                        <label>Nom* :</label>
+                        <input type="text" value="" class="input-control" />
+                    </div>
+
+					<div class="form-group">
+						<label>E-mail :</label>
+						<input type="email"  value="" class="input-control" />
+					</div>
+
+					<div class="form-group">
+						<label>Mot de passe :</label>
+						<input type="password"  value="" class="input-control" />
+					</div>
+
+
+
+					<div class="form-group">
+						<div class="btn_mid"><button class="btn_w"> <a href="home.html">S'Inscrire</a> </button></div>
+					</div> #}
+
+				</article>
+			</div>
+	</body>
+{% endblock %}
