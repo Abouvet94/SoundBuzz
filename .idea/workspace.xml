@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d6e9d3-5c07-471e-97d0-89323348f36a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/framework/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/framework/sass/bozzo.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/bozzo.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/framework/sass/mixins.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/mixins.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -20,14 +19,21 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="181">
-              <caret line="296" column="28" lean-forward="true" selection-start-line="296" selection-start-column="28" selection-end-line="296" selection-end-column="28" />
+            <state relative-caret-position="355">
+              <caret line="172" column="61" lean-forward="true" selection-start-line="172" selection-start-column="61" selection-end-line="172" selection-end-column="61" />
               <folding>
-                <element signature="e#3889#5074#0#HTML" />
                 <element signature="e#5088#10635#0#HTML" />
+                <element signature="e#12329#14106#0#HTML" />
+                <element signature="e#15171#19104#0#HTML" />
+                <element signature="e#18067#19002#0#HTML" />
+                <element signature="e#20104#23318#0#HTML" />
+                <element signature="e#23414#24424#0#HTML" />
+                <element signature="e#24438#25682#0#HTML" />
+                <element signature="e#25696#30359#0#HTML" />
+                <element signature="e#30373#35480#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -36,17 +42,17 @@
       <file leaf-file-name="bozzo.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/framework/sass/bozzo.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="246">
-              <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+            <state relative-caret-position="343">
+              <caret line="131" column="49" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ajouter_musique.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ajouter_musique.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="539">
-              <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
+            <state relative-caret-position="329">
+              <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -63,8 +69,8 @@
       <file leaf-file-name="mixins.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/framework/sass/mixins.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="884">
-              <caret line="238" column="22" selection-start-line="238" selection-start-column="22" selection-end-line="238" selection-end-column="22" />
+            <state relative-caret-position="344">
+              <caret line="66" selection-start-line="66" selection-end-line="66" selection-end-column="13" />
             </state>
           </provider>
         </entry>
@@ -91,9 +97,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>======</find>
-      <find>=====</find>
-      <find>== HEAD</find>
       <find>.style.display = &quot;none&quot;</find>
       <find>display = &quot;none&quot;</find>
       <find>====</find>
@@ -120,7 +123,10 @@
       <find>22</find>
       <find>label</find>
       <find>addmusic</find>
+      <find>select</find>
+      <find>sha</find>
       <find>Nouveauté</find>
+      <find>&lt;a href=&quot;#&quot;&gt;Partager sur Twitter&lt;/a&gt;</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -138,9 +144,10 @@
         <option value="$PROJECT_DIR$/web/framework/sass/container_player.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/util.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/pages_app.scss" />
+        <option value="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" />
+        <option value="$PROJECT_DIR$/web/framework/sass/mixins.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/bozzo.scss" />
         <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" />
-        <option value="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" />
       </list>
     </option>
   </component>
@@ -271,12 +278,12 @@
       <workItem from="1528982891636" duration="6634000" />
       <workItem from="1529047720940" duration="15825000" />
       <workItem from="1530096115167" duration="9175000" />
-      <workItem from="1530545854866" duration="17314000" />
+      <workItem from="1530545854866" duration="19056000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17340000" />
+    <option name="totallyTimeSpent" value="19082000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -313,8 +320,15 @@
         <state relative-caret-position="435">
           <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding>
-            <element signature="e#3889#5074#0#HTML" />
             <element signature="e#5088#10635#0#HTML" />
+            <element signature="e#12329#14106#0#HTML" />
+            <element signature="e#15171#19104#0#HTML" />
+            <element signature="e#18067#19002#0#HTML" />
+            <element signature="e#20104#23318#0#HTML" />
+            <element signature="e#23414#24424#0#HTML" />
+            <element signature="e#24438#25682#0#HTML" />
+            <element signature="e#25696#30359#0#HTML" />
+            <element signature="e#30373#35480#0#HTML" />
           </folding>
         </state>
       </provider>
@@ -509,13 +523,6 @@
     <entry file="file://$PROJECT_DIR$/web/framework/css/style.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/mixins.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="238" column="22" selection-start-line="238" selection-start-column="22" selection-end-line="238" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/music_styles.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -558,28 +565,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/mixins.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="344">
+          <caret line="66" selection-start-line="66" selection-end-line="66" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/bozzo.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="246">
-          <caret line="63" column="25" selection-start-line="63" selection-start-column="25" selection-end-line="63" selection-end-column="25" />
+        <state relative-caret-position="343">
+          <caret line="131" column="49" selection-start-line="131" selection-start-column="49" selection-end-line="131" selection-end-column="49" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="181">
-          <caret line="296" column="28" lean-forward="true" selection-start-line="296" selection-start-column="28" selection-end-line="296" selection-end-column="28" />
+        <state relative-caret-position="355">
+          <caret line="172" column="61" lean-forward="true" selection-start-line="172" selection-start-column="61" selection-end-line="172" selection-end-column="61" />
           <folding>
-            <element signature="e#3889#5074#0#HTML" />
             <element signature="e#5088#10635#0#HTML" />
+            <element signature="e#12329#14106#0#HTML" />
+            <element signature="e#15171#19104#0#HTML" />
+            <element signature="e#18067#19002#0#HTML" />
+            <element signature="e#20104#23318#0#HTML" />
+            <element signature="e#23414#24424#0#HTML" />
+            <element signature="e#24438#25682#0#HTML" />
+            <element signature="e#25696#30359#0#HTML" />
+            <element signature="e#30373#35480#0#HTML" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="539">
-          <caret line="49" column="26" lean-forward="true" selection-start-line="49" selection-start-column="26" selection-end-line="49" selection-end-column="26" />
         </state>
       </provider>
     </entry>

@@ -2457,6 +2457,50 @@ table {
   max-width: 22px;
   max-height: 22px;
 }
+.bozzo .container_top_ecoute table tbody tr td .dropdown, .decouverte .container_top_ecoute table tbody tr td .dropdown, .music_styles .container_top_ecoute table tbody tr td .dropdown, .playlists .container_top_ecoute table tbody tr td .dropdown, .playlist .container_top_ecoute table tbody tr td .dropdown, .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown, .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown, .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown, .playlists .container_playlist_avec_artiste table tbody tr td .dropdown, .playlist .container_playlist_avec_artiste table tbody tr td .dropdown {
+  float: left;
+  overflow: hidden;
+}
+.bozzo .container_top_ecoute table tbody tr td .dropdown .dropbtn, .decouverte .container_top_ecoute table tbody tr td .dropdown .dropbtn, .music_styles .container_top_ecoute table tbody tr td .dropdown .dropbtn, .playlists .container_top_ecoute table tbody tr td .dropdown .dropbtn, .playlist .container_top_ecoute table tbody tr td .dropdown .dropbtn, .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown .dropbtn, .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown .dropbtn, .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown .dropbtn, .playlists .container_playlist_avec_artiste table tbody tr td .dropdown .dropbtn, .playlist .container_playlist_avec_artiste table tbody tr td .dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-radius: 5px;
+}
+.bozzo .container_top_ecoute table tbody tr td .dropdown .dropdown-content, .decouverte .container_top_ecoute table tbody tr td .dropdown .dropdown-content, .music_styles .container_top_ecoute table tbody tr td .dropdown .dropdown-content, .playlists .container_top_ecoute table tbody tr td .dropdown .dropdown-content, .playlist .container_top_ecoute table tbody tr td .dropdown .dropdown-content, .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content, .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content, .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content, .playlists .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content, .playlist .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #252525;
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.bozzo .container_top_ecoute table tbody tr td .dropdown .dropdown-content a, .decouverte .container_top_ecoute table tbody tr td .dropdown .dropdown-content a, .music_styles .container_top_ecoute table tbody tr td .dropdown .dropdown-content a, .playlists .container_top_ecoute table tbody tr td .dropdown .dropdown-content a, .playlist .container_top_ecoute table tbody tr td .dropdown .dropdown-content a, .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a, .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a, .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a, .playlists .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a, .playlist .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a {
+  float: none;
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.bozzo .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:first-child, .decouverte .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:first-child, .music_styles .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:first-child, .playlists .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:first-child, .playlist .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:first-child, .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:first-child, .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:first-child, .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:first-child, .playlists .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:first-child, .playlist .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:first-child, .bozzo .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:nth-child(2), .decouverte .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:nth-child(2), .music_styles .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:nth-child(2), .playlists .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:nth-child(2), .playlist .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:nth-child(2), .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:nth-child(2), .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:nth-child(2), .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:nth-child(2), .playlists .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:nth-child(2), .playlist .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:nth-child(2) {
+  border-bottom: 1px solid #000;
+}
+.bozzo .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:hover, .decouverte .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:hover, .music_styles .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:hover, .playlists .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:hover, .playlist .container_top_ecoute table tbody tr td .dropdown .dropdown-content a:hover, .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:hover, .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:hover, .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:hover, .playlists .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:hover, .playlist .container_playlist_avec_artiste table tbody tr td .dropdown .dropdown-content a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.bozzo .container_top_ecoute table tbody tr td .dropdown:hover .dropdown-content, .decouverte .container_top_ecoute table tbody tr td .dropdown:hover .dropdown-content, .music_styles .container_top_ecoute table tbody tr td .dropdown:hover .dropdown-content, .playlists .container_top_ecoute table tbody tr td .dropdown:hover .dropdown-content, .playlist .container_top_ecoute table tbody tr td .dropdown:hover .dropdown-content, .bozzo .container_playlist_avec_artiste table tbody tr td .dropdown:hover .dropdown-content, .decouverte .container_playlist_avec_artiste table tbody tr td .dropdown:hover .dropdown-content, .music_styles .container_playlist_avec_artiste table tbody tr td .dropdown:hover .dropdown-content, .playlists .container_playlist_avec_artiste table tbody tr td .dropdown:hover .dropdown-content, .playlist .container_playlist_avec_artiste table tbody tr td .dropdown:hover .dropdown-content {
+  display: block;
+}
 .bozzo .container_albums .container_items_album, .decouverte .container_albums .container_items_album, .music_styles .container_albums .container_items_album, .playlists .container_albums .container_items_album, .playlist .container_albums .container_items_album {
   display: flex;
   flex-direction: row;
@@ -2553,7 +2597,7 @@ table {
   }
 }
 .ajouter_musique .main-content .form-group .select-control {
-  padding: 20px;
+  padding: 10px;
   height: 48px;
 }
 .ajouter_musique .main-content .form-group .btn_mid {
