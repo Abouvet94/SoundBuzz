@@ -86,3 +86,17 @@
     background-image: url(../images/icon_more_hover.svg);
   }
 }
+
+.icon_trash {
+  background-image: url(../images/icon_trash.svg);
+  &:hover {
+    background-image: url(../images/icon_trash_hover.svg);
+  }
+}
+
+.icon_edit {
+  background-image: url(../images/icon_edit.svg);
+  &:hover {
+    background-image: url(../images/icon_edit_hover.svg);
+  }
+}

@@ -1,18 +1,19 @@
 .left_panel {
   font-size: 20px;
-  border-right: 1px solid $line;
   flex-direction: column;
   justify-content: space-between;
   background-color: $color_fond;
 
   //bottom: 0
   //left: 0
-  overflow: scroll;
-  overflow-x: hidden;
+  //overflow: scroll;
+  //overflow-x: hidden;
 
   //position: absolute
 
   ul {
+    position: fixed;
+    width: 250px;
     li {
       ul {
         li {
