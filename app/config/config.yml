@@ -64,20 +64,27 @@ doctrine:
 
 # Swiftmailer Configuration
 swiftmailer:
-    transport: '%mailer_transport%'
-    host: '%mailer_host%'
-    username: '%mailer_user%'
-    password: '%mailer_password%'
-    spool: { type: memory }
+    transport: gmail
+    username: 'soundbuzz.center@gmail.com'
+    password: '@Dmin*1981'
 
 #FosUser Configuration 
 fos_user:
     db_driver: orm # other valid values are 'mongodb' and 'couchdb'
     firewall_name: main
     user_class: AppBundle\Entity\User
+    service:
+        mailer: fos_user.mailer.twig_swift
+    resetting:
+        email:
+            template:   email/password_resetting.email.twig
+    registration:
+        confirmation:
+            template:   '@FOSUser/Registration/email.txt.twig'
+            enabled: true            
     from_email:
-        address: SoundBuzz.contact@gmail.com
-        sender_name: SoundBuzz.contact
+        address: soundbuzz.center@gmail.com
+        sender_name: SoundBuzz
 
 sonata_block:
     blocks:
