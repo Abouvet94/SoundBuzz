@@ -49,3 +49,4 @@
 
 # Dossier et Fichier supplémentaire (à modifier si besoin)
 /app/config/parameters.yml
+/web/framework/audio/

@@ -7,6 +7,9 @@
 namespace WavesBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Validator\Constraints as Assert;
+
 
 /**
  * Music
@@ -18,6 +21,9 @@ use Doctrine\ORM\Mapping as ORM;
 
 class Music 
 {
+
+    const PATH_MUSIC = 'framework/audio/';
+
     /**
      * @ORM\Column(name="music_id", type="integer")
      * @ORM\Id
@@ -358,4 +364,31 @@ class Music
     {
         $this->datetransfert = $datetransfert;
     }
+
+
+    // Function Upload
+
+    
+    /**
+     * @ORM\Column(type="string")
+     *
+     * @Assert\NotBlank(message="Merci de prendre un format de Musique Compatible.")
+     * @Assert\File(mimeTypes={  "audio/mpeg", "audio/wav", "audio/x-wav", "application/octet-stream"})
+     */
+    private $file;
+
+    
+    public function getFile()
+    {
+        return $this->file;
+    }
+
+    public function setFile($file)
+    {
+        $this->file = $file;
+
+        return $this;
+    }
+    
+  
 }

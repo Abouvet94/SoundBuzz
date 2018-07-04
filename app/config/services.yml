@@ -1,7 +1,7 @@
 # Learn more about services, parameters and containers at
 # https://symfony.com/doc/current/service_container.html
 parameters:
-    #parameter_name: value
+    path_music: '%kernel.project_dir%/web/framework/audio'
 
 services:
     # default configuration for services in *this* file
@@ -33,3 +33,18 @@ services:
     # AppBundle\Service\ExampleService:
     #     arguments:
     #         $someArgument: 'some_value'
+    
+
+    admin.music:
+        class: AppBundle\Admin\MusicAdmin
+        arguments: [~, WavesBundle\Entity\Music, ~]
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: Administration , label: Musique }
+        public: true
+
+    # admin.playlist:
+    #     class: AppBundle\Admin\PlaylistAdmin
+    #     arguments: [~, WavesBundle\Entity\Playlist, ~]
+    #     tags:
+    #         - { name: sonata.admin, manager_type: orm, group: Administration , label: Playlists }
+    #     public: true

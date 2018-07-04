@@ -51,26 +51,30 @@
 
                 <h2>Ajouter une musique</h2>
                 <div class="border-bottom"></div>
+                {{ form_start(FormMusic) }}
 
                 <div class="form-group">
                     <label>Titre :</label>
-                    <input type="text" value="" class="input-control" />
-
+                        {{ form_widget(FormMusic.titre, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.titre) }}
                 </div>
 
                 <div class="form-group">
                     <label>Album :</label>
-                    <input type="text" value="" class="input-control" />
+                        {{ form_widget(FormMusic.album, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.album) }}
                 </div>
 
                 <div class="form-group">
                     <label>Artiste :</label>
-                    <input type="email"  value="" class="input-control" />
+                        {{ form_widget(FormMusic.artiste, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.artiste) }}
                 </div>
 
                 <div class="form-group">
                     <label>Piste :</label>
-                    <input type="password"  value="" class="input-control" />
+                        {{ form_widget(FormMusic.piste, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.piste) }}
                 </div>
 
                 <div class="form-group">
@@ -96,29 +100,34 @@
 
                 <div class="form-group">
                     <label>Image :</label>
-                    <input type="password"  value="" class="input-control" />
+                        {{ form_widget(FormMusic.image, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.image) }}
                 </div>
 
                 <div class="form-group">
                     <label>Type :</label>
-                    <input type="password"  value="" class="input-control" />
+                        {{ form_widget(FormMusic.type, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.type) }}
                 </div>
 
                 <div class="form-group">
-                    <div class="btn_mid"><button class="btn_w"> <a href="home.html">Ajouter</a> </button></div>
+                    <label>Upload Fichier :</label>
+                        {{ form_widget(FormMusic.file, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.file) }}
+                </div>
+                <div class="form-group">
+                    <div class="btn_mid">
+                                <input class="btn_w" type="submit" value="Ajouter">
+                            </div>
                 </div>
 
-            </article>
-
-                <h2>Page Ajouter Musique</h2>
-                    {{ form_start(FormMusic) }}
-                    {{ form_widget(FormMusic) }}
-                    {{ form_end(FormMusic) }}
+                {{ form_end(FormMusic) }}
                     <select id="monselect">
                         {% for ListeUser in PlayListUser %}
                         <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
                         {% endfor %}
                     </select>
+            </article>
             {% else %}
 
             <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>

@@ -6,6 +6,7 @@ use WavesBundle\Entity\Music;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Doctrine\DBAL\Types\FloatType;
 
 
@@ -21,8 +22,11 @@ class MusicType extends AbstractType
             ->add('artiste', TextType::class, array('required' => true))
             ->add('artiste', TextType::class, array('required' => true))
             ->add('piste', TextType::class, array('required' => true))
-            ->add('src', TextType::class, array('required' => true))
+            ->add('file', FileType::class, array('required' => true))
             ->add('image', TextType::class, array('required' => true))
             ->add('type', TextType::class, array('required' => true));
     }
+
+
+
 }
