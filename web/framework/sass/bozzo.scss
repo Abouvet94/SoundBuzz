@@ -1,6 +1,6 @@
 .bozzo, .decouverte, .music_styles, .playlists, .playlist {
   .container_description, .container_top_ecoute, .container_albums, .container_playlist_avec_artiste, .container_commentaires, .container_artist, .container_styles {
-    margin-bottom: $box-pad*3;
+    margin-bottom: $box-pad*6;
   }
   .container_description {
     display: flex;
@@ -129,7 +129,7 @@
                   text-decoration: none;
                   display: block;
                   text-align: left;
-                  &:first-child, &:nth-child(2) {
+                  &:first-child, &:nth-child(2), &:nth-child(3) {
                     border-bottom: 1px solid $black;
                   }
                   &:hover {
