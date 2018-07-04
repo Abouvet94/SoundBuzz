@@ -18,6 +18,7 @@
 		margin-bottom: $box-pad/1.5+3px;
 		padding-right: $box-pad/1.5;
 		text-align: right;
+		line-height: 22px;
 		@media screen and (max-width: $break-sm) {
 		  padding: 0;
 		  width: auto;
@@ -53,7 +54,7 @@
 	  }
 	  .select-control {
 		padding: $box-pad/1.5;
-	  	height: 63px;
+	  	height: 48px;
 	  }
 	  .btn_mid {
 		width: 100%;

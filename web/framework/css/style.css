@@ -2167,9 +2167,6 @@ table {
   padding: 0.4rem;
   vertical-align: middle;
 }
-.app section table thead tbody tr td:first-child, .app section table thead tbody tr td:nth-child(2) {
-  width: 35px;
-}
 .app section .container_styles_buttons {
   display: flex;
   flex-direction: row;
@@ -2451,9 +2448,6 @@ table {
   padding: 0.4rem;
   vertical-align: middle;
 }
-.bozzo .container_top_ecoute table tbody tr td:first-child, .decouverte .container_top_ecoute table tbody tr td:first-child, .music_styles .container_top_ecoute table tbody tr td:first-child, .playlists .container_top_ecoute table tbody tr td:first-child, .playlist .container_top_ecoute table tbody tr td:first-child, .bozzo .container_playlist_avec_artiste table tbody tr td:first-child, .decouverte .container_playlist_avec_artiste table tbody tr td:first-child, .music_styles .container_playlist_avec_artiste table tbody tr td:first-child, .playlists .container_playlist_avec_artiste table tbody tr td:first-child, .playlist .container_playlist_avec_artiste table tbody tr td:first-child, .bozzo .container_top_ecoute table tbody tr td:nth-child(2), .decouverte .container_top_ecoute table tbody tr td:nth-child(2), .music_styles .container_top_ecoute table tbody tr td:nth-child(2), .playlists .container_top_ecoute table tbody tr td:nth-child(2), .playlist .container_top_ecoute table tbody tr td:nth-child(2), .bozzo .container_playlist_avec_artiste table tbody tr td:nth-child(2), .decouverte .container_playlist_avec_artiste table tbody tr td:nth-child(2), .music_styles .container_playlist_avec_artiste table tbody tr td:nth-child(2), .playlists .container_playlist_avec_artiste table tbody tr td:nth-child(2), .playlist .container_playlist_avec_artiste table tbody tr td:nth-child(2) {
-  width: 35px;
-}
 .bozzo .container_top_ecoute table tbody tr td .icons, .decouverte .container_top_ecoute table tbody tr td .icons, .music_styles .container_top_ecoute table tbody tr td .icons, .playlists .container_top_ecoute table tbody tr td .icons, .playlist .container_top_ecoute table tbody tr td .icons, .bozzo .container_playlist_avec_artiste table tbody tr td .icons, .decouverte .container_playlist_avec_artiste table tbody tr td .icons, .music_styles .container_playlist_avec_artiste table tbody tr td .icons, .playlists .container_playlist_avec_artiste table tbody tr td .icons, .playlist .container_playlist_avec_artiste table tbody tr td .icons {
   min-width: 22px;
   min-height: 22px;
@@ -2515,6 +2509,7 @@ table {
   margin-bottom: 23px;
   padding-right: 20px;
   text-align: right;
+  line-height: 22px;
 }
 @media screen and (max-width: 567px) {
   .ajouter_musique .main-content .form-group label {
@@ -2556,7 +2551,7 @@ table {
 }
 .ajouter_musique .main-content .form-group .select-control {
   padding: 20px;
-  height: 63px;
+  height: 48px;
 }
 .ajouter_musique .main-content .form-group .btn_mid {
   width: 100%;
