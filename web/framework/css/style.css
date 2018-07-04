@@ -131,6 +131,18 @@ table {
 .icon_more:hover {
   background-image: url(../images/icon_more_hover.svg);
 }
+.icon_trash {
+  background-image: url(../images/icon_trash.svg);
+}
+.icon_trash:hover {
+  background-image: url(../images/icon_trash_hover.svg);
+}
+.icon_edit {
+  background-image: url(../images/icon_edit.svg);
+}
+.icon_edit:hover {
+  background-image: url(../images/icon_edit_hover.svg);
+}
 .myMove {
   -webkit-animation-duration: 1.5s;
   -webkit-animation-timing-function: ease-in-out;
@@ -1792,12 +1804,13 @@ table {
 }
 .left_panel {
   font-size: 20px;
-  border-right: 1px solid #4d4d4d;
   flex-direction: column;
   justify-content: space-between;
   background-color: #1a1a1a;
-  overflow: scroll;
-  overflow-x: hidden;
+}
+.left_panel ul {
+  position: fixed;
+  width: 250px;
 }
 .left_panel ul li ul li {
   font-size: 15px;
@@ -1824,7 +1837,6 @@ table {
   background-color: rgba(255, 255, 255, 0.1);
 }
 .right_panel {
-  border-left: 1px solid #4d4d4d;
   overflow: scroll;
   overflow-x: hidden;
   right: 0;
@@ -2110,7 +2122,6 @@ table {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-  height: 100vh;
   /*.icons {
    width: 30px;
    height: 30px;
@@ -2153,19 +2164,72 @@ table {
   color: #666;
   font-size: 12px;
 }
-.app section table thead tbody tr {
+.app section table tbody tr {
   padding: 5px;
 }
-.app section table thead tbody tr:hover {
+.app section table tbody tr:hover {
   background: rgba(0, 0, 0, 0.3);
 }
-.app section table thead tbody tr:nth-child(odd) {
+.app section table tbody tr:nth-child(odd) {
   background: #252525;
 }
-.app section table thead tbody tr td {
+.app section table tbody tr:nth-child(odd):hover {
+  background: rgba(0, 0, 0, 0.3);
+}
+.app section table tbody tr td {
   font-size: 15px !important;
   padding: 0.4rem;
   vertical-align: middle;
+}
+.app section table tbody tr td .icons {
+  min-width: 22px;
+  min-height: 22px;
+  max-width: 22px;
+  max-height: 22px;
+}
+.app section table tbody tr td .dropdown {
+  float: left;
+  overflow: hidden;
+}
+.app section table tbody tr td .dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+  border-radius: 5px;
+}
+.app section table tbody tr td .dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #252525;
+  -moz-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  -o-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+.app section table tbody tr td .dropdown .dropdown-content a {
+  float: none;
+  color: #fff;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.app section table tbody tr td .dropdown .dropdown-content a:first-child, .app section table tbody tr td .dropdown .dropdown-content a:nth-child(2), .app section table tbody tr td .dropdown .dropdown-content a:nth-child(3) {
+  border-bottom: 1px solid #000;
+}
+.app section table tbody tr td .dropdown .dropdown-content a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.app section table tbody tr td .dropdown:hover .dropdown-content {
+  display: block;
 }
 .app section .container_styles_buttons {
   display: flex;
@@ -2248,7 +2312,12 @@ table {
 }
 #corp_section {
   width: 100%;
-  padding: 30px;
+  border-right: 1px solid #4d4d4d;
+  border-left: 1px solid #4d4d4d;
+  padding: 30px 30px 120px 30px;
+}
+#corp_section #home_pages {
+  height: 100vh;
 }
 .music_styles .container_styles_buttons {
   display: flex;
@@ -2364,24 +2433,21 @@ table {
 .music_styles .container_styles_buttons .styles_buttons .button_blues:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.bozzo .container_description, .decouverte .container_description, .music_styles .container_description, .playlists .container_description, .playlist .container_description, .bozzo .container_top_ecoute, .decouverte .container_top_ecoute, .music_styles .container_top_ecoute, .playlists .container_top_ecoute, .playlist .container_top_ecoute, .bozzo .container_albums, .decouverte .container_albums, .music_styles .container_albums, .playlists .container_albums, .playlist .container_albums, .bozzo .container_playlist_avec_artiste, .decouverte .container_playlist_avec_artiste, .music_styles .container_playlist_avec_artiste, .playlists .container_playlist_avec_artiste, .playlist .container_playlist_avec_artiste, .bozzo .container_commentaires, .decouverte .container_commentaires, .music_styles .container_commentaires, .playlists .container_commentaires, .playlist .container_commentaires, .bozzo .container_artist, .decouverte .container_artist, .music_styles .container_artist, .playlists .container_artist, .playlist .container_artist, .bozzo .container_styles, .decouverte .container_styles, .music_styles .container_styles, .playlists .container_styles, .playlist .container_styles {
-  margin-bottom: 90px;
-}
 .bozzo .container_description, .decouverte .container_description, .music_styles .container_description, .playlists .container_description, .playlist .container_description {
   display: flex;
   flex-direction: row;
 }
-.bozzo .container_description .artist_description, .decouverte .container_description .artist_description, .music_styles .container_description .artist_description, .playlists .container_description .artist_description, .playlist .container_description .artist_description {
+.bozzo .container_description .playlist_description, .decouverte .container_description .playlist_description, .music_styles .container_description .playlist_description, .playlists .container_description .playlist_description, .playlist .container_description .playlist_description {
   display: flex;
   flex-direction: column;
 }
-.bozzo .container_description .artist_description .artist_info, .decouverte .container_description .artist_description .artist_info, .music_styles .container_description .artist_description .artist_info, .playlists .container_description .artist_description .artist_info, .playlist .container_description .artist_description .artist_info {
+.bozzo .container_description .playlist_description .playlist_info, .decouverte .container_description .playlist_description .playlist_info, .music_styles .container_description .playlist_description .playlist_info, .playlists .container_description .playlist_description .playlist_info, .playlist .container_description .playlist_description .playlist_info {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: flex-end;
 }
-.bozzo .container_description .artist_description .artist_info .button_h1 button, .decouverte .container_description .artist_description .artist_info .button_h1 button, .music_styles .container_description .artist_description .artist_info .button_h1 button, .playlists .container_description .artist_description .artist_info .button_h1 button, .playlist .container_description .artist_description .artist_info .button_h1 button {
+.bozzo .container_description .playlist_description .playlist_info .button_h1 button, .decouverte .container_description .playlist_description .playlist_info .button_h1 button, .music_styles .container_description .playlist_description .playlist_info .button_h1 button, .playlists .container_description .playlist_description .playlist_info .button_h1 button, .playlist .container_description .playlist_description .playlist_info .button_h1 button {
   text-transform: uppercase;
   height: 35px;
   line-height: 35px;
@@ -2398,61 +2464,26 @@ table {
   display: block;
   margin-bottom: 15px;
 }
-.bozzo .container_description .artist_description .artist_info .button_h1 button:hover, .decouverte .container_description .artist_description .artist_info .button_h1 button:hover, .music_styles .container_description .artist_description .artist_info .button_h1 button:hover, .playlists .container_description .artist_description .artist_info .button_h1 button:hover, .playlist .container_description .artist_description .artist_info .button_h1 button:hover {
+.bozzo .container_description .playlist_description .playlist_info .button_h1 button:hover, .decouverte .container_description .playlist_description .playlist_info .button_h1 button:hover, .music_styles .container_description .playlist_description .playlist_info .button_h1 button:hover, .playlists .container_description .playlist_description .playlist_info .button_h1 button:hover, .playlist .container_description .playlist_description .playlist_info .button_h1 button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.bozzo .container_description .artist_description .artist_info .button_h1 h1, .decouverte .container_description .artist_description .artist_info .button_h1 h1, .music_styles .container_description .artist_description .artist_info .button_h1 h1, .playlists .container_description .artist_description .artist_info .button_h1 h1, .playlist .container_description .artist_description .artist_info .button_h1 h1 {
+.bozzo .container_description .playlist_description .playlist_info .button_h1 h1, .decouverte .container_description .playlist_description .playlist_info .button_h1 h1, .music_styles .container_description .playlist_description .playlist_info .button_h1 h1, .playlists .container_description .playlist_description .playlist_info .button_h1 h1, .playlist .container_description .playlist_description .playlist_info .button_h1 h1 {
   font-size: 30px;
   margin-bottom: 15px;
 }
-.bozzo .container_description .artist_description .artist_info .artist_share, .decouverte .container_description .artist_description .artist_info .artist_share, .music_styles .container_description .artist_description .artist_info .artist_share, .playlists .container_description .artist_description .artist_info .artist_share, .playlist .container_description .artist_description .artist_info .artist_share {
+.bozzo .container_description .playlist_description .playlist_info .playlist_share, .decouverte .container_description .playlist_description .playlist_info .playlist_share, .music_styles .container_description .playlist_description .playlist_info .playlist_share, .playlists .container_description .playlist_description .playlist_info .playlist_share, .playlist .container_description .playlist_description .playlist_info .playlist_share {
   display: flex;
   flex-direction: row;
   margin-bottom: 15px;
   align-items: flex-end;
 }
-.bozzo .container_description .artist_description .artist_info .artist_share .icons, .decouverte .container_description .artist_description .artist_info .artist_share .icons, .music_styles .container_description .artist_description .artist_info .artist_share .icons, .playlists .container_description .artist_description .artist_info .artist_share .icons, .playlist .container_description .artist_description .artist_info .artist_share .icons {
+.bozzo .container_description .playlist_description .playlist_info .playlist_share .icons, .decouverte .container_description .playlist_description .playlist_info .playlist_share .icons, .music_styles .container_description .playlist_description .playlist_info .playlist_share .icons, .playlists .container_description .playlist_description .playlist_info .playlist_share .icons, .playlist .container_description .playlist_description .playlist_info .playlist_share .icons {
   margin: 0 5px;
 }
-.bozzo .container_description .artist_description p, .decouverte .container_description .artist_description p, .music_styles .container_description .artist_description p, .playlists .container_description .artist_description p, .playlist .container_description .artist_description p {
+.bozzo .container_description .playlist_description p, .decouverte .container_description .playlist_description p, .music_styles .container_description .playlist_description p, .playlists .container_description .playlist_description p, .playlist .container_description .playlist_description p {
   text-align: left;
   font-size: 15px;
   line-height: 23px;
-}
-.bozzo .container_top_ecoute table, .decouverte .container_top_ecoute table, .music_styles .container_top_ecoute table, .playlists .container_top_ecoute table, .playlist .container_top_ecoute table, .bozzo .container_playlist_avec_artiste table, .decouverte .container_playlist_avec_artiste table, .music_styles .container_playlist_avec_artiste table, .playlists .container_playlist_avec_artiste table, .playlist .container_playlist_avec_artiste table {
-  width: 100%;
-}
-.bozzo .container_top_ecoute table thead > tr > th, .decouverte .container_top_ecoute table thead > tr > th, .music_styles .container_top_ecoute table thead > tr > th, .playlists .container_top_ecoute table thead > tr > th, .playlist .container_top_ecoute table thead > tr > th, .bozzo .container_playlist_avec_artiste table thead > tr > th, .decouverte .container_playlist_avec_artiste table thead > tr > th, .music_styles .container_playlist_avec_artiste table thead > tr > th, .playlists .container_playlist_avec_artiste table thead > tr > th, .playlist .container_playlist_avec_artiste table thead > tr > th, .bozzo .container_top_ecoute table tbody > tr > td, .decouverte .container_top_ecoute table tbody > tr > td, .music_styles .container_top_ecoute table tbody > tr > td, .playlists .container_top_ecoute table tbody > tr > td, .playlist .container_top_ecoute table tbody > tr > td, .bozzo .container_playlist_avec_artiste table tbody > tr > td, .decouverte .container_playlist_avec_artiste table tbody > tr > td, .music_styles .container_playlist_avec_artiste table tbody > tr > td, .playlists .container_playlist_avec_artiste table tbody > tr > td, .playlist .container_playlist_avec_artiste table tbody > tr > td {
-  padding: 8.5714285714px;
-  text-align: left;
-}
-.bozzo .container_top_ecoute table thead tr, .decouverte .container_top_ecoute table thead tr, .music_styles .container_top_ecoute table thead tr, .playlists .container_top_ecoute table thead tr, .playlist .container_top_ecoute table thead tr, .bozzo .container_playlist_avec_artiste table thead tr, .decouverte .container_playlist_avec_artiste table thead tr, .music_styles .container_playlist_avec_artiste table thead tr, .playlists .container_playlist_avec_artiste table thead tr, .playlist .container_playlist_avec_artiste table thead tr {
-  border-bottom: 1px solid #666;
-}
-.bozzo .container_top_ecoute table thead tr th, .decouverte .container_top_ecoute table thead tr th, .music_styles .container_top_ecoute table thead tr th, .playlists .container_top_ecoute table thead tr th, .playlist .container_top_ecoute table thead tr th, .bozzo .container_playlist_avec_artiste table thead tr th, .decouverte .container_playlist_avec_artiste table thead tr th, .music_styles .container_playlist_avec_artiste table thead tr th, .playlists .container_playlist_avec_artiste table thead tr th, .playlist .container_playlist_avec_artiste table thead tr th {
-  text-transform: uppercase;
-  color: #666;
-  font-size: 12px;
-}
-.bozzo .container_top_ecoute table tbody tr, .decouverte .container_top_ecoute table tbody tr, .music_styles .container_top_ecoute table tbody tr, .playlists .container_top_ecoute table tbody tr, .playlist .container_top_ecoute table tbody tr, .bozzo .container_playlist_avec_artiste table tbody tr, .decouverte .container_playlist_avec_artiste table tbody tr, .music_styles .container_playlist_avec_artiste table tbody tr, .playlists .container_playlist_avec_artiste table tbody tr, .playlist .container_playlist_avec_artiste table tbody tr {
-  padding: 5px;
-}
-.bozzo .container_top_ecoute table tbody tr:hover, .decouverte .container_top_ecoute table tbody tr:hover, .music_styles .container_top_ecoute table tbody tr:hover, .playlists .container_top_ecoute table tbody tr:hover, .playlist .container_top_ecoute table tbody tr:hover, .bozzo .container_playlist_avec_artiste table tbody tr:hover, .decouverte .container_playlist_avec_artiste table tbody tr:hover, .music_styles .container_playlist_avec_artiste table tbody tr:hover, .playlists .container_playlist_avec_artiste table tbody tr:hover, .playlist .container_playlist_avec_artiste table tbody tr:hover {
-  background: rgba(0, 0, 0, 0.3);
-}
-.bozzo .container_top_ecoute table tbody tr:nth-child(odd), .decouverte .container_top_ecoute table tbody tr:nth-child(odd), .music_styles .container_top_ecoute table tbody tr:nth-child(odd), .playlists .container_top_ecoute table tbody tr:nth-child(odd), .playlist .container_top_ecoute table tbody tr:nth-child(odd), .bozzo .container_playlist_avec_artiste table tbody tr:nth-child(odd), .decouverte .container_playlist_avec_artiste table tbody tr:nth-child(odd), .music_styles .container_playlist_avec_artiste table tbody tr:nth-child(odd), .playlists .container_playlist_avec_artiste table tbody tr:nth-child(odd), .playlist .container_playlist_avec_artiste table tbody tr:nth-child(odd) {
-  background: #252525;
-}
-.bozzo .container_top_ecoute table tbody tr td, .decouverte .container_top_ecoute table tbody tr td, .music_styles .container_top_ecoute table tbody tr td, .playlists .container_top_ecoute table tbody tr td, .playlist .container_top_ecoute table tbody tr td, .bozzo .container_playlist_avec_artiste table tbody tr td, .decouverte .container_playlist_avec_artiste table tbody tr td, .music_styles .container_playlist_avec_artiste table tbody tr td, .playlists .container_playlist_avec_artiste table tbody tr td, .playlist .container_playlist_avec_artiste table tbody tr td {
-  font-size: 15px !important;
-  padding: 0.4rem;
-  vertical-align: middle;
-}
-.bozzo .container_top_ecoute table tbody tr td .icons, .decouverte .container_top_ecoute table tbody tr td .icons, .music_styles .container_top_ecoute table tbody tr td .icons, .playlists .container_top_ecoute table tbody tr td .icons, .playlist .container_top_ecoute table tbody tr td .icons, .bozzo .container_playlist_avec_artiste table tbody tr td .icons, .decouverte .container_playlist_avec_artiste table tbody tr td .icons, .music_styles .container_playlist_avec_artiste table tbody tr td .icons, .playlists .container_playlist_avec_artiste table tbody tr td .icons, .playlist .container_playlist_avec_artiste table tbody tr td .icons {
-  min-width: 22px;
-  min-height: 22px;
-  max-width: 22px;
-  max-height: 22px;
 }
 .bozzo .container_albums .container_items_album, .decouverte .container_albums .container_items_album, .music_styles .container_albums .container_items_album, .playlists .container_albums .container_items_album, .playlist .container_albums .container_items_album {
   display: flex;
@@ -2550,7 +2581,7 @@ table {
   }
 }
 .ajouter_musique .main-content .form-group .select-control {
-  padding: 20px;
+  padding: 10px;
   height: 48px;
 }
 .ajouter_musique .main-content .form-group .btn_mid {
