@@ -121,6 +121,7 @@
                         {% endfor %}
                     </select>
             {% else %}
+
             <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
             {% endif %}
 
@@ -143,10 +144,10 @@
                     <tr>
                         <th></th>
                         <th></th>
-                        <th>Titre</th>
+                        <th>Titre du morceau</th>
                         <th>Artiste</th>
-                        <th>Album</th>
-                        <th>Time</th>
+                        <th>Genre</th>
+                        <th>Durée</th>
                         <th></th>
                     </tr>
                     </thead>
@@ -159,7 +160,20 @@
                         <td>{{ AllMusic.artiste }}</td>
                         <td>{{ AllMusic.album }}</td>
                         <td>{{ AllMusic.times }}</td>
-                        <td><div class="icons icon_more"></div></td>
+                        {#<td><button class="icons icon_more">
+
+                            </button></td>#}
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn icons icon_more"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Télécharger</a>
+                                    <a href="#">Partager sur Facebook</a>
+                                    <a href="#">Partager sur Twitter</a>
+                                    <a href="#">Commenter</a>
+                                </div>
+                            </div>
+                        </td>
                     </tr>
                     {% endfor %}
                
@@ -293,96 +307,37 @@
 
                 <table>
                     <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Nom playliste</th>
-                        <th>Nom créateur</th>
-                        <th>Nombres d'abonnés</th>
-                        <th></th>
-                    </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Nom de la playlist</th>
+                            <th>Nom du créateur/artiste</th>
+                            <th>Genre Musical</th>
+                            {#<th>Nombres d'abonnés</th>#}
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>Playliste</td>
-                        <td>Créateur</td>
-                        <td>XXX abonnés</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
+                        <tr>
+                            <td><div class="icons icon_play"></div></td>
+                            <td><div class="icons icon_like"></div></td>
+                            <td>Playlist</td>
+                            <td>Créateur</td>
+                            <td>Métal</td>
+                            {#<td>XXX abonnés</td>
+                            <td><div class="icons icon_more"></div></td>#}
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropbtn icons icon_more"></button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Télécharger</a>
+                                        <a href="#">Partager sur Facebook</a>
+                                        <a href="#">Partager sur Twitter</a>
+                                        <a href="#">Commenter</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
@@ -577,6 +532,7 @@
         </section>
     {# Page Ma Musique #}
         <section id="mymusic_pages" class="bozzo pages">
+
             <div class="container_description">
                 <div class="big_cover"></div>
                 <div class="artist_description">
@@ -611,7 +567,7 @@
                                 <td>{{ PlayListeUser.nbmusic }}</td>
                                 <td>{{ PlayListeUser.nbabo }}</td>
                                 <td>{{ PlayListeUser.alltemp }}</td>
-                                <td><div class="icons icon_delete"></div></td>
+                                <td><div class="icons icon_delete">x</div></td>
                             </tr>
                             </tr>
                         {% endfor %}                       
@@ -727,107 +683,36 @@
 
                 <table>
                     <thead>
-                    <tr>
-                        <th></th>
-                        <th></th>
-                        <th>Titre</th>
-                        <th>Artiste</th>
-                        <th>Album</th>
-                        <th>Time</th>
-                        <th></th>
-                    </tr>
+                        <tr>
+                            <th></th>
+                            <th></th>
+                            <th>Titre du morceau</th>
+                            <th>Artiste</th>
+                            <th>Genre</th>
+                            <th>Durée</th>
+                            <th></th>
+                        </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
-                    <tr>
-                        <td><div class="icons icon_play"></div></td>
-                        <td><div class="icons icon_like"></div></td>
-                        <td>The Rocking Grounds</td>
-                        <td>The Skies Above</td>
-                        <td>The Black Mages</td>
-                        <td>3:56</td>
-                        <td><div class="icons icon_more"></div></td>
-                    </tr>
+                        <tr>
+                            <td><div class="icons icon_play"></div></td>
+                            <td><div class="icons icon_like"></div></td>
+                            <td>The Rocking Grounds</td>
+                            <td>The Skies Above</td>
+                            <td>The Black Mages</td>
+                            <td>3:56</td>
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropbtn icons icon_more"></button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Télécharger</a>
+                                        <a href="#">Partager sur Facebook</a>
+                                        <a href="#">Partager sur Twitter</a>
+                                        <a href="#">Commenter</a>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 
