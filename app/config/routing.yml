@@ -28,3 +28,12 @@ dowload_music:
 Playliste_add_music:
     path: /Playliste_add_music/
     defaults: { _controller: WavesBundle:Waves:Playliste_add_music }
+
+admin_area:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
