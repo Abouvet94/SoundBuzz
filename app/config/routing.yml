@@ -19,7 +19,7 @@ getMusicid:
 
 delete_music:
     path: /delete_music/{id}
-    defaults: { _controller: WavesBundle:Waves:DeleteMusic }
+    defaults: { _controller: WavesBundle:Waves:DeleteMusic, id:null }
 
 dowload_music:
     path: /dowl_music/{id}

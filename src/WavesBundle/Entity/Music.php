@@ -25,6 +25,7 @@ class Music
      */
     private  $music_id;
 
+
     /**
     * @ORM\Column(name="titre", type="string", length=255, nullable=true)
     */

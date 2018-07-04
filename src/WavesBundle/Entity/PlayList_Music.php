@@ -27,7 +27,7 @@ class Playlist_Music
 
     /**
     * @ORM\ManyToOne(targetEntity="WavesBundle\Entity\Music")
-    * @ORM\JoinColumn(name="music_id", referencedColumnName="music_id")
+    * @ORM\JoinColumn(name="music_id", referencedColumnName="music_id", onDelete="CASCADE")
     */
     private $music_id; 
 

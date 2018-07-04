@@ -135,6 +135,6 @@ class WavesController extends Controller {
         }
         $em->remove($entity);
         $em->flush();
-        return $this->redirect($this->generateUrl('home_bdd'));
+        return $this->redirect($this->generateUrl('home'));
     }
 }
