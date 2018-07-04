@@ -2,36 +2,32 @@
   .container_description {
     display: flex;
     flex-direction: row;
+    width: 100%;
 
     .playlist_description {
       display: flex;
       flex-direction: column;
-
+      width: 100%;
       .playlist_info {
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: flex-end;
-
         .button_h1 {
           button {
             @include button-base;
-
             background: linear-gradient(to right, $flash_pink, $flash_red);
             display: block;
             margin-bottom: $box-pad / 2;
-
             &:hover {
               background: rgba($white, 0.1);
             }
           }
-
           h1 {
             font-size: $box-pad;
             margin-bottom: $box-pad / 2;
           }
         }
-
         .playlist_share {
           display: flex;
           flex-direction: row;
@@ -40,6 +36,8 @@
 
           .icons {
             margin: 0 5px;
+            @include size($box-pad);
+            background: $purple;
           }
         }
       }
@@ -94,4 +92,46 @@
       }
     }
   }
+
+  .container_commentaires {
+    li {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: $box-pad;
+      .picture_title_comm {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        margin-bottom: $box-pad/2;
+        .picture_comm {
+          @include size($box-pad*1.5);
+          background: $purple;
+          margin: 0 $box-pad/2 0 0;
+        }
+        .point_comm {
+          margin: 0 $box-pad/2;
+          color: $color_text_ters;
+        }
+        .time_comm {
+          font-size: $box-pad/2.5;
+          color: $color_text_ters;
+        }
+      }
+      .comm {
+        color: $color_text_ters;
+      }
+      .icons_all {
+        display: flex;
+        flex-direction: row;
+        margin: 0 5px;
+        .icons {
+          @include size($box-pad);
+          margin: 0 5px;
+        }
+      }
+    }
+  }
+
+
 }
