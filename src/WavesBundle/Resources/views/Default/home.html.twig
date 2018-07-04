@@ -74,7 +74,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Genre :</label>
+                    <label>Genre Musical :</label>
                     <select name="genre_musical" class="select-control">
                         <option value="">Folk</option>
                         <option value="">Dance</option>
@@ -146,7 +146,7 @@
                         <th></th>
                         <th>Titre du morceau</th>
                         <th>Artiste</th>
-                        <th>Genre</th>
+                        <th>Genre Musical</th>
                         <th>Durée</th>
                         <th></th>
                     </tr>
@@ -302,7 +302,7 @@
 
             <div class="container_playlist_avec_artiste">
 
-                <h2>Playlist avec cet Artiste</h2>
+                <h2>Playlists avec cet Artiste</h2>
                 <div class="border-bottom"></div>
 
                 <table>
@@ -549,30 +549,45 @@
             <div class="container_top_ecoute">
                 <h2>Mes playlists</h2>
                 <div class="border-bottom"></div>
+
                 <table>
                     <thead>
                         <tr>
-                            <th>Titre</th>
-                            <th>Nombres de morceaux</th>
-                            <th>Nombres d'abonnés</th>
-                            <th>Temps</th>
+                            <th></th>
+                            <th>Nom de la playlist</th>
+                            <th>Nom du créateur/artiste</th>
+                            <th>Genre Musical</th>
+                            {#<th>Nombres d'abonnés</th>#}
+                            <th></th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
                     <tbody>
-                        {% for PlayListeUser in PlayListUser %}
-                            <tr>
-                                <tr>
-                                <td id="{{ PlayListeUser.play_id }}">{{ PlayListeUser.nom }}</td>
-                                <td>{{ PlayListeUser.nbmusic }}</td>
-                                <td>{{ PlayListeUser.nbabo }}</td>
-                                <td>{{ PlayListeUser.alltemp }}</td>
-                                <td><div class="icons icon_delete">x</div></td>
-                            </tr>
-                            </tr>
-                        {% endfor %}                       
+                        <tr>
+                            <td><div class="icons icon_play"></div></td>
+                            <td>Playlist</td>
+                            <td>Créateur</td>
+                            <td>Métal</td>
+                            {#<td>XXX abonnés</td>
+                            <td><div class="icons icon_more"></div></td>#}
+                            <td>
+                                <div class="dropdown">
+                                    <button class="dropbtn icons icon_more"></button>
+                                    <div class="dropdown-content">
+                                        <a href="#">Télécharger</a>
+                                        <a href="#">Partager sur Facebook</a>
+                                        <a href="#">Partager sur Twitter</a>
+                                        <a href="#">Commenter</a>
+                                    </div>
+                                </div>
+                            </td>
+                            <td><div class="icons icon_edit"></div></td>
+                            <td><div class="icons icon_trash"></div></td>
+                        </tr>
                     </tbody>
                 </table>
+
             </div>
 
             <div class="container_albums">
@@ -688,8 +703,9 @@
                             <th></th>
                             <th>Titre du morceau</th>
                             <th>Artiste</th>
-                            <th>Genre</th>
+                            <th>Genre Musical</th>
                             <th>Durée</th>
+                            <th></th>
                             <th></th>
                         </tr>
                     </thead>
@@ -712,6 +728,7 @@
                                     </div>
                                 </div>
                             </td>
+                            <td><div class="icons icon_trash"></div></td>
                         </tr>
                     </tbody>
                 </table>
@@ -737,26 +754,42 @@
                 <div id="Playlist_all_id" class="container_top_ecoute">
                     <h2>Playlists</h2>
                     <div class="border-bottom"></div>
+
                     <table>
                         <thead>
-                        <tr>
-                            <th>Titre</th>
-                            <th>Nombres de morceaux</th>
-                            <th>Nombres d'abonnés</th>
-                            <th>Temps</th>
-                            <th></th>
-                        </tr>
+                            <tr>
+                                <th></th>
+                                <th></th>
+                                <th>Nom de la playlist</th>
+                                <th>Nom du créateur/artiste</th>
+                                <th>Genre Musical</th>
+                                {#<th>Nombres d'abonnés</th>#}
+                                <th></th>
+                            </tr>
                         </thead>
                         <tbody>
-                         {% for playliste in playlist %}                        
-                            <tr>
-                                <td id="{{ playliste.play_id }}">{{ playliste.nom }}</td>
-                                <td>{{ playliste.nbmusic }}</td>
-                                <td>{{ playliste.nbabo }}</td>
-                                <td>{{ playliste.alltemp }}</td>
-                                <td><div class="icons icon_delete"></div></td>
-                            </tr>
-                        {% endfor %}
+                            {% for playliste in playlist %}
+                                <tr>
+                                    <td><div class="icons icon_play"></div></td>
+                                    <td><div class="icons icon_like"></div></td>
+                                    <td id="{{ playliste.play_id }}">{{ playliste.nom }}</td>
+                                    <td>Créateur</td>
+                                    <td>Métal</td>
+                                    {#<td>XXX abonnés</td>
+                                    <td><div class="icons icon_more"></div></td>#}
+                                    <td>
+                                        <div class="dropdown">
+                                            <button class="dropbtn icons icon_more"></button>
+                                            <div class="dropdown-content">
+                                                <a href="#">Télécharger</a>
+                                                <a href="#">Partager sur Facebook</a>
+                                                <a href="#">Partager sur Twitter</a>
+                                                <a href="#">Commenter</a>
+                                            </div>
+                                        </div>
+                                    </td>
+                                </tr>
+                            {% endfor %}
                         </tbody>
                     </table>
 
@@ -768,16 +801,16 @@
 
             <div class="container_description">
                 <div class="big_cover"></div>
-                <div class="artist_description">
-                    <div class="artist_info">
+                <div class="playlist_description">
+                    <div class="playlist_info">
                         <div class="button_h1">
                             <h3>Playlist</h3>
                             <h2>Nom Playlist (nom)</h2>
                             <h4>Créée par : (user)</h4>
                         </div>
-                        <div class="artist_share">
-                            <div class="abonnes">nb_abo</div>
-                            <div class="icons icon_share"></div>
+                        <div class="playlist_share">
+                            {#<div class="abonnes">nb_abo</div>
+                            <div class="icons icon_share"></div>#}
                             <div class="icons icon_fb"></div>
                             <div class="icons icon_twit"></div>
                         </div>
@@ -790,16 +823,39 @@
                     <tr>
                         <th></th>
                         <th></th>
-                        <th>Titre</th>
+                        <th>Titre du morceau</th>
                         <th>Artiste</th>
-                        <th>Album</th>
-                        <th>Time</th>
+                        <th>Genre Musical</th>
+                        <th>Durée</th>
+                        <th></th>
                         <th></th>
                     </tr>
                 </thead>
                 <tbody>
+                    <tr>
+                        <td><div class="icons icon_play"></div></td>
+                        <td><div class="icons icon_like"></div></td>
+                        <td>The Rocking Grounds</td>
+                        <td>The Skies Above</td>
+                        <td>The Black Mages</td>
+                        <td>3:56</td>
+                        <td>
+                            <div class="dropdown">
+                                <button class="dropbtn icons icon_more"></button>
+                                <div class="dropdown-content">
+                                    <a href="#">Télécharger</a>
+                                    <a href="#">Partager sur Facebook</a>
+                                    <a href="#">Partager sur Twitter</a>
+                                    <a href="#">Commenter</a>
+                                </div>
+                            </div>
+                        </td>
+                        <td><div class="icons icon_trash"></div></td>
+                    </tr>
                 </tbody>
             </table>
+
+
             {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
             <audio id="audio_a" style="display: none;" >
                 <source id="audioSource" src=""></source>
