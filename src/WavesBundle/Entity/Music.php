@@ -16,7 +16,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Entity(repositoryClass="WavesBundle\Entity\MusicRepository")
  */
 
-class Music
+class Music 
 {
     /**
      * @ORM\Column(name="music_id", type="integer")
@@ -34,6 +34,11 @@ class Music
     * @ORM\Column(name="active_flag", type="integer", nullable=true)
     */
     private $active_flag;
+
+    /**
+    * @ORM\Column(name="autorise_flag", type="integer", nullable=true)
+    */
+    private $autorise_flag;
 
     /**
     * @ORM\Column(name="artiste", type="string", length=255, nullable=true)
@@ -70,6 +75,30 @@ class Music
     */
     private $times;
 
+    /**
+    * @ORM\Column(name="description", type="string", length=255, nullable=true)
+    */
+    private $description;
+
+    /**
+    * @ORM\Column(name="compositeur", type="string", length=255, nullable=true)
+    */
+    private $compositeur;
+
+    /**
+    * @ORM\Column(name="contenue_explicite", type="string", length=255, nullable=true)
+    */
+    private $contenue_explicite;
+
+    /**
+     * @ORM\Column(name="datecreated", type="date", nullable=true)
+     */
+    private $datecreated;
+
+    /**
+     * @ORM\Column(name="datetransfert", type="date", nullable=true)
+     */
+    private $datetransfert;
 
     //Getter Setter
 
@@ -108,7 +137,7 @@ class Music
     /**
     * @return mixed
     */
-    public function getActive_Flag()
+    public function getActiveFlag()
     {
         return $this->active_flag;
     }
@@ -116,9 +145,25 @@ class Music
     /**
     * @param mixed $active_flag
     */
-    public function setActive_Flag($active_flag)
+    public function setActiveFlag($active_flag)
     {
         $this->active_flag = $active_flag;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getAutoriseFlag()
+    {
+        return $this->autorise_flag;
+    }
+
+    /**
+    * @param mixed $active_flag
+    */
+    public function setAutoriseFlag($autorise_flag)
+    {
+        $this->autorise_flag = $autorise_flag;
     }
 
     /**
@@ -231,5 +276,85 @@ class Music
     public function setTimes($times)
     {
         $this->times = $times;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+    * @param mixed $description
+    */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }   
+
+    /**
+    * @return mixed
+    */
+    public function getCompositeur()
+    {
+        return $this->compositeur;
+    }
+
+    /**
+    * @param mixed $compositeur
+    */
+    public function setCompositeur($compositeur)
+    {
+        $this->compositeur = $compositeur;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getContenueExplicite()
+    {
+        return $this->contenue_explicite;
+    }
+
+    /**
+    * @param mixed $contenue_explicite
+    */
+    public function setContenueExplicite($contenue_explicite)
+    {
+        $this->contenue_explicite = $contenue_explicite;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getDateCreated()
+    {
+        return $this->datecreated;
+    }
+
+    /**
+    * @param mixed $datecreated
+    */
+    public function setDateCreated($datecreated)
+    {
+        $this->datecreated = $datecreated;
+    }
+
+    /**
+    * @return mixed
+    */
+    public function getDateTransfert()
+    {
+        return $this->datetransfert;
+    }
+
+    /**
+    * @param mixed $datetransfert
+    */
+    public function setDateTransfert($datetransfert)
+    {
+        $this->datetransfert = $datetransfert;
     }
 }

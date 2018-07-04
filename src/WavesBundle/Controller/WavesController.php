@@ -122,4 +122,19 @@ class WavesController extends Controller {
             return $response;
         }
     }
+
+    public function DeleteMusicAction(Request $request, $id)
+    {
+        #Connection a la base de données
+        $em = $this->getDoctrine()->getManager();
+        #Vient chercher le Contrat avec l'id donnée en parametre
+        $entity = $em->getRepository('WavesBundle:Music')->find($id);
+        #Verif
+        if (!$entity) {
+            throw $this->createNotFoundException('Music non trouvé.');
+        }
+        $em->remove($entity);
+        $em->flush();
+        return $this->redirect($this->generateUrl('home_bdd'));
+    }
 }
