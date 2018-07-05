@@ -692,7 +692,7 @@
                     <div class="playlist_info">
                         <div class="button_h1">
                             <h3>Playlist</h3>
-                            <h2>Nom Playlist (nom)</h2>
+                            <h2 id="nameplayliste"></h2>
                             <h4>Créée par : (user)</h4>
                         </div>
                         <div class="playlist_share">
@@ -912,6 +912,7 @@ var playliste_music = [];
         music_page = $('#Playlist_pages');
         music_table = $('#Playlist_pages table tbody');
         playlists_all = $('#Playlist_all_pages');
+        Name_Playlist1 = $('#nameplayliste');
         Name_Playlist = $('#Name_Playlist');
         playliste_music = [];
         playlists_all.hide();
@@ -932,6 +933,7 @@ var playliste_music = [];
                 var tab = JSON.parse(data);
                 //Vide la playliste acuel
                 Name_Playlist.empty();
+                Name_Playlist1.empty();
                 for(var i=0; i < tab.length; i++ ){ 
                     id_music = tab[i].music_id;
                    playliste_music.push(tab[i].src);
@@ -947,6 +949,7 @@ var playliste_music = [];
                    music_table.append('</tr>');
                 }
                 Name_Playlist.append(value);
+                Name_Playlist1.append(value);
             }
         });
         
