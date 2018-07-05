@@ -75,7 +75,7 @@ class DefaultController extends Controller
             
            // $fileName = $file->getClientOriginalName();
             $fileName = $this->generateUniqueFileName().'.'.$file->guessExtension();  
-            $CreateMusic->setSrc('./framework/audio/'.$fileName);
+            $CreateMusic->setSrc('../framework/audio/'.$fileName);
             $file->move(
                 $this->getParameter('path_music'),
                 $fileName
