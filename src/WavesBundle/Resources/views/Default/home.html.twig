@@ -29,7 +29,7 @@
             <li id="decouvrir"><a>Découvrir</a></li>
             <li id="styles"><a>Styles</a></li>
             <li id="mymusic"><a>Ma Musique</a></li>
-            <li id="Playlist_all"><a>Playlist</a>
+            <li id="Playlist_all"><a>Playlists</a>
             {% if is_granted("IS_AUTHENTICATED_FULLY") %}
                 <li id="log_out"><a href="{{ path('fos_user_security_logout') }}">Log Out</a>
             {% else %}
@@ -51,23 +51,23 @@
 
             {% if is_granted("IS_AUTHENTICATED_FULLY") %}
 
-            <article class="main-content">
+            <div class="main-content">
 
-                <h2>Ajouter une musique</h2>
+                <h2>Ajouter un morceau</h2>
                 <div class="border-bottom"></div>
                 {{ form_start(FormMusic) }}
 
                 <div class="form-group">
-                    <label>Titre :</label>
+                    <label>Titre du morceau :</label>
                         {{ form_widget(FormMusic.titre, { 'attr': {'class': 'input-control' } }) }}
                         {{ form_errors(FormMusic.titre) }}
                 </div>
 
-                <div class="form-group">
+                {#<div class="form-group">
                     <label>Album :</label>
                         {{ form_widget(FormMusic.album, { 'attr': {'class': 'input-control' } }) }}
                         {{ form_errors(FormMusic.album) }}
-                </div>
+                </div>#}
 
                 <div class="form-group">
                     <label>Artiste :</label>
@@ -76,7 +76,7 @@
                 </div>
 
                 <div class="form-group">
-                    <label>Piste :</label>
+                    <label>Compositeur :</label>
                         {{ form_widget(FormMusic.piste, { 'attr': {'class': 'input-control' } }) }}
                         {{ form_errors(FormMusic.piste) }}
                 </div>
@@ -104,34 +104,41 @@
 
                 <div class="form-group">
                     <label>Image :</label>
-                        {{ form_widget(FormMusic.image, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_widget(FormMusic.image) }}
                         {{ form_errors(FormMusic.image) }}
                 </div>
 
-                <div class="form-group">
+                {#<div class="form-group">
                     <label>Type :</label>
                         {{ form_widget(FormMusic.type, { 'attr': {'class': 'input-control' } }) }}
                         {{ form_errors(FormMusic.type) }}
-                </div>
+                </div>#}
 
                 <div class="form-group">
-                    <label>Upload Fichier :</label>
-                        {{ form_widget(FormMusic.file, { 'attr': {'class': 'input-control' } }) }}
+                    <label>Aujouter mon morceau :</label>
+                        {{ form_widget(FormMusic.file) }}
                         {{ form_errors(FormMusic.file) }}
                 </div>
+
                 <div class="form-group">
-                    <div class="btn_mid">
-                                <input class="btn_w" type="submit" value="Ajouter">
-                            </div>
+                    <label for="">Autorisation de téléchargement</label>
+                    <input type="radio"> Oui<br>
+                    <input type="radio"> Non<br>
                 </div>
 
-                {{ form_end(FormMusic) }}
+                <div class="form-group">
+                    <div class="btn_mid">
+                        <input class="btn_w" type="submit" value="Ajouter">
+                    </div>
+                </div>
+
+                {#{{ form_end(FormMusic) }}
                     <select id="monselect">
                         {% for ListeUser in PlayListUser %}
                         <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
                         {% endfor %}
-                    </select>
-            </article>
+                    </select>#}
+            </div>
             {% else %}
 
             <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
@@ -149,6 +156,7 @@
         <section id="decouvrir_pages" class="decouverte pages">
 
             <div class="container_top_ecoute">
+                <h1>Découvrir</h1>
                 <h2>Nouveautés</h2>
                 <div class="border-bottom"></div>
                 <table>
@@ -193,7 +201,7 @@
                 </table>
             </div>
 
-            <div class="container_albums">
+            <article class="container_albums">
 
                 <h2>Nouveaux albums</h2>
                 <div class="border-bottom"></div>
@@ -310,9 +318,9 @@
 
                 </div>
 
-            </div>
+            </article>
 
-            <div class="container_playlist_avec_artiste">
+            <article class="container_playlist_avec_artiste">
 
                 <h2>Playlists avec cet Artiste</h2>
                 <div class="border-bottom"></div>
@@ -353,9 +361,9 @@
                     </tbody>
                 </table>
 
-            </div>
+            </article>
 
-            <div class="container_artist">
+            <article class="container_artist">
                 <h2>Artistes similaires</h2>
                 <div class="border-bottom"></div>
 
@@ -447,9 +455,9 @@
 
                 </div>
 
-            </div>
+            </article>
 
-            <div class="container_styles">
+            <article class="container_styles">
                 <h2>Styles</h2>
                 <div class="border-bottom"></div>
 
@@ -471,7 +479,7 @@
                     </div>
 
                 </div>
-            </div>
+            </article>
 
 
         </section>
@@ -483,7 +491,7 @@
                 <div class="artist_description">
                     <div class="artist_info">
                         <div class="button_h1">
-                            <h2>Styles</h2>
+                            <h1>Genre musical</h1>
                             <div class="border-bottom"></div>
                         </div>
                     </div>
@@ -551,6 +559,7 @@
                     <div class="artist_info">
                         <div class="button_h1">
                             <h1>Ma musique</h1>
+                            <div class="border-bottom"></div>
                         </div>
                     </div>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vitae ipsum dolor. Curabitur dapibus condimentum dolor a interdum. Mauris rhoncus, elit eu suscipit cursus, mi odio efficitur odio, nec rhoncus ante arcu viverra est. Pellentesque nec sapien aliquam, consectetur nisl eu, luctus augue. Phasellus fermentum elementum vestibulum. Ut vehicula eget justo id tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Etiam ac sagittis nisi. Curabitur eu nunc a ex elementum euismod. Aenean in risus pretium, tristique augue at, gravida mauris. Sed at purus eget lacus facilisis pulvinar.</p>
@@ -558,7 +567,7 @@
 
             </div>
 
-            <div class="container_top_ecoute">
+            <article class="container_top_ecoute">
                 <h2>Mes playlists</h2>
                 <div class="border-bottom"></div>
 
@@ -600,9 +609,9 @@
                     </tbody>
                 </table>
 
-            </div>
+            </article>
 
-            <div class="container_albums">
+            <article class="container_albums">
 
                 <h2>Mes albums préférés</h2>
                 <div class="border-bottom"></div>
@@ -701,9 +710,9 @@
 
                 </div>
 
-            </div>
+            </article>
 
-            <div class="container_playlist_avec_artiste">
+            <article class="container_playlist_avec_artiste">
 
                 <h2>Mes Morceaux préférés</h2>
                 <div class="border-bottom"></div>
@@ -745,7 +754,8 @@
                     </tbody>
                 </table>
 
-            </div>
+            </article>
+
         </section>
     {# Page All Playlists #}
         <section id="Playlist_all_pages" class="playlists pages">
@@ -764,7 +774,7 @@
                 </div>-->
 
                 <div id="Playlist_all_id" class="container_top_ecoute">
-                    <h2>Playlists</h2>
+                    <h1>Playlists</h1>
                     <div class="border-bottom"></div>
 
                     <table>
@@ -821,10 +831,11 @@
                             <h4>Créée par : (user)</h4>
                         </div>
                         <div class="playlist_share">
+                            <div>Partager la playlist : </div>
                             {#<div class="abonnes">nb_abo</div>
                             <div class="icons icon_share"></div>#}
-                            <div class="icons icon_fb"></div>
-                            <div class="icons icon_twit"></div>
+                            <div class="icons icon_facebook"></div>
+                            <div class="icons icon_twitter"></div>
                         </div>
                     </div>
                 </div>
@@ -867,7 +878,7 @@
                 </tbody>
             </table>
 
-            <div class="container_commentaires">
+            <article class="container_commentaires">
                 <h2>Commentaires</h2>
                 <div class="border-bottom"></div>
                 <ul>
@@ -929,13 +940,143 @@
 
                     </li>
                 </ul>
-            </div>
+            </article>
+
+            <article class="container_écrire_commentaire">
+
+                <div class="main-content">
+
+                    <h2>Ecrire un commentaire</h2>
+                    <div class="border-bottom"></div>
+
+                    <div class="form-group">
+                        <label>Titre ou résumé de votre commentaire :</label>
+                        <input type="text" value="" class="input-control" />
+                    </div>
+
+                    <div class="form-group">
+                        <label>Entrez ici votre commentaire :</label>
+                        <textarea type="text" value="" class="input-control"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="btn_mid">
+                            <button class="btn_w">
+                                <a href="home.html">Soumettre</a>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </article>
 
 
             {# !! IMPORTANT  !! Pour la récupérattion des src audios #}
             <audio id="audio_a" style="display: none;" >
                 <source id="audioSource" src=""></source>
             </audio>
+        </section>
+
+        <section id="userprofile_pages" class="user_profile pages">
+
+            {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+
+                <article class="main-content">
+
+                    <h2>Ajouter une musique</h2>
+                    <div class="border-bottom"></div>
+                    {{ form_start(FormMusic) }}
+
+                    <div class="form-group">
+                        <label>Titre :</label>
+                        {{ form_widget(FormMusic.titre, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.titre) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Album :</label>
+                        {{ form_widget(FormMusic.album, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.album) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Artiste :</label>
+                        {{ form_widget(FormMusic.artiste, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.artiste) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Piste :</label>
+                        {{ form_widget(FormMusic.piste, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.piste) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Genre Musical :</label>
+                        <select name="genre_musical" class="select-control">
+                            <option value="">Folk</option>
+                            <option value="">Dance</option>
+                            <option value="">Electro</option>
+                            <option value="">Métal</option>
+                            <option value="">Rock</option>
+                            <option value="">Pop</option>
+                            <option value="">Reggae</option>
+                            <option value="">R'N'B</option>
+                            <option value="">Rap</option>
+                            <option value="">Internat</option>
+                            <option value="">Variété</option>
+                            <option value="">Classique</option>
+                            <option value="">Jazz</option>
+                            <option value="">Soul</option>
+                            <option value="">Blues</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Image :</label>
+                        {{ form_widget(FormMusic.image) }}
+                        {{ form_errors(FormMusic.image) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Type :</label>
+                        {{ form_widget(FormMusic.type, { 'attr': {'class': 'input-control' } }) }}
+                        {{ form_errors(FormMusic.type) }}
+                    </div>
+
+                    <div class="form-group">
+                        <label>Aujouter mon morceau :</label>
+                        {{ form_widget(FormMusic.file) }}
+                        {{ form_errors(FormMusic.file) }}
+                    </div>
+
+                    <div class="form-group">
+                        <div class="btn_mid">
+                            <input class="btn_w" type="submit" value="Ajouter">
+                        </div>
+                    </div>
+
+                    {#{{ form_end(FormMusic) }}
+                        <select id="monselect">
+                            {% for ListeUser in PlayListUser %}
+                            <option value="{{ ListeUser.play_id }}">{{ ListeUser.nom }}</option>
+                            {% endfor %}
+                        </select>#}
+                </article>
+            {% else %}
+
+                <p><b>Bienvenue</b><br> Vous devez être connecté pour ajouter une musique.</p>
+            {% endif %}
+
+
+            {# <select id="Add_Music_Ajax">
+                {% for playlistes in playlistcopie %}
+                    <option value="{{ playlistes.play_id }}">{{ playlistes.nom }}</option>
+                {% endfor %}
+            <selected> #}
+
         </section>
 
     </div>
@@ -946,7 +1087,7 @@
             <li>
                 {# Petite condition - Si la sexion actuelle comporte un Utilisateur, afficher son Nom. Sinon Afficher Bienvenue #}
                 {% if is_granted("IS_AUTHENTICATED_FULLY") %}
-                <p><b>{{ app.user.username }}</b></p>
+                <a id="userprofile">{{ app.user.username }}</a>
                 {% else %} <p><b>Bienvenue</b></p>
                 {% endif %}
             </li>

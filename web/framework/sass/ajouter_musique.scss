@@ -1,5 +1,5 @@
-.ajouter_musique {
-  margin: $box-pad 0 $box-pad*3 0;
+.ajouter_musique, .playlist {
+  //margin: $box-pad 0 $box-pad*3 0;
   //background: linear-gradient(to right, $color_gradiant_orange, $color_gradiant_pink, $color_gradiant_purple)
   display: flex;
   flex-direction: column;
@@ -13,7 +13,7 @@
 	  }
 	  label {
 		display: block;
-		width: 130px;
+		width: 150px;
 		font-size: 1em;
 		margin-bottom: $box-pad/1.5+3px;
 		padding-right: $box-pad/1.5;
@@ -52,6 +52,7 @@
 		  width: 75%;
 		}
 	  }
+
 	  .select-control {
 		padding: 10px;
 	  	height: 48px;

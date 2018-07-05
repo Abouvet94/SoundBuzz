@@ -23,10 +23,20 @@
               background: rgba($white, 0.1);
             }
           }
-          h1 {
-            font-size: $box-pad;
-            margin-bottom: $box-pad / 2;
+          h3 {
+            font-size: $box-pad/2;
+            margin-bottom: 50px;
+            text-transform: uppercase;
+            color: $color_text_ters;
           }
+          h2 {
+            font-size: $box-pad*1.5;
+            margin-bottom: 50px;
+          }
+          h4 {
+            color: $color_text_secondary;
+          }
+
         }
         .playlist_share {
           display: flex;
@@ -37,7 +47,7 @@
           .icons {
             margin: 0 5px;
             @include size($box-pad);
-            background: $purple;
+            //background: $purple;
           }
         }
       }
