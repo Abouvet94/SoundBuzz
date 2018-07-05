@@ -30,7 +30,9 @@
             <li id="styles"><a>Styles</a></li>
             <li id="mymusic"><a>Ma Musique</a></li>
             <li id="Playlist_all"><a>Playlist</a>
-            <li id="log_out"><a>Log Out</a>
+            {% if is_granted("IS_AUTHENTICATED_FULLY") %}
+                <li id="log_out"><a href="{{ path('fos_user_security_logout') }}">Log Out</a>
+            {% endif %}
         </ul>
     </nav>
 
