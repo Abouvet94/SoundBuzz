@@ -1,0 +1,40 @@
+
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block title %}{{ parent() }}
+{% endblock %}
+{% block stylesheets %}{{ parent() }}
+
+<style>
+.button {
+    background-color: Transparent;
+    background-repeat:no-repeat;
+    border: none;
+    cursor:pointer;
+    overflow: hidden;
+    outline:none;
+}
+</style>
+
+{% endblock %}
+{% block body %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+
+    {# Ici tu met ton codes #}
+
+    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+
+
+    {% if targetUrl %}
+    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+    {% endif %}
+
+
+
+{% endblock fos_user_content %}
+
+{% endblock %}
