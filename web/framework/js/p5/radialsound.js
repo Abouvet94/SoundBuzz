@@ -53,7 +53,7 @@ function setup() {
         //resulta = resulta.replace(/../i, '');
         //console.log(resulta);
         song = loadSound(
-            String(resulta),
+            String('../'+resulta),
             loaded,
             null,
             testSong
@@ -124,7 +124,7 @@ function draw() {
         strokeWeight(1);
         noFill();
         for (var i = 0; i < 360; i++) {
-            LineOndes(volhistory, vol, i, 1.1, 250, 300);
+            LineOndes(volhistory, vol, i, 1.1, 250, 325);
         }
         endShape();
         if (volhistory.length > 360) {

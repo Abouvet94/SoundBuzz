@@ -23,7 +23,7 @@ class MusicType extends AbstractType
 			->add('artiste', TextType::class, array('required' => true))
 			->add('piste', TextType::class, array('required' => true))
 			->add('file', FileType::class, array('required' => true))
-			->add('image', FileType::class, array('required' => true))
+			->add('image', TextType::class, array('required' => true))
 			->add('type', TextType::class, array('required' => true));
 	}
 
