@@ -70,6 +70,7 @@ table {
 .icons {
   background-repeat: no-repeat;
   background-position: center center;
+  cursor: pointer;
 }
 .icon_comm {
   background-image: url(../images/icon_comm.svg);
@@ -142,6 +143,18 @@ table {
 }
 .icon_edit:hover {
   background-image: url(../images/icon_edit_hover.svg);
+}
+.icon_facebook {
+  background-image: url(../images/icon_media_facebook.svg);
+}
+.icon_facebook:hover {
+  background-image: url(../images/icon_media_facebook_hover.svg);
+}
+.icon_twitter {
+  background-image: url(../images/icon_media_twitter.svg);
+}
+.icon_twitter:hover {
+  background-image: url(../images/icon_media_twitter_hover.svg);
 }
 .myMove {
   -webkit-animation-duration: 1.5s;
@@ -2139,9 +2152,17 @@ table {
 .app section {
   width: 100%;
 }
-.app section h2 {
+.app section article {
+  padding-top: 90px;
+}
+.app section h1 {
   font-size: 30px;
-  margin: 30px 0;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+.app section h2 {
+  font-size: 25px;
+  margin: 15px 0;
 }
 .app section .border-bottom {
   border: 0;
@@ -2469,9 +2490,18 @@ table {
 .bozzo .container_description .playlist_description .playlist_info .button_h1 button:hover, .decouverte .container_description .playlist_description .playlist_info .button_h1 button:hover, .music_styles .container_description .playlist_description .playlist_info .button_h1 button:hover, .playlists .container_description .playlist_description .playlist_info .button_h1 button:hover, .playlist .container_description .playlist_description .playlist_info .button_h1 button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-.bozzo .container_description .playlist_description .playlist_info .button_h1 h1, .decouverte .container_description .playlist_description .playlist_info .button_h1 h1, .music_styles .container_description .playlist_description .playlist_info .button_h1 h1, .playlists .container_description .playlist_description .playlist_info .button_h1 h1, .playlist .container_description .playlist_description .playlist_info .button_h1 h1 {
-  font-size: 30px;
-  margin-bottom: 15px;
+.bozzo .container_description .playlist_description .playlist_info .button_h1 h3, .decouverte .container_description .playlist_description .playlist_info .button_h1 h3, .music_styles .container_description .playlist_description .playlist_info .button_h1 h3, .playlists .container_description .playlist_description .playlist_info .button_h1 h3, .playlist .container_description .playlist_description .playlist_info .button_h1 h3 {
+  font-size: 15px;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  color: #b3b3b3;
+}
+.bozzo .container_description .playlist_description .playlist_info .button_h1 h2, .decouverte .container_description .playlist_description .playlist_info .button_h1 h2, .music_styles .container_description .playlist_description .playlist_info .button_h1 h2, .playlists .container_description .playlist_description .playlist_info .button_h1 h2, .playlist .container_description .playlist_description .playlist_info .button_h1 h2 {
+  font-size: 45px;
+  margin-bottom: 50px;
+}
+.bozzo .container_description .playlist_description .playlist_info .button_h1 h4, .decouverte .container_description .playlist_description .playlist_info .button_h1 h4, .music_styles .container_description .playlist_description .playlist_info .button_h1 h4, .playlists .container_description .playlist_description .playlist_info .button_h1 h4, .playlist .container_description .playlist_description .playlist_info .button_h1 h4 {
+  color: #666;
 }
 .bozzo .container_description .playlist_description .playlist_info .playlist_share, .decouverte .container_description .playlist_description .playlist_info .playlist_share, .music_styles .container_description .playlist_description .playlist_info .playlist_share, .playlists .container_description .playlist_description .playlist_info .playlist_share, .playlist .container_description .playlist_description .playlist_info .playlist_share {
   display: flex;
@@ -2485,7 +2515,6 @@ table {
   min-height: 30px;
   max-width: 30px;
   max-height: 30px;
-  background: #955ba5;
 }
 .bozzo .container_description .playlist_description p, .decouverte .container_description .playlist_description p, .music_styles .container_description .playlist_description p, .playlists .container_description .playlist_description p, .playlist .container_description .playlist_description p {
   text-align: left;
@@ -2568,24 +2597,23 @@ table {
   max-height: 30px;
   margin: 0 5px;
 }
-.ajouter_musique {
-  margin: 30px 0 90px 0;
+.ajouter_musique, .playlist {
   display: flex;
   flex-direction: column;
 }
-.ajouter_musique .main-content .form-group {
+.ajouter_musique .main-content .form-group, .playlist .main-content .form-group {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 @media screen and (max-width: 567px) {
-  .ajouter_musique .main-content .form-group {
+  .ajouter_musique .main-content .form-group, .playlist .main-content .form-group {
     flex-direction: column;
   }
 }
-.ajouter_musique .main-content .form-group label {
+.ajouter_musique .main-content .form-group label, .playlist .main-content .form-group label {
   display: block;
-  width: 130px;
+  width: 150px;
   font-size: 1em;
   margin-bottom: 23px;
   padding-right: 20px;
@@ -2593,24 +2621,24 @@ table {
   line-height: 22px;
 }
 @media screen and (max-width: 567px) {
-  .ajouter_musique .main-content .form-group label {
+  .ajouter_musique .main-content .form-group label, .playlist .main-content .form-group label {
     padding: 0;
     width: auto;
   }
 }
-.ajouter_musique .main-content .form-group .right-inline {
+.ajouter_musique .main-content .form-group .right-inline, .playlist .main-content .form-group .right-inline {
   text-align: right;
   width: auto;
   margin-left: 20px;
 }
 @media screen and (max-width: 567px) {
-  .ajouter_musique .main-content .form-group .right-inline {
+  .ajouter_musique .main-content .form-group .right-inline, .playlist .main-content .form-group .right-inline {
     text-align: left;
     padding-right: 0;
     padding-left: 0;
   }
 }
-.ajouter_musique .main-content .form-group .input-control, .ajouter_musique .main-content .form-group .select-control {
+.ajouter_musique .main-content .form-group .input-control, .playlist .main-content .form-group .input-control, .ajouter_musique .main-content .form-group .select-control, .playlist .main-content .form-group .select-control {
   background-color: #fff;
   flex: 4 auto;
   display: block;
@@ -2620,24 +2648,24 @@ table {
   border: none;
   font-size: 20px;
 }
-.ajouter_musique .main-content .form-group .input-control:hover, .ajouter_musique .main-content .form-group .select-control:hover {
+.ajouter_musique .main-content .form-group .input-control:hover, .playlist .main-content .form-group .input-control:hover, .ajouter_musique .main-content .form-group .select-control:hover, .playlist .main-content .form-group .select-control:hover {
   background: rgba(255, 255, 255, 0.5);
 }
 @media screen and (max-width: 567px) {
-  .ajouter_musique .main-content .form-group .input-control, .ajouter_musique .main-content .form-group .select-control {
+  .ajouter_musique .main-content .form-group .input-control, .playlist .main-content .form-group .input-control, .ajouter_musique .main-content .form-group .select-control, .playlist .main-content .form-group .select-control {
     margin-top: 2px;
     margin-right: 0;
     width: 75%;
   }
 }
-.ajouter_musique .main-content .form-group .select-control {
+.ajouter_musique .main-content .form-group .select-control, .playlist .main-content .form-group .select-control {
   padding: 10px;
   height: 48px;
 }
-.ajouter_musique .main-content .form-group .btn_mid {
+.ajouter_musique .main-content .form-group .btn_mid, .playlist .main-content .form-group .btn_mid {
   width: 100%;
 }
-.ajouter_musique .main-content .form-group .btn_mid .btn_w {
+.ajouter_musique .main-content .form-group .btn_mid .btn_w, .playlist .main-content .form-group .btn_mid .btn_w {
   height: 35px;
   font-size: 15px;
   padding: 0px 15px;
@@ -2645,13 +2673,13 @@ table {
   background-color: transparent;
   color: #fff !important;
 }
-.ajouter_musique .main-content .form-group .btn_mid .btn_w:hover {
+.ajouter_musique .main-content .form-group .btn_mid .btn_w:hover, .playlist .main-content .form-group .btn_mid .btn_w:hover {
   background: linear-gradient(to right, #f39865, #cc83ae, #7f74b4);
   color: #1a1a1a;
   border: 1px solid #1a1a1a;
 }
 @media screen and (max-width: 567px) {
-  .ajouter_musique .main-content .form-group .btn_mid .btn_w {
+  .ajouter_musique .main-content .form-group .btn_mid .btn_w, .playlist .main-content .form-group .btn_mid .btn_w {
     margin-bottom: 15px;
   }
 }

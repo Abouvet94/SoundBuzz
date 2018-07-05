@@ -23,15 +23,21 @@
 
 {% block fos_user_content %}
 
-
-    {# Ici tu met ton codes #}
-
-    <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+    <body>
 
 
-    {% if targetUrl %}
-    <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
-    {% endif %}
+        {# Ici tu met ton codes #}
+
+
+        <p>{{ 'registration.confirmed'|trans({'%username%': user.username}) }}</p>
+
+
+        {% if targetUrl %}
+        <p><a href="{{ targetUrl }}">{{ 'registration.back'|trans }}</a></p>
+        {% endif %}
+
+
+    </body>
 
 
 

@@ -14,6 +14,7 @@
 .icons {
   background-repeat: no-repeat;
   background-position: center center;
+  cursor: pointer;
 }
 
 
@@ -98,5 +99,19 @@
   background-image: url(../images/icon_edit.svg);
   &:hover {
     background-image: url(../images/icon_edit_hover.svg);
+  }
+}
+
+.icon_facebook {
+  background-image: url(../images/icon_media_facebook.svg);
+  &:hover {
+    background-image: url(../images/icon_media_facebook_hover.svg);
+  }
+}
+
+.icon_twitter {
+  background-image: url(../images/icon_media_twitter.svg);
+  &:hover {
+    background-image: url(../images/icon_media_twitter_hover.svg);
   }
 }
