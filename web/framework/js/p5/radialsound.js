@@ -28,6 +28,14 @@ $('#Playlist_pages table tbody').each(function(){
   };
 });
 
+var cnv;
+
+function centerCanvas() {
+  var x = (windowWidth - width) / 2;
+  var y = (windowHeight - height) / 2;
+  cnv.position(x, y);
+}
+
 //function LineOndes
 function LineOndes(volhistory, vol, i, max, mini, maxi){
   var r = map(volhistory[i], vol, max, mini, maxi);
@@ -51,7 +59,9 @@ function setup() {
       testSong
     );
     //Initialisation du fond
-    createCanvas(800, 600);
+    cnv = createCanvas(600, 600);
+    centerCanvas();
+    
     angleMode(DEGREES);
     //défillement auto
     // if( song.isPlaying() === false ){
@@ -62,6 +72,10 @@ function setup() {
       amp = new p5.Amplitude();
     }
   }
+}
+
+function windowResized() {
+  centerCanvas();
 }
 
 //Function pour load la musique selectionné
