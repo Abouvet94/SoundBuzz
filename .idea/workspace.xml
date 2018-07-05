@@ -2,6 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="76d6e9d3-5c07-471e-97d0-89323348f36a" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/framework/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/css/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/framework/sass/pages_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/pages_app.scss" afterDir="false" />
@@ -18,16 +21,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="false">
+      <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="368">
+              <caret line="746" column="52" selection-start-line="746" selection-start-column="52" selection-end-line="746" selection-end-column="52" />
               <folding>
                 <element signature="e#363#903#0#HTML" />
                 <element signature="e#980#1183#0#HTML" />
-                <element signature="e#1356#5725#0#HTML" />
                 <element signature="e#5446#19698#0#HTML" />
+                <element signature="e#5515#7362#0#HTML" />
                 <element signature="e#7698#13253#0#HTML" />
                 <element signature="e#13267#15119#0#HTML" />
                 <element signature="e#15133#19074#0#HTML" />
@@ -39,10 +42,10 @@
                 <element signature="e#31094#32963#0#HTML" />
                 <element signature="e#32620#35999#0#HTML" />
                 <element signature="e#33754#35963#0#HTML" />
-                <element signature="e#36044#41500#0#HTML" />
                 <element signature="e#36110#36937#0#HTML" />
                 <element signature="e#36951#38506#0#HTML" />
-                <element signature="e#39024#41783#0#HTML" />
+                <element signature="e#38686#39520#0#HTML" />
+                <element signature="e#39541#40375#0#HTML" />
                 <element signature="e#42669#46786#0#HTML" />
                 <element signature="e#41577#42958#0#HTML" />
                 <element signature="e#42992#45719#0#HTML" />
@@ -81,11 +84,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages_app.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages_app.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/framework/sass/pages_app.scss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="420">
               <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MusicType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -182,9 +194,10 @@
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/web/framework/sass/util.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/bozzo.scss" />
-        <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" />
         <option value="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/pages_app.scss" />
+        <option value="$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php" />
+        <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" />
       </list>
     </option>
   </component>
@@ -212,6 +225,48 @@
             <path>
               <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
               <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
@@ -273,7 +328,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32405000" />
+    <option name="totallyTimeSpent" value="33270000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
@@ -305,37 +360,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="165" column="28" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
-          <folding>
-            <element signature="e#363#903#0#HTML" />
-            <element signature="e#980#1183#0#HTML" />
-            <element signature="e#1356#5725#0#HTML" />
-            <element signature="e#5446#19698#0#HTML" />
-            <element signature="e#7698#13253#0#HTML" />
-            <element signature="e#13267#15119#0#HTML" />
-            <element signature="e#15133#19074#0#HTML" />
-            <element signature="e#19088#20031#0#HTML" />
-            <element signature="e#19745#22959#0#HTML" />
-            <element signature="e#23300#32987#0#HTML" />
-            <element signature="e#24456#26395#0#HTML" />
-            <element signature="e#26409#31080#0#HTML" />
-            <element signature="e#31094#32963#0#HTML" />
-            <element signature="e#32620#35999#0#HTML" />
-            <element signature="e#33754#35963#0#HTML" />
-            <element signature="e#36044#41500#0#HTML" />
-            <element signature="e#36110#36937#0#HTML" />
-            <element signature="e#36951#38506#0#HTML" />
-            <element signature="e#39024#41783#0#HTML" />
-            <element signature="e#42669#46786#0#HTML" />
-            <element signature="e#41577#42958#0#HTML" />
-            <element signature="e#42992#45719#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="329">
@@ -385,8 +409,8 @@
           <folding>
             <element signature="e#363#903#0#HTML" />
             <element signature="e#980#1183#0#HTML" />
-            <element signature="e#1356#5725#0#HTML" />
             <element signature="e#5446#19698#0#HTML" />
+            <element signature="e#5515#7362#0#HTML" />
             <element signature="e#7698#13253#0#HTML" />
             <element signature="e#13267#15119#0#HTML" />
             <element signature="e#15133#19074#0#HTML" />
@@ -398,10 +422,10 @@
             <element signature="e#31094#32963#0#HTML" />
             <element signature="e#32620#35999#0#HTML" />
             <element signature="e#33754#35963#0#HTML" />
-            <element signature="e#36044#41500#0#HTML" />
             <element signature="e#36110#36937#0#HTML" />
             <element signature="e#36951#38506#0#HTML" />
-            <element signature="e#39024#41783#0#HTML" />
+            <element signature="e#38686#39520#0#HTML" />
+            <element signature="e#39541#40375#0#HTML" />
             <element signature="e#42669#46786#0#HTML" />
             <element signature="e#41577#42958#0#HTML" />
             <element signature="e#42992#45719#0#HTML" />
@@ -675,37 +699,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="e#363#903#0#HTML" />
-            <element signature="e#980#1183#0#HTML" />
-            <element signature="e#1356#5725#0#HTML" />
-            <element signature="e#5446#19698#0#HTML" />
-            <element signature="e#7698#13253#0#HTML" />
-            <element signature="e#13267#15119#0#HTML" />
-            <element signature="e#15133#19074#0#HTML" />
-            <element signature="e#19088#20031#0#HTML" />
-            <element signature="e#19745#22959#0#HTML" />
-            <element signature="e#23300#32987#0#HTML" />
-            <element signature="e#24456#26395#0#HTML" />
-            <element signature="e#26409#31080#0#HTML" />
-            <element signature="e#31094#32963#0#HTML" />
-            <element signature="e#32620#35999#0#HTML" />
-            <element signature="e#33754#35963#0#HTML" />
-            <element signature="e#36044#41500#0#HTML" />
-            <element signature="e#36110#36937#0#HTML" />
-            <element signature="e#36951#38506#0#HTML" />
-            <element signature="e#39024#41783#0#HTML" />
-            <element signature="e#42669#46786#0#HTML" />
-            <element signature="e#41577#42958#0#HTML" />
-            <element signature="e#42992#45719#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/mixins.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="914">
@@ -738,6 +731,44 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
           <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="375">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="368">
+          <caret line="746" column="52" selection-start-line="746" selection-start-column="52" selection-end-line="746" selection-end-column="52" />
+          <folding>
+            <element signature="e#363#903#0#HTML" />
+            <element signature="e#980#1183#0#HTML" />
+            <element signature="e#5446#19698#0#HTML" />
+            <element signature="e#5515#7362#0#HTML" />
+            <element signature="e#7698#13253#0#HTML" />
+            <element signature="e#13267#15119#0#HTML" />
+            <element signature="e#15133#19074#0#HTML" />
+            <element signature="e#19088#20031#0#HTML" />
+            <element signature="e#19745#22959#0#HTML" />
+            <element signature="e#23300#32987#0#HTML" />
+            <element signature="e#24456#26395#0#HTML" />
+            <element signature="e#26409#31080#0#HTML" />
+            <element signature="e#31094#32963#0#HTML" />
+            <element signature="e#32620#35999#0#HTML" />
+            <element signature="e#33754#35963#0#HTML" />
+            <element signature="e#36110#36937#0#HTML" />
+            <element signature="e#36951#38506#0#HTML" />
+            <element signature="e#38686#39520#0#HTML" />
+            <element signature="e#39541#40375#0#HTML" />
+            <element signature="e#42669#46786#0#HTML" />
+            <element signature="e#41577#42958#0#HTML" />
+            <element signature="e#42992#45719#0#HTML" />
+          </folding>
         </state>
       </provider>
     </entry>
