@@ -20,10 +20,20 @@
   section {
     width: 100%;
 
-    h2 {
+	article {
+	  padding: $box-pad*3 0px $box-pad 0px;
+	}
+
+    h1 {
       font-size: $box-pad;
       margin: $box-pad 0;
+	  text-transform: uppercase;
     }
+
+	h2 {
+	  font-size: 25px;
+	  margin: 15px 0;
+	}
 
     .border-bottom {
       border: 0;
