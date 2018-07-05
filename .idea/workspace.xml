@@ -3,8 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="76d6e9d3-5c07-471e-97d0-89323348f36a" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/web/framework/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/framework/sass/pages_app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/pages_app.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/web/framework/sass/container_player.scss" beforeDir="false" afterPath="$PROJECT_DIR$/web/framework/sass/container_player.scss" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -18,16 +17,44 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file leaf-file-name="style.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/framework/sass/style.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="347">
+              <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="container_player.scss" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/framework/sass/container_player.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="651">
+              <caret line="164" column="8" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="8" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="left_panel.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/framework/sass/left_panel.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="135">
+              <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="home.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
+            <state relative-caret-position="510">
+              <caret line="1020" selection-start-line="1020" selection-end-line="1020" />
               <folding>
                 <element signature="e#363#903#0#HTML" />
+                <element signature="e#928#41496#0#HTML" />
                 <element signature="e#980#1183#0#HTML" />
-                <element signature="e#1356#5725#0#HTML" />
                 <element signature="e#5446#19698#0#HTML" />
+                <element signature="e#5515#7362#0#HTML" />
                 <element signature="e#7698#13253#0#HTML" />
                 <element signature="e#13267#15119#0#HTML" />
                 <element signature="e#15133#19074#0#HTML" />
@@ -39,10 +66,9 @@
                 <element signature="e#31094#32963#0#HTML" />
                 <element signature="e#32620#35999#0#HTML" />
                 <element signature="e#33754#35963#0#HTML" />
-                <element signature="e#36044#41500#0#HTML" />
                 <element signature="e#36110#36937#0#HTML" />
-                <element signature="e#36951#38506#0#HTML" />
-                <element signature="e#39024#41783#0#HTML" />
+                <element signature="e#38686#39520#0#HTML" />
+                <element signature="e#39541#40375#0#HTML" />
                 <element signature="e#42669#46786#0#HTML" />
                 <element signature="e#41577#42958#0#HTML" />
                 <element signature="e#42992#45719#0#HTML" />
@@ -51,23 +77,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/register.html.twig">
+      <file leaf-file-name="radialsound.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/framework/js/p5/radialsound.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
-              <caret line="23" column="46" selection-start-line="23" selection-start-column="46" selection-end-line="23" selection-end-column="46" />
-              <folding>
-                <element signature="e#335#407#0#HTML" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="confirmed.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+            <state relative-caret-position="269">
+              <caret line="109" column="20" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -75,17 +89,26 @@
       <file leaf-file-name="variables.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/framework/sass/variables.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="825">
-              <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+            <state relative-caret-position="690">
+              <caret line="46" selection-start-line="46" selection-end-line="46" selection-end-column="16" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pages_app.scss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="pages_app.scss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/framework/sass/pages_app.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="420">
-              <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+            <state relative-caret-position="60">
+              <caret line="4" column="13" selection-start-line="200" selection-start-column="12" selection-end-line="200" selection-end-column="68" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="MusicType.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="375">
+              <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -108,33 +131,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="mixins.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/framework/sass/mixins.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="914">
-              <caret line="240" column="22" selection-start-line="236" selection-start-column="16" selection-end-line="240" selection-end-column="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="util.scss" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/framework/sass/util.scss">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="17" column="1" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>label</find>
-      <find>addmusic</find>
-      <find>Nouveauté</find>
-      <find>&lt;a href=&quot;#&quot;&gt;Partager sur Twitter&lt;/a&gt;</find>
-      <find>icon_like</find>
       <find>genre</find>
       <find>Genre</find>
       <find>mes morc</find>
@@ -160,6 +160,11 @@
       <find>artist_</find>
       <find>nouvau</find>
       <find>sha</find>
+      <find>wave</find>
+      <find>800, 600</find>
+      <find>10</find>
+      <find>progress</find>
+      <find>_internat</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -170,21 +175,23 @@
       <list>
         <option value="$PROJECT_DIR$/web/framework/css/style.css" />
         <option value="$PROJECT_DIR$/var/logs/dev.log" />
-        <option value="$PROJECT_DIR$/web/framework/sass/style.scss" />
         <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.old.html" />
         <option value="$PROJECT_DIR$/web/framework/css/player.css" />
-        <option value="$PROJECT_DIR$/web/framework/sass/container_player.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/mixins.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/right_panel.scss" />
-        <option value="$PROJECT_DIR$/web/framework/sass/left_panel.scss" />
         <option value="$PROJECT_DIR$/vendor/symfony/symfony/src/Symfony/Bundle/SecurityBundle/Resources/views/Collector/security.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/FOSUserBundle/views/Registration/confirmed.html.twig" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/web/framework/sass/util.scss" />
         <option value="$PROJECT_DIR$/web/framework/sass/bozzo.scss" />
-        <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" />
         <option value="$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss" />
+        <option value="$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php" />
         <option value="$PROJECT_DIR$/web/framework/sass/pages_app.scss" />
+        <option value="$PROJECT_DIR$/web/framework/js/p5/radialsound.js" />
+        <option value="$PROJECT_DIR$/web/framework/sass/left_panel.scss" />
+        <option value="$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig" />
+        <option value="$PROJECT_DIR$/web/framework/sass/style.scss" />
+        <option value="$PROJECT_DIR$/web/framework/sass/container_player.scss" />
       </list>
     </option>
   </component>
@@ -212,6 +219,48 @@
             <path>
               <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
               <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Form" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SoundBuzz" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="WavesBundle" type="462c0819:PsiDirectoryNode" />
+              <item name="Resources" type="462c0819:PsiDirectoryNode" />
+              <item name="views" type="462c0819:PsiDirectoryNode" />
+              <item name="Default" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="SoundBuzz" type="b2602c69:ProjectViewProjectNode" />
@@ -273,13 +322,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32405000" />
+    <option name="totallyTimeSpent" value="37184000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1920" height="1200" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.122696154" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.122696154" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
@@ -305,44 +354,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="250">
-          <caret line="165" column="28" selection-start-line="165" selection-start-column="28" selection-end-line="165" selection-end-column="28" />
-          <folding>
-            <element signature="e#363#903#0#HTML" />
-            <element signature="e#980#1183#0#HTML" />
-            <element signature="e#1356#5725#0#HTML" />
-            <element signature="e#5446#19698#0#HTML" />
-            <element signature="e#7698#13253#0#HTML" />
-            <element signature="e#13267#15119#0#HTML" />
-            <element signature="e#15133#19074#0#HTML" />
-            <element signature="e#19088#20031#0#HTML" />
-            <element signature="e#19745#22959#0#HTML" />
-            <element signature="e#23300#32987#0#HTML" />
-            <element signature="e#24456#26395#0#HTML" />
-            <element signature="e#26409#31080#0#HTML" />
-            <element signature="e#31094#32963#0#HTML" />
-            <element signature="e#32620#35999#0#HTML" />
-            <element signature="e#33754#35963#0#HTML" />
-            <element signature="e#36044#41500#0#HTML" />
-            <element signature="e#36110#36937#0#HTML" />
-            <element signature="e#36951#38506#0#HTML" />
-            <element signature="e#39024#41783#0#HTML" />
-            <element signature="e#42669#46786#0#HTML" />
-            <element signature="e#41577#42958#0#HTML" />
-            <element signature="e#42992#45719#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/ajouter_musique.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="329">
-          <caret line="35" column="7" selection-start-line="35" selection-start-column="7" selection-end-line="35" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/bozzo.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
@@ -384,9 +395,10 @@
           <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
           <folding>
             <element signature="e#363#903#0#HTML" />
+            <element signature="e#928#41496#0#HTML" />
             <element signature="e#980#1183#0#HTML" />
-            <element signature="e#1356#5725#0#HTML" />
             <element signature="e#5446#19698#0#HTML" />
+            <element signature="e#5515#7362#0#HTML" />
             <element signature="e#7698#13253#0#HTML" />
             <element signature="e#13267#15119#0#HTML" />
             <element signature="e#15133#19074#0#HTML" />
@@ -398,10 +410,9 @@
             <element signature="e#31094#32963#0#HTML" />
             <element signature="e#32620#35999#0#HTML" />
             <element signature="e#33754#35963#0#HTML" />
-            <element signature="e#36044#41500#0#HTML" />
             <element signature="e#36110#36937#0#HTML" />
-            <element signature="e#36951#38506#0#HTML" />
-            <element signature="e#39024#41783#0#HTML" />
+            <element signature="e#38686#39520#0#HTML" />
+            <element signature="e#39541#40375#0#HTML" />
             <element signature="e#42669#46786#0#HTML" />
             <element signature="e#41577#42958#0#HTML" />
             <element signature="e#42992#45719#0#HTML" />
@@ -578,20 +589,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/style.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-475">
-          <caret line="20" column="8" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/container_player.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="131" column="17" selection-start-line="131" selection-start-column="17" selection-end-line="131" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/reset.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -603,13 +600,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="31" column="51" selection-start-line="31" selection-start-column="51" selection-end-line="31" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/left_panel.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="17" selection-start-line="15" selection-start-column="17" selection-end-line="15" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -675,37 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="16" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="16" />
-          <folding>
-            <element signature="e#363#903#0#HTML" />
-            <element signature="e#980#1183#0#HTML" />
-            <element signature="e#1356#5725#0#HTML" />
-            <element signature="e#5446#19698#0#HTML" />
-            <element signature="e#7698#13253#0#HTML" />
-            <element signature="e#13267#15119#0#HTML" />
-            <element signature="e#15133#19074#0#HTML" />
-            <element signature="e#19088#20031#0#HTML" />
-            <element signature="e#19745#22959#0#HTML" />
-            <element signature="e#23300#32987#0#HTML" />
-            <element signature="e#24456#26395#0#HTML" />
-            <element signature="e#26409#31080#0#HTML" />
-            <element signature="e#31094#32963#0#HTML" />
-            <element signature="e#32620#35999#0#HTML" />
-            <element signature="e#33754#35963#0#HTML" />
-            <element signature="e#36044#41500#0#HTML" />
-            <element signature="e#36110#36937#0#HTML" />
-            <element signature="e#36951#38506#0#HTML" />
-            <element signature="e#39024#41783#0#HTML" />
-            <element signature="e#42669#46786#0#HTML" />
-            <element signature="e#41577#42958#0#HTML" />
-            <element signature="e#42992#45719#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/framework/sass/mixins.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="914">
@@ -720,10 +679,69 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/variables.scss">
+    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Form/MusicType.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="825">
-          <caret line="55" column="1" selection-start-line="55" selection-start-column="1" selection-end-line="55" selection-end-column="1" />
+        <state relative-caret-position="375">
+          <caret line="25" column="35" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/pages_app.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="13" selection-start-line="200" selection-start-column="12" selection-end-line="200" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/WavesBundle/Resources/views/Default/home.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="1020" selection-start-line="1020" selection-end-line="1020" />
+          <folding>
+            <element signature="e#363#903#0#HTML" />
+            <element signature="e#928#41496#0#HTML" />
+            <element signature="e#980#1183#0#HTML" />
+            <element signature="e#5446#19698#0#HTML" />
+            <element signature="e#5515#7362#0#HTML" />
+            <element signature="e#7698#13253#0#HTML" />
+            <element signature="e#13267#15119#0#HTML" />
+            <element signature="e#15133#19074#0#HTML" />
+            <element signature="e#19088#20031#0#HTML" />
+            <element signature="e#19745#22959#0#HTML" />
+            <element signature="e#23300#32987#0#HTML" />
+            <element signature="e#24456#26395#0#HTML" />
+            <element signature="e#26409#31080#0#HTML" />
+            <element signature="e#31094#32963#0#HTML" />
+            <element signature="e#32620#35999#0#HTML" />
+            <element signature="e#33754#35963#0#HTML" />
+            <element signature="e#36110#36937#0#HTML" />
+            <element signature="e#38686#39520#0#HTML" />
+            <element signature="e#39541#40375#0#HTML" />
+            <element signature="e#42669#46786#0#HTML" />
+            <element signature="e#41577#42958#0#HTML" />
+            <element signature="e#42992#45719#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/left_panel.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="23" selection-start-line="9" selection-start-column="23" selection-end-line="9" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/js/p5/radialsound.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="109" column="20" lean-forward="true" selection-start-line="109" selection-start-column="20" selection-end-line="109" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/style.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="347">
+          <caret line="50" column="17" lean-forward="true" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -734,10 +752,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/framework/sass/pages_app.scss">
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/variables.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="420">
-          <caret line="28" column="26" selection-start-line="28" selection-start-column="26" selection-end-line="28" selection-end-column="26" />
+        <state relative-caret-position="690">
+          <caret line="46" selection-start-line="46" selection-end-line="46" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/framework/sass/container_player.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="651">
+          <caret line="164" column="8" selection-start-line="164" selection-start-column="8" selection-end-line="164" selection-end-column="8" />
         </state>
       </provider>
     </entry>
